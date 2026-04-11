@@ -50,18 +50,26 @@
       pointer-events: none; z-index: 1;
     }
     @media (max-width: 600px) {
-      .serra-hero     { display: none; }
-        .serra-hero-mob {
-          display: block;
-          position: absolute;
-          bottom: -2px; /* Força um pequeno encaixe para evitar linhas brancas no fundo */
-          left: 0;
-          width: 100%;
-          height: auto;
-          min-height: 350px; /* Garante que a serra tenha presença visual */
-          z-index: 1;
-          pointer-events: none; }
+  .serra-hero-mob {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw; /* Garante que ocupe toda a largura da janela */
+    height: 60vh; /* Define uma altura baseada na tela do celular */
+    max-height: 500px;
+    pointer-events: none;
+    z-index: 1;
   }
+
+  .hero-content {
+    /* Aumentamos o distanciamento para o texto não brigar com o topo da serra */
+    padding-bottom: 380px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
   .hero-content {
     /* Aumenta o padding inferior para os nomes não ficarem em cima da serra no mobile */
@@ -283,7 +291,7 @@
     <!-- Serra dos Órgãos — silhueta real + extensão orgânica lateral -->
     <!-- Serra dos Órgãos — múltiplas camadas com profundidade -->
     <!-- Serra hero — ondas douradas originais -->
-  <svg class="serra-hero" viewBox="0 0 1440 380" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+  <svg class="serra-hero-mob" viewBox="0 0 400 480" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.32"/>
