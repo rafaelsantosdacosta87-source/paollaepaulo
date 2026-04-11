@@ -219,7 +219,7 @@
       perspective: 1000px;
       width: min(340px, 90vw);
       margin: 0 auto;
-      height: 380px; /* Aumentei um pouco para o verso ficar mais elegante */
+      height: 360px;
       cursor: pointer;
     }
     .flip-inner {
@@ -241,38 +241,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      /* AJUSTE: Borda fina e marrom suave para a linha */
-      border: 1px solid rgba(107, 45, 26, 0.15); 
+      border: 1px solid rgba(201,169,110,0.2);
       padding: 30px;
-      /* AJUSTE: Cor de fundo creme exata para combinar com a imagem */
-      background: #FAF6F0; 
-      box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* Sombra bem sutil */
+      background: #1a0a09; /* Cor marrom escura para o fundo do card */
     }
-    .flip-back {
-      transform: rotateY(180deg);
-    }
-    .hint-tap {
-      font-family: 'Cinzel', serif;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      /* AJUSTE: Texto marrom suave */
-      color: rgba(107, 45, 26, 0.6); 
-      margin-top: 25px;
-      text-transform: uppercase;
-    }
-    /* AJUSTE: Estilos específicos para garantir o texto marrom dentro do flip */
-    .flip-inner .address-name {
-      color: #6B2D1A;
-      margin-bottom: 20px;
-    }
-    .flip-inner .address-text {
-      color: #130706; /* Um marrom quase preto para melhor leitura */
-      font-style: italic;
-      line-height: 1.8;
-      font-size: 15px;
-    }
-
-    }
+    .flip-back { transform: rotateY(180deg); }
     .hint-tap {
       font-family: 'Cinzel', serif;
       font-size: 9px;
@@ -613,32 +586,22 @@
       
       <div class="flip-front">
         <p class="address-name" style="margin-bottom: 25px;">Casa Ville Verte</p>
-        
         <img 
-          src="./casa.png" 
+          src="./image-removebg-preview.png" 
           alt="Casa Ilustração"
-          style="
-            display: block;
-            max-width: 90%;
-            height: auto;
-            /* Se sua imagem for marrom, deixe como está. Se for preta e você 
-               quiser tentar torná-la marrom via filtro, pode usar isto: 
-               filter: sepia(1) saturate(5) hue-rotate(-20deg) brightness(0.6); 
-            */
-          "
+          style="width: 180px; filter: brightness(0) invert(1) opacity(0.8);"
         />
-
-        <p class="hint-tap">Toque para ver o endereço ↓</p>
+        <p class="hint-tap">Toque para ver o endereço</p>
       </div>
 
       <div class="flip-back">
         <p class="address-name">Casa Ville Verte</p>
-        <p class="address-text" style="margin: 25px 0;">
+        <p class="address-text" style="margin: 20px 0;">
           Parque do Imbuí, 2815<br>
           Teresópolis, Rio de Janeiro<br><br>
-          <span style="display:block; margin-top:15px; font-weight:600;">13 de julho de 2026</span>
+          13 de julho de 2026
         </p>
-        <a class="map-link" href="http://googleusercontent.com/http://googleusercontent.com/maps.google.com/6" target="_blank" style="color: #6B2D1A; border-color: rgba(107, 45, 26, 0.3);">Abrir no Google Maps →</a>
+        <a class="map-link" href="https://maps.google.com" target="_blank">Abrir no Google Maps →</a>
       </div>
 
     </div>
