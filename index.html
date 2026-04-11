@@ -21,28 +21,60 @@
     html { scroll-behavior: smooth; }
     body { background: var(--branco); color: var(--marrom); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
 
-    /* ── HERO ── */
+    /* ── HERO AJUSTADO ── */
     #hero {
       min-height: 100vh;
-      background: var(--marrom);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 80px 24px 0;
-      position: relative; overflow: hidden;
+      background: var(--marrom-escuro);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+      overflow: hidden;
     }
-    #hero::before {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 70% 50% at 50% 10%, rgba(201,169,110,0.12) 0%, transparent 0%),
-        radial-gradient(ellipse 100% 40% at 50% 100%, rgba(61,24,16,0.9) 0%, transparent 40%);
-      pointer-events: none;
+    
+    .hero-content { 
+      position: relative; 
+      z-index: 1; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .serra-hero {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: clamp(220px, 38vw, 380px);
-      pointer-events: none; z-index: 1;
+    
+    .hero-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(70px, 12vw, 110px); /* Ajuste para o tamanho da imagem */
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--creme);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 1.2s 0.6s forwards;
     }
-    .hero-content { position: relative; z-index: 2; padding-bottom: clamp(200px,34vw,360px); }
+    
+    /* Estilização específica do ampersand (&) central */
+    .hero-ampersand {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(80px, 15vw, 140px);
+      color: var(--dourado);
+      line-height: 0.6; /* Faz o & ficar mais próximo dos nomes */
+      margin: 10px 0;
+      font-style: italic;
+      display: block;
+    }
+    
+    .hero-divider {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--dourado), transparent);
+      margin: 40px auto;
+      opacity: 0;
+      animation: fadeIn 1s 1.2s forwards;
+    }
 
     /* Hero signature image — monogram on top, full names below */
     .hero-sig-mono {
@@ -287,40 +319,21 @@
 <!-- ══════════ HERO ══════════ -->
 <section id="hero">
   <div class="hero-content">
-    <!-- Monogram — top portion of signature image, tinted gold -->
-    <img
-      src="./monograma.png"
-      alt="PP"
-      style="
-        display:block; margin:0 auto 16px;
-        width: clamp(80px,12vw,110px); height:auto;
-        object-fit:cover; object-position:top center;
-        filter: brightness(0) saturate(100%) invert(80%) sepia(30%) saturate(500%) hue-rotate(5deg) brightness(1.25);
-        opacity:0.82;
-        animation: fadeUp 1s 0.2s both;
-      "
-    />
     <p class="hero-pre">Celebração do Matrimônio</p>
-    <!-- Full signature image — names, tinted white -->
-    <img
-      src="./nomes.png"
-      alt="Paolla e Paulo"
-      style="
-        display:block; margin:0 auto;
-        width: min(780px, 90vw); height:auto;
-        filter: brightness(0) invert(1);
-        opacity:0.95;
-        animation: fadeUp 1.2s 0.6s both;
-      "
-    />
-    <div class="hero-rule"></div>
+    
+    <div class="hero-names">
+      <span>Paolla</span>
+      <span class="hero-ampersand">&</span>
+      <span>Paulo</span>
+    </div>
+
+    <div class="hero-divider"></div>
+    
     <p class="hero-date">13 · 07 · 2026</p>
-    <p class="hero-loc">Casa Ville Verte · Teresópolis, RJ</p>
-    <p class="hero-verse">
-      "Para que todos vejam, e saibam, e considerem, e juntamente entendam<br>
-      que a mão do Senhor fez isto..." — Isaías 41:20
-    </p>
+    <p class="hero-location">Casa Ville Verte · Parque do Imbuí, 2815 · Teresópolis, RJ</p>
   </div>
+  <div class="scroll-hint">↓</div>
+</section>
 
   <!-- Serra dos Órgãos — silhueta extraída da imagem real -->
     <!-- Serra dos Órgãos — silhueta nativa, proporção preservada -->
