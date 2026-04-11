@@ -214,56 +214,52 @@
     @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(7px);} }
     .reveal { opacity:0; transform:translateY(28px); transition: opacity 0.85s ease, transform 0.85s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
-    /* ── ESTILO DO VIRA-CARTA ── */
-    /* ── AJUSTE DE CENTRALIZAÇÃO TOTAL ── */
-    .flip-container {
-      perspective: 1000px;
-      width: 100%; /* Ocupa a largura disponível */
-      max-width: 380px; /* Limita o tamanho em telas grandes */
-      margin: 0 auto; /* Centraliza o contêiner na página */
-      height: 420px;
-      cursor: pointer;
-      display: block; /* Garante que o margin: auto funcione */
-    }
-    
-    .flip-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      transform-style: preserve-3d;
-    }
-    
-    .flip-front, .flip-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Centraliza horizontalmente */
-      justify-content: center; /* Centraliza verticalmente */
-      text-align: center;
-      border: 1px solid rgba(201,169,110,0.2);
-      padding: 20px;
-      background: #1a0a09;
-      left: 0;
-      top: 0;
-    }
-    }
-    .flip-back { transform: rotateY(180deg); }
-    .hint-tap {
-      font-family: 'Cinzel', serif;
-      font-size: 13px; /* Texto maior e mais legível */
-      letter-spacing: 0.25em;
-      color: var(--dourado-claro); /* Cor mais clara para dar destaque */
-      margin-top: 35px; /* Mais espaço abaixo da casa */
-      opacity: 1; /* Retirei a transparência para não ficar apagado */
-      text-transform: uppercase;
-      font-weight: 500;
-      border-top: 1px solid rgba(201,169,110,0.3); /* Linha sutil para emoldurar o texto */
-      padding-top: 15px;
-    }
+    /* ── RESET DO VIRA-CARTA ── */
+  .flip-container {
+    perspective: 1000px;
+    width: 90vw;
+    max-width: 380px;
+    height: 420px;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+  }
+  
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  
+  /* Esta classe é o que faz o giro acontecer */
+  .flipped .flip-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Suporte para Safari/iOS */
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(201,169,110,0.3);
+    background: #1a0a09;
+    padding: 30px;
+    top: 0;
+    left: 0;
+  }
+  
+  .flip-back {
+    transform: rotateY(180deg);
+  }
   </style>
 </head>
 <body>
@@ -593,35 +589,28 @@
   </p>
 
   <div class="flip-container reveal" onclick="this.classList.toggle('flipped')">
-    <div class="flip-inner">
-      
-      <div class="flip-front">
-  <p class="address-name" style="margin-bottom: 25px; width: 100%;">Casa Ville Verte</p>
-  
-  <img 
-    src="./casa.png" 
-    alt="Casa Ilustração"
-    style="
-      width: 85%; /* Usa porcentagem para caber em qualquer celular */
-      max-width: 280px; /* Não cresce mais que isso no PC */
-      height: auto;
-      filter: brightness(0) invert(1) opacity(0.9);
-      margin: 0 auto; /* Força centralização da imagem */
-    " 
-  />
-  
-  <p class="hint-tap" style="width: 100%;">Toque para ver o endereço</p>
-</div>
+  <div class="flip-inner">
+    
+    <div class="flip-front">
+      <p class="address-name" style="margin-bottom: 25px; color: var(--dourado-claro);">Casa Ville Verte</p>
+      <img src="./casa.png" style="width: 80%; max-width: 250px; filter: brightness(0) invert(1); margin: 0 auto;" />
+      <p class="hint-tap">Toque para ver o endereço</p>
+    </div>
 
-      <div class="flip-back">
-        <p class="address-name">Casa Ville Verte</p>
-        <p class="address-text" style="margin: 20px 0;">
-          Parque do Imbuí, 2815<br>
-          Teresópolis, Rio de Janeiro<br><br>
-          13 de julho de 2026
-        </p>
-        <a class="map-link" href="https://maps.google.com" target="_blank">Abrir no Google Maps →</a>
-      </div>
+    <div class="flip-back">
+      <p class="address-name" style="color: var(--dourado-claro);">Casa Ville Verte</p>
+      <p class="address-text" style="margin: 20px 0; color: #fff; opacity: 0.9;">
+        Parque do Imbuí, 2815<br>
+        Teresópolis, Rio de Janeiro<br><br>
+        13 de julho de 2026
+      </p>
+      <a class="map-link" href="https://maps.google.com" target="_blank" onclick="event.stopPropagation();">
+        Abrir no Google Maps →
+      </a>
+    </div>
+
+  </div>
+</div>
 
     </div>
   </div>
