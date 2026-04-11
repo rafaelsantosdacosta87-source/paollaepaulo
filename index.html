@@ -39,10 +39,10 @@
     }
     .serra-hero {
       position: absolute; bottom: 0; left: 0; right: 0;
-      height: clamp(220px, 38vw, 380px);
+      height: clamp(320px, 38vw, 380px);
       pointer-events: none; z-index: 1;
     }
-    .hero-content { position: relative; z-index: 2; padding-bottom: clamp(200px,34vw,360px); }
+    .hero-content { position: relative; z-index: 2; padding-bottom: clamp(300px,34vw,360px); }
 
     /* Hero signature image — monogram on top, full names below */
     .hero-sig-mono {
@@ -239,7 +239,7 @@
 
     /* ── FOOTER ── */
     footer { background: var(--marrom); border-top: 1px solid rgba(201,169,110,0.1); text-align: center; padding: 52px 24px; }
-    .footer-sig { display: block; margin: 0 auto 14px; width: min(140px, 75vw); height: auto; filter: brightness(0) saturate(100%) invert(72%) sepia(38%) saturate(600%) hue-rotate(5deg) brightness(1.1); opacity: 0.5; }
+    .footer-sig { display: block; margin: 0 auto 14px; width: min(80px, 40vw); height: auto; filter: brightness(0) saturate(100%) invert(72%) sepia(38%) saturate(600%) hue-rotate(5deg) brightness(1.1); opacity: 0.5; }
     .footer-sub { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.28em; color: rgba(243,235,224,0.3); }
     .footer-verse { margin-top: 24px; font-size: 13px; font-style: italic; color: rgba(201,169,110,0.3); max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.65; }
 
@@ -661,7 +661,7 @@
         <img 
           src="./casa.png" 
           alt="Casa Ilustração"
-          style="width: 330px; filter: brightness(0) invert(1) opacity(0.8);"
+          style="width: 250px; filter: brightness(0) invert(1) opacity(0.8);"
         />
         <p class="hint-tap">Toque para ver o endereço</p>
       </div>
@@ -673,7 +673,7 @@
           Teresópolis, Rio de Janeiro<br><br>
           13 de julho de 2026
         </p>
-        <a class="map-link" href="https://maps.google.com" target="_blank">Abrir no Google Maps →</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Parque+do+Imbui+2815+Teresopolis+Rio+de+Janeiro" target="_blank">Abrir no Google Maps →</a>
       </div>
 
 
@@ -686,9 +686,10 @@
 
 <!-- ══════════ FOOTER ══════════ -->
 <footer>
-  <img src="./monograma.png"
+  <img src="monograma.png"
   class="footer-sig"/>
   <p class="footer-sub">13 · 07 · 2026 &nbsp;·&nbsp; Teresópolis, RJ</p>
+  <p class="footer-verse">"Para que todos vejam, e saibam, e considerem, e juntamente entendam<br>que a mão do Senhor fez isto..." — Isaías 41:20</p>
 </footer>
 
 <script>
