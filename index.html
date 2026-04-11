@@ -47,7 +47,6 @@
     /* Hero signature image — monogram on top, full names below */
     .hero-sig-mono {
       display: block; margin: 0 auto 20px;
-      /* crop to just the monogram area at top of image */
       width: clamp(80px, 12vw, 120px);
       height: auto;
       object-fit: cover;
@@ -71,6 +70,39 @@
       opacity: 0.94;
       animation: fadeUp 1.2s 0.6s both;
     }
+    /* ── HERO NAMES TYPOGRAPHY ── */
+    .hero-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      text-align: center;
+      line-height: 0.9;
+      opacity: 0;
+      animation: fadeUp 1.2s 0.6s forwards;
+      margin-bottom: 0;
+    }
+    .hero-name-paolla {
+      display: block;
+      font-size: clamp(70px, 17vw, 170px);
+      font-style: italic;
+      color: var(--creme-escuro);
+      letter-spacing: -0.01em;
+    }
+    .hero-ampersand {
+      display: block;
+      font-size: clamp(60px, 14vw, 140px);
+      color: var(--dourado);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 0.85;
+    }
+    .hero-name-paulo {
+      display: block;
+      font-size: clamp(76px, 19vw, 190px);
+      font-style: normal;
+      color: var(--creme);
+      letter-spacing: -0.02em;
+      line-height: 0.85;
+    }
     .hero-rule {
       width: 1px; height: 64px;
       background: linear-gradient(to bottom, transparent, var(--dourado), transparent);
@@ -93,8 +125,8 @@
       animation: fadeUp 1s 1.9s both;
     }
     .scroll-hint {
-      position: absolute; bottom: 22px; left: 50%;
-      transform: translateX(-50%); color: var(--dourado); opacity: 0.35; font-size: 18px;
+      display: block; margin-top: 24px; text-align: center;
+      color: var(--dourado); opacity: 0.35; font-size: 18px;
       animation: bounce 2.2s infinite; z-index: 3;
     }
 
@@ -211,7 +243,7 @@
     /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
     @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(7px);} }
+    @keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(7px);} }
     .reveal { opacity:0; transform:translateY(28px); transition: opacity 0.85s ease, transform 0.85s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
     /* ── RESET DO VIRA-CARTA ── */
@@ -287,39 +319,16 @@
 <!-- ══════════ HERO ══════════ -->
 <section id="hero">
   <div class="hero-content">
-    <!-- Monogram — top portion of signature image, tinted gold -->
-    <img
-      src="./monograma.png"
-      alt="PP"
-      style="
-        display:block; margin:0 auto 16px;
-        width: clamp(80px,12vw,110px); height:auto;
-        object-fit:cover; object-position:top center;
-        filter: brightness(0) saturate(100%) invert(80%) sepia(30%) saturate(500%) hue-rotate(5deg) brightness(1.25);
-        opacity:0.82;
-        animation: fadeUp 1s 0.2s both;
-      "
-    />
     <p class="hero-pre">Celebração do Matrimônio</p>
-    <!-- Full signature image — names, tinted white -->
-    <img
-      src="./nomes.png"
-      alt="Paolla e Paulo"
-      style="
-        display:block; margin:0 auto;
-        width: min(780px, 90vw); height:auto;
-        filter: brightness(0) invert(1);
-        opacity:0.95;
-        animation: fadeUp 1.2s 0.6s both;
-      "
-    />
+    <h1 class="hero-names">
+      <span class="hero-name-paolla">Paolla</span>
+      <span class="hero-ampersand">&amp;</span>
+      <span class="hero-name-paulo">Paulo</span>
+    </h1>
     <div class="hero-rule"></div>
     <p class="hero-date">13 · 07 · 2026</p>
-    <p class="hero-loc">Casa Ville Verte · Teresópolis, RJ</p>
-    <p class="hero-verse">
-      "Para que todos vejam, e saibam, e considerem, e juntamente entendam<br>
-      que a mão do Senhor fez isto..." — Isaías 41:20
-    </p>
+    <p class="hero-loc">Casa Ville Verte · Parque do Imbuí, 2815 · Teresópolis, RJ</p>
+    <div class="scroll-hint">↓</div>
   </div>
 
   <!-- Serra dos Órgãos — silhueta extraída da imagem real -->
@@ -363,7 +372,7 @@
       <path d="M0,364 Q18,358 36,364 Q54,370 72,364 Q90,358 108,364 Q126,370 144,364 Q162,358 180,364 Q198,370 216,364 Q234,358 252,364 Q270,370 288,364 Q306,358 324,364 Q342,370 360,364 Q378,358 396,364 Q414,370 432,364 Q450,358 468,364 Q486,370 504,364 Q522,358 540,364 Q558,370 576,364 Q594,358 612,364 Q630,370 648,364 Q666,358 684,364 Q702,370 720,364 Q738,358 756,364 Q774,370 792,364 Q810,358 828,364 Q846,370 864,364 Q882,358 900,364 Q918,370 936,364 Q954,358 972,364 Q990,370 1008,364 Q1026,358 1044,364 Q1062,370 1080,364 Q1098,358 1116,364 Q1134,370 1152,364 Q1170,358 1188,364 Q1206,370 1224,364 Q1242,358 1260,364 Q1278,370 1296,364 Q1314,358 1332,364 Q1350,370 1368,364 Q1386,358 1404,364 Q1422,370 1440,364"/>
     </g>
   </svg>
-    <div class="scroll-hint">↓</div>
+
 </section>
 
 <!-- ══════════ NAV ══════════ -->
