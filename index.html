@@ -215,15 +215,23 @@
     .reveal { opacity:0; transform:translateY(28px); transition: opacity 0.85s ease, transform 0.85s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
     /* ── RESET DO VIRA-CARTA ── */
+    #local {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centraliza o conteúdo horizontalmente */
+      justify-content: center;
+      width: 100%;
+      padding: 60px 0; /* Remove padding lateral que pode empurrar o card */
+    }
+
   .flip-container {
     perspective: 1000px;
-    width: 90vw;
+    width: 90vw; /* Usa 90% da largura da tela do celular */
     max-width: 380px;
     height: 420px;
-    margin: 0 auto;
+    margin: 0 auto; /* Margem automática nas laterais para centralizar */
     cursor: pointer;
     position: relative;
-    z-index: 5;
   }
   
   .flip-inner {
