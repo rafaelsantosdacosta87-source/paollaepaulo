@@ -149,6 +149,9 @@
     .ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--dourado)); }
     .ornament::after { background: linear-gradient(to left, transparent, var(--dourado)); }
     .ornament span { color: var(--dourado); font-size: 17px; opacity: 0.65; }
+    #local .ornament::before { background: linear-gradient(to right, transparent, rgba(201,169,110,0.6)); }
+    #local .ornament::after { background: linear-gradient(to left, transparent, rgba(201,169,110,0.6)); }
+    #local .ornament span { opacity: 0.8; }
 
     /* ── CONTAGEM ── */
     #contagem { background: var(--creme); text-align: center; }
@@ -503,7 +506,7 @@
     </div>
   </div>
   <p class="traje-obs reveal" style="margin-top:32px;">
-    Pedimos que evitem roupas nas cores <strong>branco</strong> e <strong>marrom</strong>.
+    Por gentileza, evitar roupas nas cores <strong>branco</strong> e <strong>marrom</strong>.
   </p>
 </section>
 
@@ -641,8 +644,12 @@
   <section id="local">
   <p class="sec-label reveal">Como chegar</p>
   <h2 class="sec-title reveal">O <em>Local</em></h2>
-    <div class="ornament reveal"><span>❧</span></div>
-  <p class="historia-text reveal visible" style="font-style:italic; font-size:clamp(15px,2vw,18px); color:var(--creme); margin-bottom:32px; max-width:600px; margin-left:auto; margin-right:auto;">
+  <div class="reveal" style="display:flex; align-items:center; justify-content:center; gap:16px; margin: 0 auto 40px; max-width:320px; width:100%;">
+    <span style="flex:1; height:1px; background: linear-gradient(to right, transparent, rgba(201,169,110,0.6)); display:block;"></span>
+    <span style="color:var(--dourado); font-size:17px; opacity:0.8;">❧</span>
+    <span style="flex:1; height:1px; background: linear-gradient(to left, transparent, rgba(201,169,110,0.6)); display:block;"></span>
+  </div>
+  <p class="historia-text reveal visible" style="font-style:italic; font-size:clamp(15px,2vw,18px); color:var(--creme); margin-bottom:32px; max-width:600px; margin-left:auto; margin-right:auto; padding: 0 24px; box-sizing:border-box;">
     "Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão do Senhor fez isto..." — Isaías 41:20
   </p>
 
@@ -654,7 +661,7 @@
         <img 
           src="./casa.png" 
           alt="Casa Ilustração"
-          style="width: 250px; filter: brightness(0) invert(1) opacity(0.8);"
+          style="width: 330px; filter: brightness(0) invert(1) opacity(0.8);"
         />
         <p class="hint-tap">Toque para ver o endereço</p>
       </div>
