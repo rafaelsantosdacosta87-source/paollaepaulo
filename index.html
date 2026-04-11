@@ -217,9 +217,9 @@
     /* ── ESTILO DO VIRA-CARTA ── */
     .flip-container {
       perspective: 1000px;
-      width: min(340px, 90vw);
+      width: min(400px, 92vw); /* Aumentei a largura do cartão */
       margin: 0 auto;
-      height: 360px;
+      height: 420px; /* Aumentei a altura para o conteúdo respirar */
       cursor: pointer;
     }
     .flip-inner {
@@ -248,12 +248,15 @@
     .flip-back { transform: rotateY(180deg); }
     .hint-tap {
       font-family: 'Cinzel', serif;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      color: var(--dourado);
-      margin-top: 25px;
-      opacity: 1;
+      font-size: 13px; /* Texto maior e mais legível */
+      letter-spacing: 0.25em;
+      color: var(--dourado-claro); /* Cor mais clara para dar destaque */
+      margin-top: 35px; /* Mais espaço abaixo da casa */
+      opacity: 1; /* Retirei a transparência para não ficar apagado */
       text-transform: uppercase;
+      font-weight: 500;
+      border-top: 1px solid rgba(201,169,110,0.3); /* Linha sutil para emoldurar o texto */
+      padding-top: 15px;
     }
   </style>
 </head>
