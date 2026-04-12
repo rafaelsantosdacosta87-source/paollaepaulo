@@ -213,7 +213,7 @@
     .acc-body-inner { padding: 28px 30px 36px; text-align: left; }
     .gift-category { margin-bottom: 30px; }
     .gift-category:last-child { margin-bottom: 0; }
-    .gift-cat-title { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--marrom-claro); margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--creme-escuro); }
+    /* gift-cat-title moved to .gift-cat-header */
     .gift-item { margin-bottom: 16px; }
     .gift-item:last-child { margin-bottom: 0; }
     .gift-name { font-size: clamp(15px,2vw,17px); color: var(--marrom); margin-bottom: 6px; }
@@ -350,6 +350,81 @@
       border-color: var(--dourado);
       background: rgba(19,7,6,0.95);
     }
+
+    /* ── RESERVA ── */
+    .gift-cat-header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap;
+      margin-bottom: 14px; padding-bottom: 6px;
+      border-bottom: 1px solid var(--creme-escuro);
+    }
+    .gift-cat-title {
+      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--marrom-claro);
+      margin: 0; padding: 0; border: none;
+    }
+    .reserve-btn {
+      font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--dourado);
+      background: none; border: 1px solid rgba(201,169,110,0.3);
+      padding: 4px 12px; cursor: pointer; white-space: nowrap;
+      transition: all 0.25s; flex-shrink: 0;
+    }
+    .reserve-btn:hover { background: rgba(201,169,110,0.08); border-color: var(--dourado); }
+    .gift-reserved {
+      font-size: 12px; font-style: italic;
+      color: var(--dourado); opacity: 0.9; display: none;
+      white-space: nowrap;
+    }
+    .gift-category.is-reserved .reserve-btn   { display: none; }
+    .gift-category.is-reserved .gift-reserved { display: inline; }
+    .gift-category.is-reserved .gift-item     { opacity: 0.35; pointer-events: none; }
+
+    /* Modal */
+    .reserve-modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(10,3,2,0.82); z-index: 500;
+      align-items: center; justify-content: center;
+    }
+    .reserve-modal-overlay.open { display: flex; }
+    .reserve-modal {
+      background: var(--marrom-medio); border: 1px solid rgba(201,169,110,0.22);
+      padding: 44px 40px; max-width: 400px; width: 90%; text-align: center;
+    }
+    .reserve-modal h3 {
+      font-size: clamp(22px,3.5vw,28px); font-weight: 300;
+      color: var(--creme); margin-bottom: 6px;
+    }
+    .reserve-modal-item-name {
+      font-size: 17px; color: var(--dourado); margin-bottom: 8px;
+    }
+    .reserve-modal-desc {
+      font-size: 14px; font-style: italic;
+      color: rgba(243,235,224,0.45); margin-bottom: 28px; line-height: 1.6;
+    }
+    .reserve-modal input {
+      width: 100%; background: rgba(243,235,224,0.06);
+      border: none; border-bottom: 1px solid rgba(201,169,110,0.4);
+      padding: 10px 4px; font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; color: var(--creme); outline: none;
+      text-align: center; margin-bottom: 28px;
+    }
+    .reserve-modal input::placeholder { color: rgba(243,235,224,0.25); }
+    .reserve-modal-actions { display: flex; gap: 12px; justify-content: center; }
+    .modal-confirm {
+      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em;
+      text-transform: uppercase; background: var(--dourado);
+      color: var(--marrom); border: none; padding: 12px 28px;
+      cursor: pointer; transition: opacity 0.2s;
+    }
+    .modal-confirm:hover { opacity: 0.85; }
+    .modal-cancel {
+      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em;
+      text-transform: uppercase; background: none;
+      color: rgba(243,235,224,0.4); border: 1px solid rgba(243,235,224,0.15);
+      padding: 12px 28px; cursor: pointer; transition: opacity 0.2s;
+    }
+    .modal-cancel:hover { opacity: 0.7; }
   </style>
 </head>
 <body>
@@ -534,47 +609,97 @@
         <span class="acc-arrow">↓</span>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
-        <div class="gift-category">
-          <p class="gift-cat-title">Liquidificador</p>
-          <div class="gift-item"><p class="gift-name">Oster 1400W</p><div class="gift-links"><a href="https://amzn.to/47dvdIA" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28WFzh2" target="_blank" class="gift-link">Mercado Livre</a></div></div>
+        <div class="gift-category" data-cat-id="cat-001">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Liquidificador</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-001', 'Liquidificador', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Oster 1400W</p><div class="gift-links"><a href="https://amzn.to/47dvdIA" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28WFzh2" target="_blank" class="gift-link">Mercado Livre</a>
+        </div></div>
           <div class="gift-item"><p class="gift-name">Electrolux 1500W</p><div class="gift-links"><a href="https://meli.la/32srsgZ" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4sYhnlK" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Sanduicheira Grill</p>
-          <div class="gift-item"><p class="gift-name">Oster 1000W</p><div class="gift-links"><a href="https://amzn.to/4sYy8xd" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/3237nDa" target="_blank" class="gift-link">Mercado Livre</a></div></div>
+        <div class="gift-category" data-cat-id="cat-002">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Sanduicheira Grill</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-002', 'Sanduicheira Grill', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Oster 1000W</p><div class="gift-links"><a href="https://amzn.to/4sYy8xd" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/3237nDa" target="_blank" class="gift-link">Mercado Livre</a>
+        </div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Escorredor de Louça</p>
-          <div class="gift-item"><p class="gift-name">Tramontina Inox</p><div class="gift-links"><a href="https://meli.la/31mjcVA" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4bVGrEb" target="_blank" class="gift-link">Amazon</a></div></div>
+        <div class="gift-category" data-cat-id="cat-003">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Escorredor de Louça</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-003', 'Escorredor de Louça', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Tramontina Inox</p><div class="gift-links"><a href="https://meli.la/31mjcVA" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4bVGrEb" target="_blank" class="gift-link">Amazon</a>
+        </div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Chaleira</p>
-          <div class="gift-item"><p class="gift-name">Black and Decker</p><div class="gift-links"><a href="https://amzn.to/40PP6ln" target="_blank" class="gift-link">Amazon</a></div></div>
+        <div class="gift-category" data-cat-id="cat-004">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Chaleira</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-004', 'Chaleira', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Black and Decker</p><div class="gift-links"><a href="https://amzn.to/40PP6ln" target="_blank" class="gift-link">Amazon</a>
+        </div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Saladeira</p>
-          <div class="gift-item"><p class="gift-name">Gamela Acácia 30cm</p><div class="gift-links"><a href="https://www.tokstok.com.br/bbk-gamela-30-cm-acacia-acacia/p" target="_blank" class="gift-link">Tok&amp;Stok</a></div></div>
+        <div class="gift-category" data-cat-id="cat-005">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Saladeira</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-005', 'Saladeira', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Gamela Acácia 30cm</p><div class="gift-links"><a href="https://www.tokstok.com.br/bbk-gamela-30-cm-acacia-acacia/p" target="_blank" class="gift-link">Tok&amp;Stok</a>
+        </div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Jogo de Taças</p>
-          <div class="gift-item"><p class="gift-name">Taça de Cristal 460ml</p><div class="gift-links"><a href="https://meli.la/1vU2e1b" target="_blank" class="gift-link">Mercado Livre</a><a href="http://bit.ly/4lGbcQK" target="_blank" class="gift-link">Magalu</a><a href="https://amzn.to/4lK4B84" target="_blank" class="gift-link">Amazon</a></div></div>
+        <div class="gift-category" data-cat-id="cat-006">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Jogo de Taças</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-006', 'Jogo de Taças', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Taça de Cristal 460ml</p><div class="gift-links"><a href="https://meli.la/1vU2e1b" target="_blank" class="gift-link">Mercado Livre</a><a href="http://bit.ly/4lGbcQK" target="_blank" class="gift-link">Magalu</a><a href="https://amzn.to/4lK4B84" target="_blank" class="gift-link">Amazon</a>
+        </div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Jogo de Toalha</p>
-          <div class="gift-item"><p class="gift-name">Banhão Algodão Egípcio 600g</p><div class="gift-links"><a href="https://bit.ly/4uIQTX7" target="_blank" class="gift-link">First Class</a></div></div>
+        <div class="gift-category" data-cat-id="cat-007">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Jogo de Toalha</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-007', 'Jogo de Toalha', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Banhão Algodão Egípcio 600g</p><div class="gift-links"><a href="https://bit.ly/4uIQTX7" target="_blank" class="gift-link">First Class</a>
+        </div></div>
           <div class="gift-item"><p class="gift-name">Buddemeyer Fio Penteado</p><div class="gift-links"><a href="https://amzn.to/416uOEt" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Porta Tempero</p>
-          <div class="gift-item"><p class="gift-name">Porta Tempero</p><div class="gift-links"><a href="https://bit.ly/3NGbqL7" target="_blank" class="gift-link">Tok&amp;Stok</a></div></div>
+        <div class="gift-category" data-cat-id="cat-008">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Porta Tempero</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-008', 'Porta Tempero', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Porta Tempero</p><div class="gift-links"><a href="https://bit.ly/3NGbqL7" target="_blank" class="gift-link">Tok&amp;Stok</a>
+        </div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Cesto de Roupa</p>
-          <div class="gift-item"><p class="gift-name">Grid Preto</p><div class="gift-links"><a href="https://s.shopee.com.br/3B2rrWh8WI" target="_blank" class="gift-link">Shopee</a></div></div>
+        <div class="gift-category" data-cat-id="cat-009">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Cesto de Roupa</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-009', 'Cesto de Roupa', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Grid Preto</p><div class="gift-links"><a href="https://s.shopee.com.br/3B2rrWh8WI" target="_blank" class="gift-link">Shopee</a>
+        </div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Travessas</p>
-          <div class="gift-item"><p class="gift-name">Travessa Pequena</p><div class="gift-links"><a href="https://meli.la/29rCwzY" target="_blank" class="gift-link">Mercado Livre</a></div></div>
+        <div class="gift-category" data-cat-id="cat-010">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Travessas</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-010', 'Travessas', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Travessa Pequena</p><div class="gift-links"><a href="https://meli.la/29rCwzY" target="_blank" class="gift-link">Mercado Livre</a>
+        </div></div>
           <div class="gift-item"><p class="gift-name">Travessa Média</p><div class="gift-links"><a href="https://meli.la/23AqHp4" target="_blank" class="gift-link">Mercado Livre</a></div></div>
           <div class="gift-item"><p class="gift-name">Travessa Grande</p><div class="gift-links"><a href="https://meli.la/2ppY1SC" target="_blank" class="gift-link">Mercado Livre</a></div></div>
         </div>
@@ -588,33 +713,63 @@
         <span class="acc-arrow">↓</span>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
-        <div class="gift-category">
-          <p class="gift-cat-title">Panela de Pressão (indução)</p>
-          <div class="gift-item"><p class="gift-name">Rochedo 4L</p><div class="gift-links"><a href="https://meli.la/1sm4xdb" target="_blank" class="gift-link">Mercado Livre</a></div></div>
+        <div class="gift-category" data-cat-id="cat-011">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Panela de Pressão (indução)</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-011', 'Panela de Pressão (indução)', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Rochedo 4L</p><div class="gift-links"><a href="https://meli.la/1sm4xdb" target="_blank" class="gift-link">Mercado Livre</a>
+        </div></div>
           <div class="gift-item"><p class="gift-name">Tramontina 4.5L</p><div class="gift-links"><a href="https://meli.la/1UDukJQ" target="_blank" class="gift-link">Mercado Livre</a></div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Jogo de Cama</p>
-          <div class="gift-item"><p class="gift-name">300 Fios Algodão Percal</p><div class="gift-links"><a href="https://bit.ly/4sukxxR" target="_blank" class="gift-link">Casa Riachuelo</a></div></div>
+        <div class="gift-category" data-cat-id="cat-012">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Jogo de Cama</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-012', 'Jogo de Cama', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">300 Fios Algodão Percal</p><div class="gift-links"><a href="https://bit.ly/4sukxxR" target="_blank" class="gift-link">Casa Riachuelo</a>
+        </div></div>
           <div class="gift-item"><p class="gift-name">300 Fios Buddemeyer – Cetim</p><div class="gift-links"><a href="https://amzn.to/40Nt0jm" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28t8srf" target="_blank" class="gift-link">Mercado Livre</a></div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Air Fryer</p>
-          <div class="gift-item"><p class="gift-name">Philips Walita Série 1000 XL — 6,2L</p><div class="gift-links"><a href="https://amzn.to/40NfP1V" target="_blank" class="gift-link">Amazon</a></div></div>
+        <div class="gift-category" data-cat-id="cat-013">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Air Fryer</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-013', 'Air Fryer', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Philips Walita Série 1000 XL — 6,2L</p><div class="gift-links"><a href="https://amzn.to/40NfP1V" target="_blank" class="gift-link">Amazon</a>
+        </div></div>
           <div class="gift-item"><p class="gift-name">Philips Walita Série 2000 XL Digital — 6,2L</p><div class="gift-links"><a href="https://amzn.to/4dz57Uc" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Vaporizador de Roupas</p>
-          <div class="gift-item"><p class="gift-name">Electrolux Expert</p><div class="gift-links"><a href="https://amzn.to/41jFVtu" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1kFNLDC" target="_blank" class="gift-link">Mercado Livre</a></div></div>
+        <div class="gift-category" data-cat-id="cat-014">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Vaporizador de Roupas</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-014', 'Vaporizador de Roupas', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Electrolux Expert</p><div class="gift-links"><a href="https://amzn.to/41jFVtu" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1kFNLDC" target="_blank" class="gift-link">Mercado Livre</a>
+        </div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Batedeira</p>
-          <div class="gift-item"><p class="gift-name">Electrolux 750W (Bowl Inox)</p><div class="gift-links"><a href="https://meli.la/2fv9itW" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/47LIZCl" target="_blank" class="gift-link">Amazon</a></div></div>
+        <div class="gift-category" data-cat-id="cat-015">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Batedeira</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-015', 'Batedeira', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Electrolux 750W (Bowl Inox)</p><div class="gift-links"><a href="https://meli.la/2fv9itW" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/47LIZCl" target="_blank" class="gift-link">Amazon</a>
+        </div></div>
           <div class="gift-item"><p class="gift-name">Oster 850W (Bowl Inox)</p><div class="gift-links"><a href="https://amzn.to/3PnVq0T" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/31b1Vvq" target="_blank" class="gift-link">Mercado Livre</a></div></div>
         </div>
-        <div class="gift-category">
-          <p class="gift-cat-title">Depurador</p>
-          <div class="gift-item"><p class="gift-name">Electrolux Inox 60cm</p><div class="gift-links"><a href="https://loja.electrolux.com.br/depurador-60cm-de-parede-inox-de60x-electrolux/p?idsku=148" target="_blank" class="gift-link">Electrolux</a></div></div>
+        <div class="gift-category" data-cat-id="cat-016">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Depurador</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-016', 'Depurador', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Electrolux Inox 60cm</p><div class="gift-links"><a href="https://loja.electrolux.com.br/depurador-60cm-de-parede-inox-de60x-electrolux/p?idsku=148" target="_blank" class="gift-link">Electrolux</a>
+        </div></div>
           <div class="gift-item"><p class="gift-name">Philco Inox</p><div class="gift-links"><a href="https://amzn.to/4rV9Y5C" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
       </div></div>
@@ -623,13 +778,18 @@
     <!-- FAIXA 3 -->
     <div class="acc-tier" id="tier3">
       <div class="acc-header" onclick="toggleTier('tier3')">
-        <div><p class="acc-tier-label">Faixa 3</p><p class="acc-tier-range">R$ 500 ou mais</p></div>
+        <div><p class="acc-tier-label">Faixa 3</p><p class="acc-tier-range">R$ 500+</p></div>
         <span class="acc-arrow">↓</span>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
-        <div class="gift-category">
-          <p class="gift-cat-title">Cooktop de Indução</p>
-          <div class="gift-item"><p class="gift-name">Dako</p><div class="gift-links"><a href="https://amzn.to/4t0bdBs" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/2VHKZhT" target="_blank" class="gift-link">Mercado Livre</a></div></div>
+        <div class="gift-category" data-cat-id="cat-017">
+          <div class="gift-cat-header">
+            <p class="gift-cat-title">Cooktop de Indução</p>
+            <button class="reserve-btn" onclick="openReserveModal('cat-017', 'Cooktop de Indução', event)">♡ Vou presentear</button>
+            <span class="gift-reserved"></span>
+          </div>
+          <div class="gift-item"><p class="gift-name">Dako</p><div class="gift-links"><a href="https://amzn.to/4t0bdBs" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/2VHKZhT" target="_blank" class="gift-link">Mercado Livre</a>
+        </div></div>
           <div class="gift-item"><p class="gift-name">EOS</p><div class="gift-links"><a href="https://amzn.to/4t0AkEb" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
       </div></div>
@@ -773,6 +933,79 @@
   });
 
   tryAutoplay();
+</script>
+
+<!-- ══════════ MODAL DE RESERVA ══════════ -->
+<div class="reserve-modal-overlay" id="reserveModal">
+  <div class="reserve-modal">
+    <h3>Reservar presente</h3>
+    <p class="reserve-modal-item-name" id="modal-item-name"></p>
+    <p class="reserve-modal-desc">Digite seu nome para reservar este item.<br>Ele ficará marcado para todos os convidados.</p>
+    <input type="text" id="reserveName" placeholder="Seu nome" maxlength="60" autocomplete="off"/>
+    <div class="reserve-modal-actions">
+      <button class="modal-cancel" onclick="closeReserveModal()">Cancelar</button>
+      <button class="modal-confirm" onclick="confirmReserve()">Reservar ✓</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── SISTEMA DE RESERVA ──
+  const STORAGE_PREFIX = 'cat_reserve_';
+  let pendingId = null;
+
+  async function loadAllReservations() {
+    document.querySelectorAll('[data-cat-id]').forEach(async (cat) => {
+      const id = cat.dataset.catId;
+      try {
+        const r = await window.storage.get(STORAGE_PREFIX + id, true);
+        if (r && r.value) applyReserved(cat, r.value);
+      } catch(e) {}
+    });
+  }
+
+  function applyReserved(catEl, name) {
+    catEl.classList.add('is-reserved');
+    const lbl = catEl.querySelector('.gift-reserved');
+    if (lbl) lbl.textContent = '✓ Reservado por ' + name;
+  }
+
+  function openReserveModal(catId, catName, e) {
+    if (e) e.stopPropagation();
+    document.getElementById('modal-item-name').textContent = catName;
+    document.getElementById('reserveName').value = '';
+    pendingId = catId;
+    document.getElementById('reserveModal').classList.add('open');
+    setTimeout(() => document.getElementById('reserveName').focus(), 120);
+  }
+
+  function closeReserveModal() {
+    document.getElementById('reserveModal').classList.remove('open');
+    pendingId = null;
+  }
+
+  async function confirmReserve() {
+    const name = document.getElementById('reserveName').value.trim();
+    if (!name) { document.getElementById('reserveName').focus(); return; }
+    try {
+      await window.storage.set(STORAGE_PREFIX + pendingId, name, true);
+      const cat = document.querySelector('[data-cat-id="' + pendingId + '"]');
+      applyReserved(cat, name);
+      closeReserveModal();
+    } catch(e) {
+      alert('Não foi possível salvar. Tente novamente.');
+    }
+  }
+
+  document.getElementById('reserveModal').addEventListener('click', function(e) {
+    if (e.target === this) closeReserveModal();
+  });
+
+  document.getElementById('reserveName').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') confirmReserve();
+  });
+
+  loadAllReservations();
 </script>
 </body>
 </html>
