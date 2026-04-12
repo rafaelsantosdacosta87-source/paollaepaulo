@@ -143,14 +143,14 @@
     .gift-link:hover { background: var(--creme); border-color: var(--dourado); color: var(--marrom); }
 
     /* ── GIFT CAT HEADER ── */
-    .gift-cat-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; flex-wrap: nowrap; }
-    .gift-cat-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--marrom); margin: 0; flex: 1; min-width: 0; line-height: 1.4; }
+    .gift-cat-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; }
+    .gift-cat-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--marrom); margin: 0; }
     .reserve-btn { font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--marrom-claro); background: none; border: 1px solid rgba(107,45,26,0.3); padding: 6px 14px; cursor: pointer; white-space: nowrap; transition: all 0.25s; flex-shrink: 0; }
     .reserve-btn:hover { background: rgba(201,169,110,0.1); border-color: var(--dourado); color: var(--marrom); }
 
     /* ── ITEM RESERVADO ── */
     .gift-category.is-reserved { background: #1c0b09; border: 1px solid rgba(201,169,110,0.35); }
-    .gift-category.is-reserved .gift-cat-header { padding: 0; border: none; }
+    .gift-category.is-reserved .gift-cat-header { padding: 0; }
     .gift-category.is-reserved .gift-item { display: none; }
     .reserved-inner {
       display: flex; align-items: center; gap: 14px;
@@ -161,8 +161,7 @@
     .reserved-inner:hover { background: rgba(201,169,110,0.06); }
     .reserved-checkmark { width: 34px; height: 34px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid var(--dourado); display: flex; align-items: center; justify-content: center; color: var(--dourado); font-size: 16px; background: rgba(201,169,110,0.08); }
     .reserved-info { flex: 1; min-width: 0; }
-    .reserved-item-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(232,212,168,0.4); text-decoration: line-through; margin: 0 0 2px; }
-    .reserved-donor { font-size: 12px; font-style: italic; color: rgba(201,169,110,0.8); margin: 0 0 2px; }
+    .reserved-item-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(232,212,168,0.4); text-decoration: line-through; margin: 0 0 3px; }
     .reserved-hint { font-size: 11px; font-style: italic; color: rgba(201,169,110,0.35); margin: 0; }
     .reserved-tag { font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; background: rgba(201,169,110,0.1); color: rgba(201,169,110,0.65); border: 1px solid rgba(201,169,110,0.22); padding: 5px 12px; flex-shrink: 0; white-space: nowrap; }
 
@@ -605,44 +604,40 @@
   const btn = document.getElementById('music-btn');
   audio.volume = 0.35;
   let playing = false;
-  function setPlaying(state) {
-    playing = state;
-    btn.style.color = state ? 'var(--dourado)' : 'rgba(201,169,110,0.35)';
-  }
   document.addEventListener('click', function startOnInteraction() {
-    if (!playing) { audio.play().then(() => setPlaying(true)).catch(()=>{}); }
+    if (!playing) { audio.play().then(() => { playing = true; btn.style.color = 'var(--dourado)'; }).catch(()=>{}); }
     document.removeEventListener('click', startOnInteraction);
-  }, { once: true });
+  }, { once: false });
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (playing) { audio.pause(); setPlaying(false); }
-    else { audio.play().then(() => setPlaying(true)).catch(()=>{}); }
+    if (playing) { audio.pause(); playing = false; btn.style.color = 'rgba(201,169,110,0.35)'; }
+    else { audio.play(); playing = true; btn.style.color = 'var(--dourado)'; }
   });
-  audio.play().then(() => setPlaying(true)).catch(()=>{});
+  audio.play().then(() => { playing = true; }).catch(()=>{});
 
-  /* ── SISTEMA DE RESERVA (JSONBin) ── */
-  const JSONBIN_ID  = '69db0c3c856a68218924474c';
-  const JSONBIN_KEY = '$2a$10$Iqysbw6MQQhvG4HqK/ZLA0g.NZVLRxcPGduaYVU4Q27.FnT80qRmq';
-  const JSONBIN_URL = 'https://api.jsonbin.io/v3/b/' + JSONBIN_ID;
-  let pendingId = null, cancelPendingId = null, reservations = {}, saving = false;
+  /* ── SISTEMA DE RESERVA ── */
+  const FIREBASE_URL = 'https://paollapaulo-presentes-default-rtdb.firebaseio.com';
+  let pendingId = null;
+  let cancelPendingId = null;
+  let reservations = {};
 
   function updateCounter() {
+    const count = document.querySelectorAll('.gift-category.is-reserved').length;
     const el = document.getElementById('reserve-count');
-    if (el) el.textContent = document.querySelectorAll('.gift-category.is-reserved').length;
+    if (el) el.textContent = count;
   }
 
   function applyReserved(catEl, name) {
     catEl.classList.add('is-reserved');
     const header = catEl.querySelector('.gift-cat-header');
-    const titleEl = catEl.querySelector('.gift-cat-title') || catEl.querySelector('.reserved-item-title');
+    const titleEl = catEl.querySelector('.gift-cat-title');
     const titleText = titleEl ? titleEl.textContent : '';
     const catId = catEl.dataset.catId;
     header.innerHTML = `
-      <div class="reserved-inner" onclick="openCancelModal('${catId}','${titleText.replace(/'/g,"\\'")}',event)">
+      <div class="reserved-inner" onclick="openCancelModal('${catId}', '${titleText.replace(/'/g,"\\'")}', event)">
         <div class="reserved-checkmark">✓</div>
         <div class="reserved-info">
           <p class="reserved-item-title">${titleText}</p>
-          <p class="reserved-donor">por ${name}</p>
           <p class="reserved-hint">Clique para cancelar a reserva</p>
         </div>
         <span class="reserved-tag">Reservado</span>
@@ -654,9 +649,12 @@
     catEl.classList.remove('is-reserved');
     const header = catEl.querySelector('.gift-cat-header');
     const catId = catEl.dataset.catId;
+    // Restore the original title and button
+    const nameParts = titleText.replace(/\\/g, '');
     header.innerHTML = `
       <p class="gift-cat-title">${titleText}</p>
       <button class="reserve-btn" onclick="openReserveModal('${catId}','${titleText.replace(/'/g,"\\'")}',event)">♡ Vou presentear</button>`;
+    // Show gift items again
     catEl.querySelectorAll('.gift-item').forEach(el => el.style.display = '');
     updateCounter();
   }
@@ -664,46 +662,21 @@
   function renderAll() {
     document.querySelectorAll('[data-cat-id]').forEach(cat => {
       const id = cat.dataset.catId;
-      const isReserved = cat.classList.contains('is-reserved');
-      if (reservations[id]) {
-        if (!isReserved) applyReserved(cat, reservations[id]);
-      } else if (isReserved) {
-        const titleEl = cat.querySelector('.reserved-item-title');
-        revertToAvailable(cat, titleEl ? titleEl.textContent : '');
-      }
+      if (reservations[id]) applyReserved(cat, reservations[id]);
     });
-    updateCounter();
-  }
-
-  async function saveToJsonBin() {
-    if (saving) return;
-    saving = true;
-    try {
-      await fetch(JSONBIN_URL, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_KEY },
-        body: JSON.stringify(reservations)
-      });
-    } catch(e) { console.log('Erro ao salvar:', e); }
-    saving = false;
   }
 
   async function loadReservations() {
-    // Cache local primeiro (instantâneo)
+    try { reservations = JSON.parse(localStorage.getItem('pp_reservas') || '{}'); renderAll(); } catch(e) {}
     try {
-      reservations = JSON.parse(localStorage.getItem('pp_reservas') || '{}');
-      renderAll();
-    } catch(e) {}
-    // Depois busca JSONBin (fonte de verdade)
-    try {
-      const res = await fetch(JSONBIN_URL + '/latest', {
-        headers: { 'X-Master-Key': JSONBIN_KEY }
-      });
+      const res = await fetch(FIREBASE_URL + '/reservas.json');
       const data = await res.json();
-      reservations = data.record || {};
-      localStorage.setItem('pp_reservas', JSON.stringify(reservations));
-      renderAll();
-    } catch(e) { console.log('JSONBin indisponível, usando cache local'); }
+      if (data) {
+        reservations = data;
+        localStorage.setItem('pp_reservas', JSON.stringify(reservations));
+        renderAll();
+      }
+    } catch(e) { console.log('Firebase offline, usando cache local'); }
   }
 
   /* ── MODAL: RESERVAR ── */
@@ -724,9 +697,14 @@
     if (!name) { document.getElementById('reserveName').focus(); return; }
     reservations[pendingId] = name;
     localStorage.setItem('pp_reservas', JSON.stringify(reservations));
-    applyReserved(document.querySelector('[data-cat-id="' + pendingId + '"]'), name);
+    const cat = document.querySelector('[data-cat-id="' + pendingId + '"]');
+    applyReserved(cat, name);
     closeReserveModal();
-    await saveToJsonBin();
+    try {
+      await fetch(FIREBASE_URL + '/reservas/' + pendingId + '.json', {
+        method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(name)
+      });
+    } catch(e) { console.log('Erro ao salvar:', e); }
   }
   document.getElementById('reserveModal').addEventListener('click', function(e) { if (e.target === this) closeReserveModal(); });
   document.getElementById('reserveName').addEventListener('keydown', function(e) { if (e.key === 'Enter') confirmReserve(); });
@@ -745,17 +723,18 @@
   async function confirmCancel() {
     const catEl = document.querySelector('[data-cat-id="' + cancelPendingId + '"]');
     const titleEl = catEl.querySelector('.reserved-item-title');
+    const titleText = titleEl ? titleEl.textContent : '';
     delete reservations[cancelPendingId];
     localStorage.setItem('pp_reservas', JSON.stringify(reservations));
-    revertToAvailable(catEl, titleEl ? titleEl.textContent : '');
+    revertToAvailable(catEl, titleText);
     closeCancelModal();
-    await saveToJsonBin();
+    try {
+      await fetch(FIREBASE_URL + '/reservas/' + cancelPendingId + '.json', { method: 'DELETE' });
+    } catch(e) { console.log('Erro ao cancelar:', e); }
   }
   document.getElementById('cancelModal').addEventListener('click', function(e) { if (e.target === this) closeCancelModal(); });
 
   loadReservations();
-  setInterval(loadReservations, 30000);
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) loadReservations(); });
 </script>
 </body>
 </html>
