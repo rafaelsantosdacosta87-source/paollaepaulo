@@ -154,18 +154,17 @@
     .gift-category.is-reserved .gift-cat-header { padding: 0; border: none; }
     .gift-category.is-reserved .gift-item { display: none; }
     .reserved-inner {
-      display: flex; align-items: center; gap: 14px;
+      display: flex; align-items: center; gap: 12px;
       padding: 14px 18px; width: 100%;
-      cursor: pointer;
-      transition: background 0.2s;
+      cursor: pointer; transition: background 0.2s;
     }
     .reserved-inner:hover { background: rgba(201,169,110,0.06); }
-    .reserved-checkmark { width: 34px; height: 34px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid var(--dourado); display: flex; align-items: center; justify-content: center; color: var(--dourado); font-size: 16px; background: rgba(201,169,110,0.08); }
-    .reserved-info { flex: 1; min-width: 0; }
-    .reserved-item-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(232,212,168,0.4); text-decoration: line-through; margin: 0 0 2px; }
+    .reserved-checkmark { width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid var(--dourado); display: flex; align-items: center; justify-content: center; color: var(--dourado); font-size: 15px; background: rgba(201,169,110,0.08); }
+    .reserved-info { flex: 1; min-width: 0; overflow: hidden; }
+    .reserved-item-title { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(232,212,168,0.4); text-decoration: line-through; margin: 0 0 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .reserved-donor { font-size: 12px; font-style: italic; color: rgba(201,169,110,0.8); margin: 0 0 2px; }
     .reserved-hint { font-size: 11px; font-style: italic; color: rgba(201,169,110,0.35); margin: 0; }
-    .reserved-tag { font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; background: rgba(201,169,110,0.1); color: rgba(201,169,110,0.65); border: 1px solid rgba(201,169,110,0.22); padding: 5px 12px; flex-shrink: 0; white-space: nowrap; }
+    .reserved-tag { font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; background: rgba(201,169,110,0.1); color: rgba(201,169,110,0.65); border: 1px solid rgba(201,169,110,0.22); padding: 5px 10px; flex-shrink: 0; white-space: nowrap; }
 
     /* ── BANNER DE RESERVA ── */
     .reserve-urgency-banner { max-width: 760px; margin: 0 auto 28px; display: flex; align-items: center; gap: 16px; background: #1c0b09; border: 1px solid rgba(201,169,110,0.4); border-left: 3px solid var(--dourado); padding: 16px 20px; animation: pulse-gold 3s ease-in-out infinite; }
