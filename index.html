@@ -621,10 +621,13 @@
   audio.play().then(() => setPlaying(true)).catch(()=>{});
 
   /* ── SISTEMA DE RESERVA ── */
-  const FIREBASE_URL = 'https://paollapaulo-presentes-default-rtdb.firebaseio.com';
+  const JSONBIN_ID = '69db0c3c856a68218924474c';
+  const JSONBIN_KEY = '$2a$10$Iqysbw6MQQhvG4HqK/ZLA0g.NZVLRxcPGduaYVU4Q27.FnT80qRmq';
+  const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_ID}`;
   let pendingId = null;
   let cancelPendingId = null;
   let reservations = {};
+  let saving = false;
 
   function updateCounter() {
     const count = document.querySelectorAll('.gift-category.is-reserved').length;
@@ -658,7 +661,6 @@
     header.innerHTML = `
       <p class="gift-cat-title">${titleText}</p>
       <button class="reserve-btn" onclick="openReserveModal('${catId}','${titleText.replace(/'/g,"\\'")}',event)">♡ Vou presentear</button>`;
-    // Show gift items again
     catEl.querySelectorAll('.gift-item').forEach(el => el.style.display = '');
     updateCounter();
   }
@@ -668,10 +670,8 @@
       const id = cat.dataset.catId;
       const isReserved = cat.classList.contains('is-reserved');
       if (reservations[id]) {
-        // Já está reservado com o nome certo? Não faz nada
         if (!isReserved) applyReserved(cat, reservations[id]);
       } else {
-        // Não deveria estar reservado
         if (isReserved) {
           const titleEl = cat.querySelector('.reserved-item-title');
           const titleText = titleEl ? titleEl.textContent : '';
@@ -682,21 +682,41 @@
     updateCounter();
   }
 
+  async function fetchFromJsonBin() {
+    const res = await fetch(JSONBIN_URL + '/latest', {
+      headers: { 'X-Master-Key': JSONBIN_KEY }
+    });
+    const data = await res.json();
+    return data.record || {};
+  }
+
+  async function saveToJsonBin() {
+    if (saving) return;
+    saving = true;
+    try {
+      await fetch(JSONBIN_URL, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_KEY },
+        body: JSON.stringify(reservations)
+      });
+    } catch(e) { console.log('Erro ao salvar no JSONBin:', e); }
+    saving = false;
+  }
+
   async function loadReservations() {
-    // Mostra cache local instantaneamente (sem piscar)
+    // Mostra cache local instantaneamente
     try {
       const cached = JSON.parse(localStorage.getItem('pp_reservas') || '{}');
       reservations = cached;
       renderAll();
     } catch(e) {}
-    // Busca Firebase e aplica diferenças
+    // Busca JSONBin e aplica
     try {
-      const res = await fetch(FIREBASE_URL + '/reservas.json');
-      const data = await res.json();
-      reservations = data || {};
+      const data = await fetchFromJsonBin();
+      reservations = data;
       localStorage.setItem('pp_reservas', JSON.stringify(reservations));
       renderAll();
-    } catch(e) { console.log('Firebase offline, usando cache local'); }
+    } catch(e) { console.log('JSONBin offline, usando cache local'); }
   }
 
   /* ── MODAL: RESERVAR ── */
@@ -720,11 +740,7 @@
     const cat = document.querySelector('[data-cat-id="' + pendingId + '"]');
     applyReserved(cat, name);
     closeReserveModal();
-    try {
-      await fetch(FIREBASE_URL + '/reservas/' + pendingId + '.json', {
-        method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(name)
-      });
-    } catch(e) { console.log('Erro ao salvar:', e); }
+    await saveToJsonBin();
   }
   document.getElementById('reserveModal').addEventListener('click', function(e) { if (e.target === this) closeReserveModal(); });
   document.getElementById('reserveName').addEventListener('keydown', function(e) { if (e.key === 'Enter') confirmReserve(); });
@@ -748,9 +764,7 @@
     localStorage.setItem('pp_reservas', JSON.stringify(reservations));
     revertToAvailable(catEl, titleText);
     closeCancelModal();
-    try {
-      await fetch(FIREBASE_URL + '/reservas/' + cancelPendingId + '.json', { method: 'DELETE' });
-    } catch(e) { console.log('Erro ao cancelar:', e); }
+    await saveToJsonBin();
   }
   document.getElementById('cancelModal').addEventListener('click', function(e) { if (e.target === this) closeCancelModal(); });
 
