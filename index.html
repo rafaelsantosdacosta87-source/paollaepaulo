@@ -145,7 +145,7 @@
     /* ── GIFT CAT HEADER ── */
     .gift-cat-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; flex-wrap: nowrap; }
     .gift-cat-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--marrom); margin: 0; flex: 1; min-width: 0; line-height: 1.4; }
-    .reserve-btn { font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--marrom-claro); background: none; border: 1px solid rgba(107,45,26,0.3); padding: 6px 14px; cursor: pointer; white-space: nowrap; transition: all 0.25s; flex-shrink: 0; max-width: 140px; text-align: center; }
+    .reserve-btn { font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--marrom-claro); background: none; border: 1px solid rgba(107,45,26,0.3); padding: 6px 14px; cursor: pointer; white-space: nowrap; transition: all 0.25s; flex-shrink: 0; }
     .reserve-btn:hover { background: rgba(201,169,110,0.1); border-color: var(--dourado); color: var(--marrom); }
 
     /* ── ITEM RESERVADO ── */
@@ -161,9 +161,9 @@
     .reserved-inner:hover { background: rgba(201,169,110,0.06); }
     .reserved-checkmark { width: 34px; height: 34px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid var(--dourado); display: flex; align-items: center; justify-content: center; color: var(--dourado); font-size: 16px; background: rgba(201,169,110,0.08); }
     .reserved-info { flex: 1; min-width: 0; }
-    .reserved-item-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(232,212,168,0.4); text-decoration: line-through; margin: 0 0 3px; }
+    .reserved-item-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(232,212,168,0.4); text-decoration: line-through; margin: 0 0 2px; }
+    .reserved-donor { font-size: 12px; font-style: italic; color: rgba(201,169,110,0.8); margin: 0 0 2px; }
     .reserved-hint { font-size: 11px; font-style: italic; color: rgba(201,169,110,0.35); margin: 0; }
-    .reserved-donor { font-size: 12px; font-style: italic; color: rgba(201,169,110,0.75); margin: 2px 0 0; }
     .reserved-tag { font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; background: rgba(201,169,110,0.1); color: rgba(201,169,110,0.65); border: 1px solid rgba(201,169,110,0.22); padding: 5px 12px; flex-shrink: 0; white-space: nowrap; }
 
     /* ── BANNER DE RESERVA ── */
@@ -620,19 +620,15 @@
   });
   audio.play().then(() => setPlaying(true)).catch(()=>{});
 
-  /* ── SISTEMA DE RESERVA ── */
-  const JSONBIN_ID = '69db0c3c856a68218924474c';
+  /* ── SISTEMA DE RESERVA (JSONBin) ── */
+  const JSONBIN_ID  = '69db0c3c856a68218924474c';
   const JSONBIN_KEY = '$2a$10$Iqysbw6MQQhvG4HqK/ZLA0g.NZVLRxcPGduaYVU4Q27.FnT80qRmq';
-  const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_ID}`;
-  let pendingId = null;
-  let cancelPendingId = null;
-  let reservations = {};
-  let saving = false;
+  const JSONBIN_URL = 'https://api.jsonbin.io/v3/b/' + JSONBIN_ID;
+  let pendingId = null, cancelPendingId = null, reservations = {}, saving = false;
 
   function updateCounter() {
-    const count = document.querySelectorAll('.gift-category.is-reserved').length;
     const el = document.getElementById('reserve-count');
-    if (el) el.textContent = count;
+    if (el) el.textContent = document.querySelectorAll('.gift-category.is-reserved').length;
   }
 
   function applyReserved(catEl, name) {
@@ -642,7 +638,7 @@
     const titleText = titleEl ? titleEl.textContent : '';
     const catId = catEl.dataset.catId;
     header.innerHTML = `
-      <div class="reserved-inner" onclick="openCancelModal('${catId}', '${titleText.replace(/'/g,"\\'")}', event)">
+      <div class="reserved-inner" onclick="openCancelModal('${catId}','${titleText.replace(/'/g,"\\'")}',event)">
         <div class="reserved-checkmark">✓</div>
         <div class="reserved-info">
           <p class="reserved-item-title">${titleText}</p>
@@ -671,23 +667,12 @@
       const isReserved = cat.classList.contains('is-reserved');
       if (reservations[id]) {
         if (!isReserved) applyReserved(cat, reservations[id]);
-      } else {
-        if (isReserved) {
-          const titleEl = cat.querySelector('.reserved-item-title');
-          const titleText = titleEl ? titleEl.textContent : '';
-          revertToAvailable(cat, titleText);
-        }
+      } else if (isReserved) {
+        const titleEl = cat.querySelector('.reserved-item-title');
+        revertToAvailable(cat, titleEl ? titleEl.textContent : '');
       }
     });
     updateCounter();
-  }
-
-  async function fetchFromJsonBin() {
-    const res = await fetch(JSONBIN_URL + '/latest', {
-      headers: { 'X-Master-Key': JSONBIN_KEY }
-    });
-    const data = await res.json();
-    return data.record || {};
   }
 
   async function saveToJsonBin() {
@@ -699,24 +684,26 @@
         headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_KEY },
         body: JSON.stringify(reservations)
       });
-    } catch(e) { console.log('Erro ao salvar no JSONBin:', e); }
+    } catch(e) { console.log('Erro ao salvar:', e); }
     saving = false;
   }
 
   async function loadReservations() {
-    // Mostra cache local instantaneamente
+    // Cache local primeiro (instantâneo)
     try {
-      const cached = JSON.parse(localStorage.getItem('pp_reservas') || '{}');
-      reservations = cached;
+      reservations = JSON.parse(localStorage.getItem('pp_reservas') || '{}');
       renderAll();
     } catch(e) {}
-    // Busca JSONBin e aplica
+    // Depois busca JSONBin (fonte de verdade)
     try {
-      const data = await fetchFromJsonBin();
-      reservations = data;
+      const res = await fetch(JSONBIN_URL + '/latest', {
+        headers: { 'X-Master-Key': JSONBIN_KEY }
+      });
+      const data = await res.json();
+      reservations = data.record || {};
       localStorage.setItem('pp_reservas', JSON.stringify(reservations));
       renderAll();
-    } catch(e) { console.log('JSONBin offline, usando cache local'); }
+    } catch(e) { console.log('JSONBin indisponível, usando cache local'); }
   }
 
   /* ── MODAL: RESERVAR ── */
@@ -737,8 +724,7 @@
     if (!name) { document.getElementById('reserveName').focus(); return; }
     reservations[pendingId] = name;
     localStorage.setItem('pp_reservas', JSON.stringify(reservations));
-    const cat = document.querySelector('[data-cat-id="' + pendingId + '"]');
-    applyReserved(cat, name);
+    applyReserved(document.querySelector('[data-cat-id="' + pendingId + '"]'), name);
     closeReserveModal();
     await saveToJsonBin();
   }
@@ -759,19 +745,16 @@
   async function confirmCancel() {
     const catEl = document.querySelector('[data-cat-id="' + cancelPendingId + '"]');
     const titleEl = catEl.querySelector('.reserved-item-title');
-    const titleText = titleEl ? titleEl.textContent : '';
     delete reservations[cancelPendingId];
     localStorage.setItem('pp_reservas', JSON.stringify(reservations));
-    revertToAvailable(catEl, titleText);
+    revertToAvailable(catEl, titleEl ? titleEl.textContent : '');
     closeCancelModal();
     await saveToJsonBin();
   }
   document.getElementById('cancelModal').addEventListener('click', function(e) { if (e.target === this) closeCancelModal(); });
 
   loadReservations();
-  // Sincroniza com Firebase a cada 30s para refletir reservas de outros dispositivos
   setInterval(loadReservations, 30000);
-  // Sincroniza quando a aba volta a ficar visível (ex: usuário volta ao celular)
   document.addEventListener('visibilitychange', () => { if (!document.hidden) loadReservations(); });
 </script>
 </body>
