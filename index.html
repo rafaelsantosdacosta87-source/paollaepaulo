@@ -39,82 +39,34 @@
     }
     .serra-hero {
       position: absolute; bottom: 0; left: 0; right: 0;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1440 / 380;
-      min-height: 220px;
-      pointer-events: none; z-index: 1;
+      width: 100%; height: auto; aspect-ratio: 1440 / 380;
+      min-height: 220px; pointer-events: none; z-index: 1;
     }
     .hero-content { position: relative; z-index: 2; padding-bottom: max(220px, 26.4vw); }
     @media (max-width: 600px) {
       .serra-hero { min-height: 180px; }
       .hero-content { padding-bottom: max(180px, 46vw); }
     }
-
     .hero-pre {
       font-family: 'Cinzel', serif; font-size: clamp(9px,1.8vw,11px);
       letter-spacing: 0.45em; color: var(--dourado); text-transform: uppercase;
       margin-bottom: 20px; animation: fadeUp 1s 0.4s both;
     }
     .hero-names {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      text-align: center;
-      line-height: 0.9;
-      opacity: 0;
-      animation: fadeUp 1.2s 0.6s forwards;
-      margin-bottom: 0;
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      text-align: center; line-height: 0.9;
+      opacity: 0; animation: fadeUp 1.2s 0.6s forwards; margin-bottom: 0;
     }
-    .hero-name-paolla {
-      display: block;
-      font-size: clamp(70px, 17vw, 170px);
-      font-style: italic;
-      color: var(--creme-escuro);
-      letter-spacing: -0.01em;
-    }
-    .hero-ampersand {
-      display: block;
-      font-size: clamp(60px, 14vw, 140px);
-      color: var(--dourado);
-      font-style: italic;
-      font-weight: 400;
-      line-height: 0.85;
-    }
-    .hero-name-paulo {
-      display: block;
-      font-size: clamp(76px, 19vw, 190px);
-      font-style: normal;
-      color: var(--creme);
-      letter-spacing: -0.02em;
-      line-height: 0.85;
-    }
-    .hero-rule {
-      width: 1px; height: 64px;
-      background: linear-gradient(to bottom, transparent, var(--dourado), transparent);
-      margin: 28px auto; animation: fadeIn 1s 1.2s both;
-    }
-    .hero-date {
-      font-family: 'Cinzel', serif; font-size: clamp(12px,2.2vw,17px);
-      letter-spacing: 0.3em; color: var(--dourado-claro);
-      animation: fadeUp 1s 1.4s both;
-    }
-    .hero-loc {
-      font-size: clamp(12px,1.8vw,15px); font-style: italic;
-      color: rgba(243,235,224,0.45); margin-top: 10px;
-      animation: fadeUp 1s 1.6s both;
-    }
-    .scroll-hint {
-      display: block; margin-top: 24px; text-align: center;
-      color: var(--dourado); opacity: 0.35; font-size: 18px;
-      animation: bounce 2.2s infinite; z-index: 3;
-    }
+    .hero-name-paolla { display: block; font-size: clamp(70px, 17vw, 170px); font-style: italic; color: var(--creme-escuro); letter-spacing: -0.01em; }
+    .hero-ampersand { display: block; font-size: clamp(60px, 14vw, 140px); color: var(--dourado); font-style: italic; font-weight: 400; line-height: 0.85; }
+    .hero-name-paulo { display: block; font-size: clamp(76px, 19vw, 190px); font-style: normal; color: var(--creme); letter-spacing: -0.02em; line-height: 0.85; }
+    .hero-rule { width: 1px; height: 64px; background: linear-gradient(to bottom, transparent, var(--dourado), transparent); margin: 28px auto; animation: fadeIn 1s 1.2s both; }
+    .hero-date { font-family: 'Cinzel', serif; font-size: clamp(12px,2.2vw,17px); letter-spacing: 0.3em; color: var(--dourado-claro); animation: fadeUp 1s 1.4s both; }
+    .hero-loc { font-size: clamp(12px,1.8vw,15px); font-style: italic; color: rgba(243,235,224,0.45); margin-top: 10px; animation: fadeUp 1s 1.6s both; }
+    .scroll-hint { display: block; margin-top: 24px; text-align: center; color: var(--dourado); opacity: 0.35; font-size: 18px; animation: bounce 2.2s infinite; z-index: 3; }
 
     /* ── NAV ── */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(19,7,6,0.97); backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(201,169,110,0.12);
-    }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(19,7,6,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,169,110,0.12); }
     nav ul { display: flex; justify-content: center; gap: clamp(8px,2.5vw,32px); list-style: none; padding: 14px 16px; flex-wrap: wrap; }
     nav a { font-family: 'Cinzel', serif; font-size: 9.5px; letter-spacing: 0.22em; color: var(--dourado-claro); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
     nav a:hover { color: var(--dourado); }
@@ -128,9 +80,6 @@
     .ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--dourado)); }
     .ornament::after { background: linear-gradient(to left, transparent, var(--dourado)); }
     .ornament span { color: var(--dourado); font-size: 17px; opacity: 0.65; }
-    #local .ornament::before { background: linear-gradient(to right, transparent, rgba(201,169,110,0.6)); }
-    #local .ornament::after { background: linear-gradient(to left, transparent, rgba(201,169,110,0.6)); }
-    #local .ornament span { opacity: 0.8; }
 
     /* ── CONTAGEM ── */
     #contagem { background: var(--creme); text-align: center; }
@@ -194,95 +143,37 @@
     .gift-link:hover { background: var(--creme); border-color: var(--dourado); color: var(--marrom); }
 
     /* ── GIFT CAT HEADER ── */
-    .gift-cat-header {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 12px; padding: 14px 18px;
-    }
-    .gift-cat-title {
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--marrom);
-      margin: 0;
-    }
-    .reserve-btn {
-      font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--marrom-claro);
-      background: none; border: 1px solid rgba(107,45,26,0.3);
-      padding: 6px 14px; cursor: pointer; white-space: nowrap;
-      transition: all 0.25s; flex-shrink: 0;
-    }
+    .gift-cat-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; }
+    .gift-cat-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--marrom); margin: 0; }
+    .reserve-btn { font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--marrom-claro); background: none; border: 1px solid rgba(107,45,26,0.3); padding: 6px 14px; cursor: pointer; white-space: nowrap; transition: all 0.25s; flex-shrink: 0; }
     .reserve-btn:hover { background: rgba(201,169,110,0.1); border-color: var(--dourado); color: var(--marrom); }
 
     /* ── ITEM RESERVADO ── */
-    .gift-category.is-reserved {
-      background: #1c0b09;
-      border: 1px solid rgba(201,169,110,0.35);
-    }
-    .gift-category.is-reserved .gift-cat-header {
-      padding: 0;
-    }
+    .gift-category.is-reserved { background: #1c0b09; border: 1px solid rgba(201,169,110,0.35); }
+    .gift-category.is-reserved .gift-cat-header { padding: 0; }
     .gift-category.is-reserved .gift-item { display: none; }
     .reserved-inner {
       display: flex; align-items: center; gap: 14px;
       padding: 14px 18px; width: 100%;
+      cursor: pointer;
+      transition: background 0.2s;
     }
-    .reserved-checkmark {
-      width: 34px; height: 34px; flex-shrink: 0;
-      border-radius: 50%; border: 1.5px solid var(--dourado);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--dourado); font-size: 16px;
-      background: rgba(201,169,110,0.08);
-    }
+    .reserved-inner:hover { background: rgba(201,169,110,0.06); }
+    .reserved-checkmark { width: 34px; height: 34px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid var(--dourado); display: flex; align-items: center; justify-content: center; color: var(--dourado); font-size: 16px; background: rgba(201,169,110,0.08); }
     .reserved-info { flex: 1; min-width: 0; }
-    .reserved-item-title {
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: rgba(232,212,168,0.4);
-      text-decoration: line-through; margin: 0 0 3px;
-    }
-    .reserved-by-name {
-      font-size: 13px; font-style: italic; color: var(--dourado);
-      opacity: 0.85; margin: 0;
-    }
-    .reserved-tag {
-      font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.18em;
-      text-transform: uppercase;
-      background: rgba(201,169,110,0.1); color: rgba(201,169,110,0.65);
-      border: 1px solid rgba(201,169,110,0.22); padding: 5px 12px;
-      flex-shrink: 0; white-space: nowrap;
-    }
+    .reserved-item-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(232,212,168,0.4); text-decoration: line-through; margin: 0 0 3px; }
+    .reserved-hint { font-size: 11px; font-style: italic; color: rgba(201,169,110,0.35); margin: 0; }
+    .reserved-tag { font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; background: rgba(201,169,110,0.1); color: rgba(201,169,110,0.65); border: 1px solid rgba(201,169,110,0.22); padding: 5px 12px; flex-shrink: 0; white-space: nowrap; }
 
-    /* ── BANNER DE URGÊNCIA ── */
-    .reserve-urgency-banner {
-      max-width: 760px; margin: 0 auto 28px;
-      display: flex; align-items: center; gap: 16px;
-      background: #1c0b09;
-      border: 1px solid rgba(201,169,110,0.4);
-      border-left: 3px solid var(--dourado);
-      padding: 16px 20px;
-      animation: pulse-gold 3s ease-in-out infinite;
-    }
-    @keyframes pulse-gold {
-      0%, 100% { border-left-color: var(--dourado); box-shadow: none; }
-      50%       { border-left-color: var(--dourado-claro); box-shadow: 0 0 18px rgba(201,169,110,0.18); }
-    }
+    /* ── BANNER DE RESERVA ── */
+    .reserve-urgency-banner { max-width: 760px; margin: 0 auto 28px; display: flex; align-items: center; gap: 16px; background: #1c0b09; border: 1px solid rgba(201,169,110,0.4); border-left: 3px solid var(--dourado); padding: 16px 20px; animation: pulse-gold 3s ease-in-out infinite; }
+    @keyframes pulse-gold { 0%, 100% { border-left-color: var(--dourado); box-shadow: none; } 50% { border-left-color: var(--dourado-claro); box-shadow: 0 0 18px rgba(201,169,110,0.18); } }
     .banner-body { flex: 1; }
-    .banner-body strong {
-      display: block; font-family: 'Cinzel', serif;
-      font-size: clamp(11px,1.8vw,13px); letter-spacing: 0.12em;
-      color: var(--dourado-claro); margin-bottom: 3px;
-    }
-    .banner-body span {
-      font-size: 13px; font-style: italic;
-      color: rgba(232,212,168,0.5); line-height: 1.4;
-    }
+    .banner-body strong { display: block; font-family: 'Cinzel', serif; font-size: clamp(11px,1.8vw,13px); letter-spacing: 0.12em; color: var(--dourado-claro); margin-bottom: 3px; }
+    .banner-body span { font-size: 13px; font-style: italic; color: rgba(232,212,168,0.5); line-height: 1.4; }
     .banner-counter { text-align: right; flex-shrink: 0; }
-    .banner-counter-num {
-      display: block; font-size: clamp(26px,4vw,34px); font-weight: 300;
-      color: var(--dourado); line-height: 1;
-    }
-    .banner-counter-lbl {
-      font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: rgba(201,169,110,0.5);
-    }
+    .banner-counter-num { display: block; font-size: clamp(26px,4vw,34px); font-weight: 300; color: var(--dourado); line-height: 1; }
+    .banner-counter-lbl { font-family: 'Cinzel', serif; font-size: 8.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(201,169,110,0.5); }
 
     /* ── CONFIRMAÇÃO ── */
     #confirmacao { background: var(--creme); text-align: center; }
@@ -291,39 +182,16 @@
     .whats-btn:hover { opacity: 0.7; }
 
     /* ── LOCAL ── */
-    #local {
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      width: 100%; padding: 60px 0;
-      background: var(--marrom); color: var(--creme); text-align: center;
-    }
+    #local { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; padding: 60px 0; background: var(--marrom); color: var(--creme); text-align: center; }
     #local .sec-label { color: var(--dourado-claro); opacity: 0.7; }
     #local .sec-title { color: var(--creme); }
     #local .sec-title em { color: var(--dourado-claro); }
-    .flip-container {
-      perspective: 1000px; width: 90vw; max-width: 480px;
-      height: 500px; margin: 0 auto; cursor: pointer; position: relative;
-    }
-    .flip-inner {
-      position: relative; width: 100%; height: 100%; text-align: center;
-      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      transform-style: preserve-3d;
-    }
+    .flip-container { perspective: 1000px; width: 90vw; max-width: 480px; height: 500px; margin: 0 auto; cursor: pointer; position: relative; }
+    .flip-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
     .flipped .flip-inner { transform: rotateY(180deg); }
-    .flip-front, .flip-back {
-      position: absolute; width: 100%; height: 100%;
-      -webkit-backface-visibility: hidden; backface-visibility: hidden;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      border: 1px solid rgba(201,169,110,0.3); background: #1a0a09;
-      padding: 40px; top: 0; left: 0;
-    }
+    .flip-front, .flip-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(201,169,110,0.3); background: #1a0a09; padding: 40px; top: 0; left: 0; }
     .flip-back { transform: rotateY(180deg); }
-    .hint-tap {
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.35em;
-      color: var(--dourado); margin-top: 32px; text-transform: uppercase;
-      border: 1px solid rgba(201,169,110,0.4); padding: 10px 24px;
-      transition: background 0.25s;
-    }
+    .hint-tap { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.35em; color: var(--dourado); margin-top: 32px; text-transform: uppercase; border: 1px solid rgba(201,169,110,0.4); padding: 10px 24px; transition: background 0.25s; }
     .flip-container:hover .hint-tap { background: rgba(201,169,110,0.08); }
     .address-name { font-family: 'Cinzel', serif; font-size: clamp(18px,2.5vw,26px); color: var(--dourado-claro); margin-bottom: 16px; }
     .address-text { font-size: clamp(18px,2.2vw,22px); font-style: italic; color: rgba(243,235,224,0.85); line-height: 2; }
@@ -337,54 +205,25 @@
     .footer-verse { margin-top: 24px; font-size: 13px; font-style: italic; color: rgba(201,169,110,0.3); max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.65; }
 
     /* ── MUSIC BTN ── */
-    .music-btn {
-      position: fixed; bottom: 28px; right: 28px; z-index: 200;
-      width: 44px; height: 44px; border-radius: 50%;
-      border: 1px solid rgba(201,169,110,0.4);
-      background: rgba(19,7,6,0.85); backdrop-filter: blur(8px);
-      color: var(--dourado); font-size: 16px; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: border-color 0.3s, background 0.3s;
-    }
+    .music-btn { position: fixed; bottom: 28px; right: 28px; z-index: 200; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(201,169,110,0.4); background: rgba(19,7,6,0.85); backdrop-filter: blur(8px); color: var(--dourado); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color 0.3s, background 0.3s; }
     .music-btn:hover { border-color: var(--dourado); background: rgba(19,7,6,0.95); }
 
-    /* ── MODAL ── */
-    .reserve-modal-overlay {
-      display: none; position: fixed; inset: 0;
-      background: rgba(10,3,2,0.82); z-index: 500;
-      align-items: center; justify-content: center;
-    }
-    .reserve-modal-overlay.open { display: flex; }
-    .reserve-modal {
-      background: var(--marrom-medio); border: 1px solid rgba(201,169,110,0.22);
-      padding: 44px 40px; max-width: 400px; width: 90%; text-align: center;
-    }
-    .reserve-modal h3 { font-size: clamp(22px,3.5vw,28px); font-weight: 300; color: var(--creme); margin-bottom: 6px; }
-    .reserve-modal-item-name { font-size: 17px; color: var(--dourado); margin-bottom: 8px; }
-    .reserve-modal-desc { font-size: 14px; font-style: italic; color: rgba(243,235,224,0.45); margin-bottom: 28px; line-height: 1.6; }
-    .reserve-modal input {
-      width: 100%; background: rgba(243,235,224,0.06);
-      border: none; border-bottom: 1px solid rgba(201,169,110,0.4);
-      padding: 10px 4px; font-family: 'Cormorant Garamond', serif;
-      font-size: 18px; color: var(--creme); outline: none;
-      text-align: center; margin-bottom: 28px;
-    }
-    .reserve-modal input::placeholder { color: rgba(243,235,224,0.25); }
-    .reserve-modal-actions { display: flex; gap: 12px; justify-content: center; }
-    .modal-confirm {
-      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em;
-      text-transform: uppercase; background: var(--dourado);
-      color: var(--marrom); border: none; padding: 12px 28px;
-      cursor: pointer; transition: opacity 0.2s;
-    }
-    .modal-confirm:hover { opacity: 0.85; }
-    .modal-cancel {
-      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em;
-      text-transform: uppercase; background: none;
-      color: rgba(243,235,224,0.4); border: 1px solid rgba(243,235,224,0.15);
-      padding: 12px 28px; cursor: pointer; transition: opacity 0.2s;
-    }
-    .modal-cancel:hover { opacity: 0.7; }
+    /* ── MODAL BASE ── */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,3,2,0.82); z-index: 500; align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal-box { background: var(--marrom-medio); border: 1px solid rgba(201,169,110,0.22); padding: 44px 40px; max-width: 400px; width: 90%; text-align: center; }
+    .modal-box h3 { font-size: clamp(22px,3.5vw,28px); font-weight: 300; color: var(--creme); margin-bottom: 6px; }
+    .modal-item-name { font-size: 17px; color: var(--dourado); margin-bottom: 8px; }
+    .modal-desc { font-size: 14px; font-style: italic; color: rgba(243,235,224,0.45); margin-bottom: 28px; line-height: 1.6; }
+    .modal-actions { display: flex; gap: 12px; justify-content: center; }
+    .modal-box input { width: 100%; background: rgba(243,235,224,0.06); border: none; border-bottom: 1px solid rgba(201,169,110,0.4); padding: 10px 4px; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--creme); outline: none; text-align: center; margin-bottom: 28px; }
+    .modal-box input::placeholder { color: rgba(243,235,224,0.25); }
+    .btn-confirm { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; background: var(--dourado); color: var(--marrom); border: none; padding: 12px 28px; cursor: pointer; transition: opacity 0.2s; }
+    .btn-confirm:hover { opacity: 0.85; }
+    .btn-cancel { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; background: none; color: rgba(243,235,224,0.4); border: 1px solid rgba(243,235,224,0.15); padding: 12px 28px; cursor: pointer; transition: opacity 0.2s; }
+    .btn-cancel:hover { opacity: 0.7; }
+    .btn-danger { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; background: none; color: rgba(220,100,80,0.75); border: 1px solid rgba(220,100,80,0.3); padding: 12px 28px; cursor: pointer; transition: all 0.2s; }
+    .btn-danger:hover { background: rgba(220,100,80,0.1); border-color: rgba(220,100,80,0.6); color: rgba(220,100,80,1); }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
@@ -412,14 +251,8 @@
   </div>
   <svg class="serra-hero" viewBox="0 0 1440 380" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.32"/>
-        <stop offset="100%" stop-color="#C9A96E" stop-opacity="0.05"/>
-      </linearGradient>
-      <linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.16"/>
-        <stop offset="100%" stop-color="#C9A96E" stop-opacity="0.03"/>
-      </linearGradient>
+      <linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C9A96E" stop-opacity="0.32"/><stop offset="100%" stop-color="#C9A96E" stop-opacity="0.05"/></linearGradient>
+      <linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C9A96E" stop-opacity="0.16"/><stop offset="100%" stop-color="#C9A96E" stop-opacity="0.03"/></linearGradient>
     </defs>
     <path fill="url(#sg2)" d="M0,380 L0,340 C150,330 250,220 320,230 C380,240 430,320 550,310 C620,300 640,240 680,240 C710,240 730,300 800,310 C900,320 950,150 1020,150 C1080,150 1150,280 1250,270 C1350,260 1400,180 1440,160 L1440,380 Z"/>
     <path fill="url(#sg1)" d="M0,380 L0,360 C50,350 150,220 250,230 C320,240 350,340 450,340 C520,340 580,240 620,240 C650,240 670,330 750,330 C820,330 850,210 880,140 C895,70 915,70 930,140 C950,260 1000,280 1050,240 C1100,180 1150,110 1230,100 C1300,90 1380,180 1440,250 L1440,380 Z"/>
@@ -555,91 +388,50 @@
         <span class="acc-arrow">↓</span>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
-
         <div class="gift-category" data-cat-id="cat-001">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Liquidificador</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-001','Liquidificador',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Liquidificador</p><button class="reserve-btn" onclick="openReserveModal('cat-001','Liquidificador',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Oster 1400W</p><div class="gift-links"><a href="https://amzn.to/47dvdIA" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28WFzh2" target="_blank" class="gift-link">Mercado Livre</a></div></div>
           <div class="gift-item"><p class="gift-name">Electrolux 1500W</p><div class="gift-links"><a href="https://meli.la/32srsgZ" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4sYhnlK" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-002">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Sanduicheira Grill</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-002','Sanduicheira Grill',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Sanduicheira Grill</p><button class="reserve-btn" onclick="openReserveModal('cat-002','Sanduicheira Grill',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Oster 1000W</p><div class="gift-links"><a href="https://amzn.to/4sYy8xd" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/3237nDa" target="_blank" class="gift-link">Mercado Livre</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-003">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Escorredor de Louça</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-003','Escorredor de Louça',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Escorredor de Louça</p><button class="reserve-btn" onclick="openReserveModal('cat-003','Escorredor de Louça',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Tramontina Inox</p><div class="gift-links"><a href="https://meli.la/31mjcVA" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4bVGrEb" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-004">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Chaleira</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-004','Chaleira',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Chaleira</p><button class="reserve-btn" onclick="openReserveModal('cat-004','Chaleira',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Black and Decker</p><div class="gift-links"><a href="https://amzn.to/40PP6ln" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-005">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Saladeira</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-005','Saladeira',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Saladeira</p><button class="reserve-btn" onclick="openReserveModal('cat-005','Saladeira',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Gamela Acácia 30cm</p><div class="gift-links"><a href="https://www.tokstok.com.br/bbk-gamela-30-cm-acacia-acacia/p" target="_blank" class="gift-link">Tok&amp;Stok</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-006">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Jogo de Taças</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-006','Jogo de Taças',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Jogo de Taças</p><button class="reserve-btn" onclick="openReserveModal('cat-006','Jogo de Taças',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Taça de Cristal 460ml</p><div class="gift-links"><a href="https://meli.la/1vU2e1b" target="_blank" class="gift-link">Mercado Livre</a><a href="http://bit.ly/4lGbcQK" target="_blank" class="gift-link">Magalu</a><a href="https://amzn.to/4lK4B84" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-007">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Jogo de Toalha</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-007','Jogo de Toalha',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Jogo de Toalha</p><button class="reserve-btn" onclick="openReserveModal('cat-007','Jogo de Toalha',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Banhão Algodão Egípcio 600g</p><div class="gift-links"><a href="https://bit.ly/4uIQTX7" target="_blank" class="gift-link">First Class</a></div></div>
           <div class="gift-item"><p class="gift-name">Buddemeyer Fio Penteado</p><div class="gift-links"><a href="https://amzn.to/416uOEt" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-008">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Porta Tempero</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-008','Porta Tempero',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Porta Tempero</p><button class="reserve-btn" onclick="openReserveModal('cat-008','Porta Tempero',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Porta Tempero</p><div class="gift-links"><a href="https://bit.ly/3NGbqL7" target="_blank" class="gift-link">Tok&amp;Stok</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-009">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Cesto de Roupa</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-009','Cesto de Roupa',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Cesto de Roupa</p><button class="reserve-btn" onclick="openReserveModal('cat-009','Cesto de Roupa',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Grid Preto</p><div class="gift-links"><a href="https://s.shopee.com.br/3B2rrWh8WI" target="_blank" class="gift-link">Shopee</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-010">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Travessas</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-010','Travessas',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Travessas</p><button class="reserve-btn" onclick="openReserveModal('cat-010','Travessas',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Travessa Pequena</p><div class="gift-links"><a href="https://meli.la/29rCwzY" target="_blank" class="gift-link">Mercado Livre</a></div></div>
           <div class="gift-item"><p class="gift-name">Travessa Média</p><div class="gift-links"><a href="https://meli.la/23AqHp4" target="_blank" class="gift-link">Mercado Livre</a></div></div>
           <div class="gift-item"><p class="gift-name">Travessa Grande</p><div class="gift-links"><a href="https://meli.la/2ppY1SC" target="_blank" class="gift-link">Mercado Livre</a></div></div>
         </div>
-
       </div></div>
     </div>
 
@@ -650,60 +442,35 @@
         <span class="acc-arrow">↓</span>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
-
         <div class="gift-category" data-cat-id="cat-011">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Panela de Pressão (indução)</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-011','Panela de Pressão (indução)',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Panela de Pressão (indução)</p><button class="reserve-btn" onclick="openReserveModal('cat-011','Panela de Pressão (indução)',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Rochedo 4L</p><div class="gift-links"><a href="https://meli.la/1sm4xdb" target="_blank" class="gift-link">Mercado Livre</a></div></div>
           <div class="gift-item"><p class="gift-name">Tramontina 4.5L</p><div class="gift-links"><a href="https://meli.la/1UDukJQ" target="_blank" class="gift-link">Mercado Livre</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-012">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Jogo de Cama</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-012','Jogo de Cama',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Jogo de Cama</p><button class="reserve-btn" onclick="openReserveModal('cat-012','Jogo de Cama',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">300 Fios Algodão Percal</p><div class="gift-links"><a href="https://bit.ly/4sukxxR" target="_blank" class="gift-link">Casa Riachuelo</a></div></div>
           <div class="gift-item"><p class="gift-name">300 Fios Buddemeyer – Cetim</p><div class="gift-links"><a href="https://amzn.to/40Nt0jm" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28t8srf" target="_blank" class="gift-link">Mercado Livre</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-013">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Air Fryer</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-013','Air Fryer',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Air Fryer</p><button class="reserve-btn" onclick="openReserveModal('cat-013','Air Fryer',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Philips Walita Série 1000 XL — 6,2L</p><div class="gift-links"><a href="https://amzn.to/40NfP1V" target="_blank" class="gift-link">Amazon</a></div></div>
           <div class="gift-item"><p class="gift-name">Philips Walita Série 2000 XL Digital — 6,2L</p><div class="gift-links"><a href="https://amzn.to/4dz57Uc" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-014">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Vaporizador de Roupas</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-014','Vaporizador de Roupas',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Vaporizador de Roupas</p><button class="reserve-btn" onclick="openReserveModal('cat-014','Vaporizador de Roupas',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Electrolux Expert</p><div class="gift-links"><a href="https://amzn.to/41jFVtu" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1kFNLDC" target="_blank" class="gift-link">Mercado Livre</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-015">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Batedeira</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-015','Batedeira',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Batedeira</p><button class="reserve-btn" onclick="openReserveModal('cat-015','Batedeira',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Electrolux 750W (Bowl Inox)</p><div class="gift-links"><a href="https://meli.la/2fv9itW" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/47LIZCl" target="_blank" class="gift-link">Amazon</a></div></div>
           <div class="gift-item"><p class="gift-name">Oster 850W (Bowl Inox)</p><div class="gift-links"><a href="https://amzn.to/3PnVq0T" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/31b1Vvq" target="_blank" class="gift-link">Mercado Livre</a></div></div>
         </div>
-
         <div class="gift-category" data-cat-id="cat-016">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Depurador</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-016','Depurador',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Depurador</p><button class="reserve-btn" onclick="openReserveModal('cat-016','Depurador',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Electrolux Inox 60cm</p><div class="gift-links"><a href="https://loja.electrolux.com.br/depurador-60cm-de-parede-inox-de60x-electrolux/p?idsku=148" target="_blank" class="gift-link">Electrolux</a></div></div>
           <div class="gift-item"><p class="gift-name">Philco Inox</p><div class="gift-links"><a href="https://amzn.to/4rV9Y5C" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-
       </div></div>
     </div>
 
@@ -714,16 +481,11 @@
         <span class="acc-arrow">↓</span>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
-
         <div class="gift-category" data-cat-id="cat-017">
-          <div class="gift-cat-header">
-            <p class="gift-cat-title">Cooktop de Indução</p>
-            <button class="reserve-btn" onclick="openReserveModal('cat-017','Cooktop de Indução',event)">♡ Vou presentear</button>
-          </div>
+          <div class="gift-cat-header"><p class="gift-cat-title">Cooktop de Indução</p><button class="reserve-btn" onclick="openReserveModal('cat-017','Cooktop de Indução',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Dako</p><div class="gift-links"><a href="https://amzn.to/4t0bdBs" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/2VHKZhT" target="_blank" class="gift-link">Mercado Livre</a></div></div>
           <div class="gift-item"><p class="gift-name">EOS</p><div class="gift-links"><a href="https://amzn.to/4t0AkEb" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-
       </div></div>
     </div>
 
@@ -784,16 +546,29 @@
 </audio>
 <button class="music-btn" id="music-btn" title="Música">♪</button>
 
-<!-- MODAL DE RESERVA -->
-<div class="reserve-modal-overlay" id="reserveModal">
-  <div class="reserve-modal">
+<!-- ══════════ MODAL: RESERVAR ══════════ -->
+<div class="modal-overlay" id="reserveModal">
+  <div class="modal-box">
     <h3>Reservar presente</h3>
-    <p class="reserve-modal-item-name" id="modal-item-name"></p>
-    <p class="reserve-modal-desc">Digite seu nome para reservar este item.<br>Ele ficará marcado para todos os convidados.</p>
+    <p class="modal-item-name" id="modal-item-name"></p>
+    <p class="modal-desc">Digite seu nome para reservar este item.<br>Ele ficará marcado para todos os convidados.</p>
     <input type="text" id="reserveName" placeholder="Seu nome" maxlength="60" autocomplete="off"/>
-    <div class="reserve-modal-actions">
-      <button class="modal-cancel" onclick="closeReserveModal()">Cancelar</button>
-      <button class="modal-confirm" onclick="confirmReserve()">Reservar ✓</button>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeReserveModal()">Cancelar</button>
+      <button class="btn-confirm" onclick="confirmReserve()">Reservar ✓</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ MODAL: CANCELAR RESERVA ══════════ -->
+<div class="modal-overlay" id="cancelModal">
+  <div class="modal-box">
+    <h3>Cancelar reserva</h3>
+    <p class="modal-item-name" id="cancel-item-name"></p>
+    <p class="modal-desc">Tem certeza que deseja cancelar a reserva deste item?<br>Ele voltará a ficar disponível para outros convidados.</p>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeCancelModal()">Manter reserva</button>
+      <button class="btn-danger" onclick="confirmCancel()">Sim, cancelar</button>
     </div>
   </div>
 </div>
@@ -829,33 +604,21 @@
   const btn = document.getElementById('music-btn');
   audio.volume = 0.35;
   let playing = false;
-
   document.addEventListener('click', function startOnInteraction() {
-    if (!playing) {
-      audio.play().then(() => {
-        playing = true;
-        btn.style.color = 'var(--dourado)';
-      }).catch(()=>{});
-    }
+    if (!playing) { audio.play().then(() => { playing = true; btn.style.color = 'var(--dourado)'; }).catch(()=>{}); }
     document.removeEventListener('click', startOnInteraction);
   }, { once: false });
-
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (playing) {
-      audio.pause(); playing = false;
-      btn.style.color = 'rgba(201,169,110,0.35)';
-    } else {
-      audio.play(); playing = true;
-      btn.style.color = 'var(--dourado)';
-    }
+    if (playing) { audio.pause(); playing = false; btn.style.color = 'rgba(201,169,110,0.35)'; }
+    else { audio.play(); playing = true; btn.style.color = 'var(--dourado)'; }
   });
-
   audio.play().then(() => { playing = true; }).catch(()=>{});
 
-  /* ── SISTEMA DE RESERVA — Firebase ── */
+  /* ── SISTEMA DE RESERVA ── */
   const FIREBASE_URL = 'https://paollapaulo-presentes-default-rtdb.firebaseio.com';
   let pendingId = null;
+  let cancelPendingId = null;
   let reservations = {};
 
   function updateCounter() {
@@ -869,14 +632,30 @@
     const header = catEl.querySelector('.gift-cat-header');
     const titleEl = catEl.querySelector('.gift-cat-title');
     const titleText = titleEl ? titleEl.textContent : '';
+    const catId = catEl.dataset.catId;
     header.innerHTML = `
-      <div class="reserved-inner">
+      <div class="reserved-inner" onclick="openCancelModal('${catId}', '${titleText.replace(/'/g,"\\'")}', event)">
         <div class="reserved-checkmark">✓</div>
         <div class="reserved-info">
           <p class="reserved-item-title">${titleText}</p>
+          <p class="reserved-hint">Clique para cancelar a reserva</p>
         </div>
         <span class="reserved-tag">Reservado</span>
       </div>`;
+    updateCounter();
+  }
+
+  function revertToAvailable(catEl, titleText) {
+    catEl.classList.remove('is-reserved');
+    const header = catEl.querySelector('.gift-cat-header');
+    const catId = catEl.dataset.catId;
+    // Restore the original title and button
+    const nameParts = titleText.replace(/\\/g, '');
+    header.innerHTML = `
+      <p class="gift-cat-title">${titleText}</p>
+      <button class="reserve-btn" onclick="openReserveModal('${catId}','${titleText.replace(/'/g,"\\'")}',event)">♡ Vou presentear</button>`;
+    // Show gift items again
+    catEl.querySelectorAll('.gift-item').forEach(el => el.style.display = '');
     updateCounter();
   }
 
@@ -900,6 +679,7 @@
     } catch(e) { console.log('Firebase offline, usando cache local'); }
   }
 
+  /* ── MODAL: RESERVAR ── */
   function openReserveModal(catId, catName, e) {
     if (e) e.stopPropagation();
     document.getElementById('modal-item-name').textContent = catName;
@@ -908,12 +688,10 @@
     document.getElementById('reserveModal').classList.add('open');
     setTimeout(() => document.getElementById('reserveName').focus(), 120);
   }
-
   function closeReserveModal() {
     document.getElementById('reserveModal').classList.remove('open');
     pendingId = null;
   }
-
   async function confirmReserve() {
     const name = document.getElementById('reserveName').value.trim();
     if (!name) { document.getElementById('reserveName').focus(); return; }
@@ -924,19 +702,37 @@
     closeReserveModal();
     try {
       await fetch(FIREBASE_URL + '/reservas/' + pendingId + '.json', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(name)
+        method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(name)
       });
-    } catch(e) { console.log('Erro ao salvar no Firebase:', e); }
+    } catch(e) { console.log('Erro ao salvar:', e); }
   }
+  document.getElementById('reserveModal').addEventListener('click', function(e) { if (e.target === this) closeReserveModal(); });
+  document.getElementById('reserveName').addEventListener('keydown', function(e) { if (e.key === 'Enter') confirmReserve(); });
 
-  document.getElementById('reserveModal').addEventListener('click', function(e) {
-    if (e.target === this) closeReserveModal();
-  });
-  document.getElementById('reserveName').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') confirmReserve();
-  });
+  /* ── MODAL: CANCELAR ── */
+  function openCancelModal(catId, catName, e) {
+    if (e) e.stopPropagation();
+    document.getElementById('cancel-item-name').textContent = catName;
+    cancelPendingId = catId;
+    document.getElementById('cancelModal').classList.add('open');
+  }
+  function closeCancelModal() {
+    document.getElementById('cancelModal').classList.remove('open');
+    cancelPendingId = null;
+  }
+  async function confirmCancel() {
+    const catEl = document.querySelector('[data-cat-id="' + cancelPendingId + '"]');
+    const titleEl = catEl.querySelector('.reserved-item-title');
+    const titleText = titleEl ? titleEl.textContent : '';
+    delete reservations[cancelPendingId];
+    localStorage.setItem('pp_reservas', JSON.stringify(reservations));
+    revertToAvailable(catEl, titleText);
+    closeCancelModal();
+    try {
+      await fetch(FIREBASE_URL + '/reservas/' + cancelPendingId + '.json', { method: 'DELETE' });
+    } catch(e) { console.log('Erro ao cancelar:', e); }
+  }
+  document.getElementById('cancelModal').addEventListener('click', function(e) { if (e.target === this) closeCancelModal(); });
 
   loadReservations();
 </script>
