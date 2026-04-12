@@ -630,8 +630,8 @@
   function applyReserved(catEl, name) {
     catEl.classList.add('is-reserved');
     const header = catEl.querySelector('.gift-cat-header');
-    const titleEl = catEl.querySelector('.gift-cat-title');
-    const titleText = titleEl ? titleEl.textContent : '';
+    const titleEl = catEl.querySelector('.gift-cat-title') || catEl.querySelector('.reserved-item-title');
+    const titleText = catEl.dataset.title || (titleEl ? titleEl.textContent : '');
     const catId = catEl.dataset.catId;
     header.innerHTML = `
       <div class="reserved-inner" onclick="openCancelModal('${catId}', '${titleText.replace(/'/g,"\\'")}', event)">
@@ -661,10 +661,23 @@
   }
 
   function renderAll() {
+    // Guarda o título original no data-title antes de qualquer substituição
+    document.querySelectorAll('[data-cat-id]').forEach(cat => {
+      if (!cat.dataset.title) {
+        const t = cat.querySelector('.gift-cat-title');
+        if (t) cat.dataset.title = t.textContent;
+      }
+    });
     document.querySelectorAll('[data-cat-id]').forEach(cat => {
       const id = cat.dataset.catId;
-      if (reservations[id]) applyReserved(cat, reservations[id]);
+      const isReserved = cat.classList.contains('is-reserved');
+      if (reservations[id]) {
+        if (!isReserved) applyReserved(cat, reservations[id]);
+      } else if (isReserved) {
+        revertToAvailable(cat, cat.dataset.title || '');
+      }
     });
+    updateCounter();
   }
 
   async function saveToFirebase() {
