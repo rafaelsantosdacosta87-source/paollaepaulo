@@ -664,32 +664,32 @@
   }
 
   function renderAll() {
-    // First reset all items to available state
-    document.querySelectorAll('[data-cat-id]').forEach(cat => {
-      if (cat.classList.contains('is-reserved')) {
-        const id = cat.dataset.catId;
-        const titleEl = cat.querySelector('.reserved-item-title');
-        const titleText = titleEl ? titleEl.textContent : (cat.querySelector('.gift-cat-title') ? cat.querySelector('.gift-cat-title').textContent : '');
-        revertToAvailable(cat, titleText);
-      }
-    });
-    // Then apply all current reservations
     document.querySelectorAll('[data-cat-id]').forEach(cat => {
       const id = cat.dataset.catId;
-      if (reservations[id]) applyReserved(cat, reservations[id]);
+      const isReserved = cat.classList.contains('is-reserved');
+      if (reservations[id]) {
+        // Já está reservado com o nome certo? Não faz nada
+        if (!isReserved) applyReserved(cat, reservations[id]);
+      } else {
+        // Não deveria estar reservado
+        if (isReserved) {
+          const titleEl = cat.querySelector('.reserved-item-title');
+          const titleText = titleEl ? titleEl.textContent : '';
+          revertToAvailable(cat, titleText);
+        }
+      }
     });
+    updateCounter();
   }
 
   async function loadReservations() {
-    // Load local cache first for fast display
+    // Mostra cache local instantaneamente (sem piscar)
     try {
       const cached = JSON.parse(localStorage.getItem('pp_reservas') || '{}');
-      if (Object.keys(cached).length > 0) {
-        reservations = cached;
-        renderAll();
-      }
+      reservations = cached;
+      renderAll();
     } catch(e) {}
-    // Always fetch from Firebase to get the real-time state
+    // Busca Firebase e aplica diferenças
     try {
       const res = await fetch(FIREBASE_URL + '/reservas.json');
       const data = await res.json();
