@@ -203,6 +203,7 @@
     .acc-tier { border: 1px solid var(--creme-escuro); background: var(--branco); overflow: hidden; transition: box-shadow 0.3s; }
     .acc-tier:hover { box-shadow: 0 4px 24px rgba(19,7,6,0.06); }
     .acc-header { display: flex; align-items: center; justify-content: space-between; padding: 22px 30px; cursor: pointer; user-select: none; transition: background 0.25s; }
+    .acc-header > div { display: flex; flex-direction: column; align-items: flex-start; }
     .acc-header:hover { background: var(--creme); }
     .acc-tier-label { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--dourado); margin-bottom: 4px; }
     .acc-tier-range { font-size: clamp(20px,3vw,26px); font-weight: 300; color: var(--marrom); line-height: 1; }
@@ -213,7 +214,7 @@
     .acc-body-inner { padding: 28px 30px 36px; text-align: left; }
     .gift-category { margin-bottom: 30px; }
     .gift-category:last-child { margin-bottom: 0; }
-    /* gift-cat-title moved to .gift-cat-header */
+    /* gift-cat-title now inside .gift-cat-header */
     .gift-item { margin-bottom: 16px; }
     .gift-item:last-child { margin-bottom: 0; }
     .gift-name { font-size: clamp(15px,2vw,17px); color: var(--marrom); margin-bottom: 6px; }
@@ -588,7 +589,7 @@
     </div>
   </div>
   <p class="traje-obs reveal" style="margin-top:32px;">
-    Pedimos, por gentileza, que evitem roupas nas cores <strong>branco</strong> e <strong>marrom</strong>.
+    Por gentileza, evitar roupas nas cores <strong>branco</strong> e <strong>marrom</strong>.
   </p>
 </section>
 
@@ -778,7 +779,7 @@
     <!-- FAIXA 3 -->
     <div class="acc-tier" id="tier3">
       <div class="acc-header" onclick="toggleTier('tier3')">
-        <div><p class="acc-tier-label">Faixa 3</p><p class="acc-tier-range">R$ 500+</p></div>
+        <div><p class="acc-tier-label">Faixa 3</p><p class="acc-tier-range">R$ 500 ou mais</p></div>
         <span class="acc-arrow">↓</span>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
@@ -950,17 +951,36 @@
 </div>
 
 <script>
-  // ── SISTEMA DE RESERVA ──
-  const STORAGE_PREFIX = 'cat_reserve_';
-  let pendingId = null;
+  // ── SISTEMA DE RESERVA — Firebase Realtime Database ──
+  // SETUP (1 vez, 2 minutos):
+  // 1. Acesse console.firebase.google.com → criar projeto → Realtime Database → criar banco
+  // 2. Em "Regras", cole: { "rules": { ".read": true, ".write": true } } → publicar
+  // 3. Copie a URL do banco (ex: https://SEU-PROJETO-default-rtdb.firebaseio.com)
+  // 4. Substitua FIREBASE_URL abaixo pela sua URL
+  const FIREBASE_URL = 'https://paollapaulo-presentes-default-rtdb.firebaseio.com';
 
-  async function loadAllReservations() {
-    document.querySelectorAll('[data-cat-id]').forEach(async (cat) => {
+  let pendingId    = null;
+  let reservations = {};
+
+  async function loadReservations() {
+    // Cache local para resposta imediata
+    try { reservations = JSON.parse(localStorage.getItem('pp_reservas') || '{}'); renderAll(); } catch(e) {}
+    // Busca do Firebase
+    try {
+      const res  = await fetch(FIREBASE_URL + '/reservas.json');
+      const data = await res.json();
+      if (data) {
+        reservations = data;
+        localStorage.setItem('pp_reservas', JSON.stringify(reservations));
+        renderAll();
+      }
+    } catch(e) { console.log('Firebase offline, usando cache local'); }
+  }
+
+  function renderAll() {
+    document.querySelectorAll('[data-cat-id]').forEach(cat => {
       const id = cat.dataset.catId;
-      try {
-        const r = await window.storage.get(STORAGE_PREFIX + id, true);
-        if (r && r.value) applyReserved(cat, r.value);
-      } catch(e) {}
+      if (reservations[id]) applyReserved(cat, reservations[id]);
     });
   }
 
@@ -987,25 +1007,32 @@
   async function confirmReserve() {
     const name = document.getElementById('reserveName').value.trim();
     if (!name) { document.getElementById('reserveName').focus(); return; }
+
+    // Aplica imediatamente na tela
+    reservations[pendingId] = name;
+    localStorage.setItem('pp_reservas', JSON.stringify(reservations));
+    const cat = document.querySelector('[data-cat-id="' + pendingId + '"]');
+    applyReserved(cat, name);
+    closeReserveModal();
+
+    // Salva no Firebase
     try {
-      await window.storage.set(STORAGE_PREFIX + pendingId, name, true);
-      const cat = document.querySelector('[data-cat-id="' + pendingId + '"]');
-      applyReserved(cat, name);
-      closeReserveModal();
-    } catch(e) {
-      alert('Não foi possível salvar. Tente novamente.');
-    }
+      await fetch(FIREBASE_URL + '/reservas/' + pendingId + '.json', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(name)
+      });
+    } catch(e) { console.log('Erro ao salvar no Firebase:', e); }
   }
 
   document.getElementById('reserveModal').addEventListener('click', function(e) {
     if (e.target === this) closeReserveModal();
   });
-
   document.getElementById('reserveName').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') confirmReserve();
   });
 
-  loadAllReservations();
+  loadReservations();
 </script>
 </body>
 </html>
