@@ -234,14 +234,13 @@
     .reveal { opacity:0; transform:translateY(28px); transition: opacity 0.85s ease, transform 0.85s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
     /* ── FAIXA PIX ── */
-    .acc-tier-pix { border: 1px solid rgba(201,169,110,0.5); background: var(--branco); overflow: hidden; transition: box-shadow 0.3s; position: relative; }
-    .acc-tier-pix::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, var(--dourado), transparent); }
-    .acc-tier-pix:hover { box-shadow: 0 4px 24px rgba(201,169,110,0.12); }
-    .acc-tier-pix .acc-header { background: linear-gradient(135deg, rgba(201,169,110,0.04) 0%, transparent 60%); }
-    .acc-tier-pix .acc-header:hover { background: rgba(201,169,110,0.08); }
+    .acc-tier-pix { border: 1px solid var(--creme-escuro); background: var(--branco); overflow: hidden; transition: box-shadow 0.3s; }
+    .acc-tier-pix:hover { box-shadow: 0 4px 24px rgba(19,7,6,0.06); }
+    .acc-tier-pix .acc-header:hover { background: var(--creme); }
     .acc-tier-pix .acc-tier-label { color: var(--dourado); }
     .acc-tier-pix .acc-tier-range { color: var(--marrom); }
-    .pix-body-inner { padding: 36px 28px; text-align: center; }
+    .acc-tier-entrega { border-color: var(--marrom-claro) !important; }
+    .acc-tier-entrega .acc-tier-label { color: var(--marrom-claro); } padding: 36px 28px; text-align: center; }
     .pix-intro { font-size: clamp(15px,2vw,17px); font-style: italic; color: var(--marrom); opacity: 0.8; line-height: 1.75; max-width: 480px; margin: 0 auto 32px; }
     .pix-card { max-width: 340px; margin: 0 auto; border: 1px solid var(--creme-escuro); padding: 32px 28px; background: var(--branco); position: relative; }
     .pix-card::before { content: ''; position: absolute; inset: 6px; border: 1px solid rgba(201,169,110,0.15); pointer-events: none; }
@@ -421,7 +420,7 @@
         </div>
         <div class="gift-category" data-cat-id="cat-001b">
           <div class="gift-cat-header"><p class="gift-cat-title">Processador de Alimentos</p><button class="reserve-btn" onclick="openReserveModal('cat-001b','Processador de Alimentos',event)">♡ Vou presentear</button></div>
-          <div class="gift-item"><p class="gift-name">Black & Decker 2L</p><div class="gift-links"><a href="https://meli.la/26g3NQV" target="_blank" class="gift-link">Mercado Livre</a></div></div>
+          <div class="gift-item"><p class="gift-name">Black & Decker 2L</p><div class="gift-links"><a href="https://meli.la/26g3NQV" target="_blank" class="gift-link">Mercado Livre</a><span class="gift-link" style="opacity:0.4;cursor:default;border-style:dashed;">Amazon (em breve)</span></div></div>
         </div>
         <div class="gift-category" data-cat-id="cat-002">
           <div class="gift-cat-header"><p class="gift-cat-title">Sanduicheira Grill</p><button class="reserve-btn" onclick="openReserveModal('cat-002','Sanduicheira Grill',event)">♡ Vou presentear</button></div>
@@ -495,10 +494,6 @@
           <div class="gift-item"><p class="gift-name">Philips Walita Série 1000 XL — 6,2L</p><div class="gift-links"><a href="https://amzn.to/40NfP1V" target="_blank" class="gift-link">Amazon</a></div></div>
           <div class="gift-item"><p class="gift-name">Philips Walita Série 2000 XL Digital — 6,2L</p><div class="gift-links"><a href="https://amzn.to/4dz57Uc" target="_blank" class="gift-link">Amazon</a></div></div>
         </div>
-        <div class="gift-category" data-cat-id="cat-014">
-          <div class="gift-cat-header"><p class="gift-cat-title">Vaporizador de Roupas</p><button class="reserve-btn" onclick="openReserveModal('cat-014','Vaporizador de Roupas',event)">♡ Vou presentear</button></div>
-          <div class="gift-item"><p class="gift-name">Electrolux Expert</p><div class="gift-links"><a href="https://amzn.to/41jFVtu" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1kFNLDC" target="_blank" class="gift-link">Mercado Livre</a></div></div>
-        </div>
         <div class="gift-category" data-cat-id="cat-015">
           <div class="gift-cat-header"><p class="gift-cat-title">Batedeira</p><button class="reserve-btn" onclick="openReserveModal('cat-015','Batedeira',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Electrolux 750W (Bowl Inox)</p><div class="gift-links"><a href="https://meli.la/2fv9itW" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/47LIZCl" target="_blank" class="gift-link">Amazon</a></div></div>
@@ -527,6 +522,10 @@
         <div class="gift-category" data-cat-id="cat-018">
           <div class="gift-cat-header"><p class="gift-cat-title">Jogo de Panelas</p><button class="reserve-btn" onclick="openReserveModal('cat-018','Jogo de Panelas',event)">♡ Vou presentear</button></div>
           <div class="gift-item"><p class="gift-name">Tramontina Grano</p><div class="gift-links"><a href="https://amzn.to/4mwcgHn" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1ma2Yqp" target="_blank" class="gift-link">Mercado Livre</a></div></div>
+        </div>
+        <div class="gift-category" data-cat-id="cat-014">
+          <div class="gift-cat-header"><p class="gift-cat-title">Vaporizador de Roupas</p><button class="reserve-btn" onclick="openReserveModal('cat-014','Vaporizador de Roupas',event)">♡ Vou presentear</button></div>
+          <div class="gift-item"><p class="gift-name">Electrolux Expert</p><div class="gift-links"><a href="https://amzn.to/41jFVtu" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1kFNLDC" target="_blank" class="gift-link">Mercado Livre</a></div></div>
         </div>
         <div class="gift-category" data-cat-id="cat-019">
           <div class="gift-cat-header"><p class="gift-cat-title">Aparelho de Jantar</p><button class="reserve-btn" onclick="openReserveModal('cat-019','Aparelho de Jantar',event)">♡ Vou presentear</button></div>
@@ -566,7 +565,7 @@
     </div>
 
     <!-- ENTREGA DE PRESENTES -->
-    <div class="acc-tier" style="border:1px solid var(--creme-escuro);">
+    <div class="acc-tier acc-tier-entrega">
       <div class="acc-header" onclick="this.closest('.acc-tier').classList.toggle('open')" style="cursor:pointer;">
         <div>
           <p class="acc-tier-label">Como entregar</p>
@@ -861,14 +860,12 @@ await saveToFirebase();
   document.getElementById('cancelModal').addEventListener('click', function(e) { if (e.target === this) closeCancelModal(); });
 
   /* ── PIX ── */
-  // Substitua PIX_KEY pelo valor real da chave Pix
   const PIX_KEY = 'paollamcontildes@gmail.com';
   const PIX_NAME = 'Paolla Marinho Contildes';
 
-  document.getElementById('pix-key-display').textContent = PIX_KEY !== 'INSIRA_A_CHAVE_PIX_AQUI' ? PIX_KEY : '—';
+  document.getElementById('pix-key-display').textContent = PIX_KEY;
 
   function copyPix() {
-    if (PIX_KEY === 'INSIRA_A_CHAVE_PIX_AQUI') return;
     navigator.clipboard.writeText(PIX_KEY).then(() => {
       const btn = document.getElementById('pix-copy-btn');
       btn.textContent = 'Copiado ✓';
@@ -877,16 +874,36 @@ await saveToFirebase();
     });
   }
 
-  // Gera QR Code via API pública
-  (function loadQR() {
-    if (PIX_KEY === 'INSIRA_A_CHAVE_PIX_AQUI') return;
+  // QR Code gerado localmente (sem dependência externa)
+  (function generateQR() {
+    // Biblioteca QR inline minificada — padrão QR Code Model 2
     const wrap = document.getElementById('pix-qr-wrap');
-    const img = document.createElement('img');
-    img.alt = 'QR Code Pix';
-    img.style.cssText = 'width:100%;height:100%;display:block;';
-    const data = encodeURIComponent(PIX_KEY);
-    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${data}&bgcolor=ffffff&color=130706&margin=2`;
-    img.onload = () => { wrap.innerHTML = ''; wrap.appendChild(img); };
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+    script.onload = function() {
+      wrap.innerHTML = '';
+      const div = document.createElement('div');
+      div.style.cssText = 'width:156px;height:156px;';
+      wrap.appendChild(div);
+      new QRCode(div, {
+        text: PIX_KEY,
+        width: 156,
+        height: 156,
+        colorDark: '#130706',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    };
+    script.onerror = function() {
+      // fallback: imagem via Google Charts
+      wrap.innerHTML = '';
+      const img = document.createElement('img');
+      img.alt = 'QR Code Pix';
+      img.style.cssText = 'width:156px;height:156px;display:block;';
+      img.src = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + encodeURIComponent(PIX_KEY) + '&choe=UTF-8';
+      wrap.appendChild(img);
+    };
+    document.head.appendChild(script);
   })();
 
   loadReservations();
