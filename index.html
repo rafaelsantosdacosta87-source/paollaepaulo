@@ -659,7 +659,7 @@
     /* adicione quantas quiser */
   ];
 
-  let currentTrack = 0;
+  let currentTrack = Math.floor(Math.random() * playlist.length);
   let playing = false;
 
   const audio   = document.getElementById('bg-music');
