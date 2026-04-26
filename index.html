@@ -638,11 +638,89 @@
   <p class="footer-verse">"Para que todos vejam, e saibam, e considerem, e juntamente entendam<br>que a mão do Senhor fez isto..." — Isaías 41:20</p>
 </footer>
 
-<!-- MÚSICA -->
-<audio id="bg-music" loop>
-  <source src="./musica.mp3" type="audio/mpeg">
-</audio>
-<button class="music-btn" id="music-btn" title="Música">♪</button>
+<script>
+  /* ── PLAYER COM PLAYLIST ── */
+  const playlist = [
+    { src: './musica.mp3',  title: 'Música 1' },
+    { src: './musica2.mp3', title: 'Música 2' },
+    { src: './musica3.mp3', title: 'Música 3' },
+    /* adicione quantas quiser */
+  ];
+
+  let currentTrack = 0;
+  let playing = false;
+
+  const audio   = document.getElementById('bg-music');
+  const btn     = document.getElementById('music-btn');
+  const info    = document.getElementById('track-info');
+
+  audio.volume = 0.35;
+
+  function loadTrack(index) {
+    audio.src = playlist[index].src;
+    info.innerHTML = `
+      <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.2em;opacity:0.6;margin-bottom:4px;">TOCANDO AGORA</div>
+      ${playlist[index].title}
+      <div style="margin-top:8px;display:flex;gap:10px;justify-content:flex-end;">
+        <span onclick="prevTrack()" style="cursor:pointer;opacity:0.7;">&#8592; ant</span>
+        <span onclick="nextTrack()" style="cursor:pointer;opacity:0.7;">próx &#8594;</span>
+      </div>`;
+  }
+
+  function nextTrack() {
+    currentTrack = (currentTrack + 1) % playlist.length;
+    loadTrack(currentTrack);
+    if (playing) audio.play();
+  }
+
+  function prevTrack() {
+    currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
+    loadTrack(currentTrack);
+    if (playing) audio.play();
+  }
+
+  /* avança automaticamente ao terminar a faixa */
+  audio.addEventListener('ended', () => {
+    audio.loop = false;
+    nextTrack();
+  });
+
+  loadTrack(currentTrack);
+
+  /* toque inicial no primeiro clique */
+  document.addEventListener('click', function startOnInteraction() {
+    if (!playing) {
+      audio.play().then(() => {
+        playing = true;
+        btn.style.color = 'var(--dourado)';
+        info.style.display = 'block';
+      }).catch(() => {});
+    }
+    document.removeEventListener('click', startOnInteraction);
+  }, { once: true });
+
+  /* botão: play/pause + mostrar info */
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (playing) {
+      audio.pause();
+      playing = false;
+      btn.style.color = 'rgba(201,169,110,0.35)';
+      info.style.display = 'none';
+    } else {
+      audio.play();
+      playing = true;
+      btn.style.color = 'var(--dourado)';
+      info.style.display = 'block';
+    }
+  });
+
+  /* tentativa de autoplay */
+  audio.play().then(() => {
+    playing = true;
+    info.style.display = 'block';
+  }).catch(() => {});
+</script>
 
 <!-- ══════════ MODAL: RESERVAR ══════════ -->
 <div class="modal-overlay" id="reserveModal">
