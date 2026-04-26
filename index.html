@@ -775,21 +775,6 @@
     if (!isOpen) tier.classList.add('open');
   }
 
-  /* ── MÚSICA ── */
-  const audio = document.getElementById('bg-music');
-  const btn = document.getElementById('music-btn');
-  audio.volume = 0.35;
-  let playing = false;
-  document.addEventListener('click', function startOnInteraction() {
-    if (!playing) { audio.play().then(() => { playing = true; btn.style.color = 'var(--dourado)'; }).catch(()=>{}); }
-    document.removeEventListener('click', startOnInteraction);
-  }, { once: true });
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (playing) { audio.pause(); playing = false; btn.style.color = 'rgba(201,169,110,0.35)'; }
-    else { audio.play(); playing = true; btn.style.color = 'var(--dourado)'; }
-  });
-  audio.play().then(() => { playing = true; }).catch(()=>{});
 
   /* ── SISTEMA DE RESERVA ── */
   const FIREBASE_URL = 'https://paollapaulo-bf6b0-default-rtdb.firebaseio.com';
