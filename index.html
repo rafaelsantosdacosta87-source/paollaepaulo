@@ -351,7 +351,6 @@
     <li><a href="#cerimonia">Programação</a></li>
     <li><a href="#traje">Traje</a></li>
     <li><a href="#presentes">Presentes</a></li>
-    <li><a href="#presentes" onclick="setTimeout(()=>toggleTier('tier-pix'),100)">Pix</a></li>
     <li><a href="#confirmacao">Confirmação</a></li>
     <li><a href="#local">Local</a></li>
   </ul>
@@ -981,7 +980,7 @@
       </div></div>
     </div>
     
-    <!-- FAIXA PIX -->
+   <!-- FAIXA PIX -->
     <div class="acc-tier acc-tier-pix" id="tier-pix">
       <div class="acc-header" onclick="toggleTier('tier-pix')">
         <div>
@@ -998,487 +997,473 @@
             <div class="pix-qr-wrap" id="pix-qr-wrap">
               <svg viewBox="0 0 10.8 10.8" xmlns="http://www.w3.org/2000/svg" style="width:156px;height:156px;display:block;background:#fff;">
                 <path fill="#130706" d="M0.4,0.4H0.8V0.8H0.4zM0.8,0.4H1.2V0.8H0.8zM1.2,0.4H1.6V0.8H1.2zM1.6,0.4H2V0.8H1.6zM2,0.4H2.4V0.8H2zM2.4,0.4H2.8V0.8H2.4zM2.8,0.4H3.2V0.8H2.8zM3.6,0.4H4V0.8H3.6zM4,0.4H4.4V0.8H4zM4.8,0.4H5.2V0.8H4.8zM5.6,0.4H6V0.8H5.6zM6,0.4H6.4V0.8H6zM7.6,0.4H8V0.8H7.6zM8,0.4H8.4V0.8H8zM8.4,0.4H8.8V0.8H8.4zM8.8,0.4H9.2V0.8H8.8zM9.2,0.4H9.6V0.8H9.2zM9.6,0.4H10V0.8H9.6zM10,0.4H10.4V0.8H10zM0.4,0.8H0.8V1.2H0.4zM2.8,0.8H3.2V1.2H2.8zM4,0.8H4.4V1.2H4zM4.4,0.8H4.8V1.2H4.4zM5.2,0.8H5.6V1.2H5.2zM5.6,0.8H6V1.2H5.6zM6,0.8H6.4V1.2H6zM7.6,0.8H8V1.2H7.6zM10,0.8H10.4V1.2H10zM0.4,1.2H0.8V1.6H0.4zM1.2,1.2H1.6V1.6H1.2zM1.6,1.2H2V1.6H1.6zM2,1.2H2.4V1.6H2zM2.8,1.2H3.2V1.6H2.8zM3.6,1.2H4V1.6H3.6zM4.8,1.2H5.2V1.6H4.8zM5.6,1.2H6V1.6H5.6zM6.4,1.2H6.8V1.6H6.4zM6.8,1.2H7.2V1.6H6.8zM7.6,1.2H8V1.6H7.6zM8.4,1.2H8.8V1.6H8.4zM8.8,1.2H9.2V1.6H8.8zM9.2,1.2H9.6V1.6H9.2zM10,1.2H10.4V1.6H10zM0.4,1.6H0.8V2H0.4zM1.2,1.6H1.6V2H1.2zM1.6,1.6H2V2H1.6zM2,1.6H2.4V2H2zM2.8,1.6H3.2V2H2.8zM4,1.6H4.4V2H4zM4.8,1.6H5.2V2H4.8zM5.2,1.6H5.6V2H5.2zM5.6,1.6H6V2H5.6zM6,1.6H6.4V2H6zM7.6,1.6H8V2H7.6zM8.4,1.6H8.8V2H8.4zM8.8,1.6H9.2V2H8.8zM9.2,1.6H9.6V2H9.2zM10,1.6H10.4V2H10zM0.4,2H0.8V2.4H0.4zM1.2,2H1.6V2.4H1.2zM1.6,2H2V2.4H1.6zM2,2H2.4V2.4H2zM2.8,2H3.2V2.4H2.8zM4,2H4.4V2.4H4zM4.8,2H5.2V2.4H4.8zM6,2H6.4V2.4H6zM6.4,2H6.8V2.4H6.4zM7.6,2H8V2.4H7.6zM8.4,2H8.8V2.4H8.4zM8.8,2H9.2V2.4H8.8zM9.2,2H9.6V2.4H9.2zM10,2H10.4V2.4H10zM0.4,2.4H0.8V2.8H0.4zM2.8,2.4H3.2V2.8H2.8zM3.6,2.4H4V2.8H3.6zM4,2.4H4.4V2.8H4zM6,2.4H6.4V2.8H6zM6.8,2.4H7.2V2.8H6.8zM7.6,2.4H8V2.8H7.6zM10,2.4H10.4V2.8H10zM0.4,2.8H0.8V3.2H0.4zM0.8,2.8H1.2V3.2H0.8zM1.2,2.8H1.6V3.2H1.2zM1.6,2.8H2V3.2H1.6zM2,2.8H2.4V3.2H2zM2.4,2.8H2.8V3.2H2.4zM2.8,2.8H3.2V3.2H2.8zM3.6,2.8H4V3.2H3.6zM4.4,2.8H4.8V3.2H4.4zM5.2,2.8H5.6V3.2H5.2zM6,2.8H6.4V3.2H6zM6.8,2.8H7.2V3.2H6.8zM7.6,2.8H8V3.2H7.6zM8,2.8H8.4V3.2H8zM8.4,2.8H8.8V3.2H8.4zM8.8,2.8H9.2V3.2H8.8zM9.2,2.8H9.6V3.2H9.2zM9.6,2.8H10V3.2H9.6zM10,2.8H10.4V3.2H10zM4.4,3.2H4.8V3.6H4.4zM5.2,3.2H5.6V3.6H5.2zM6,3.2H6.4V3.6H6zM6.4,3.2H6.8V3.6H6.4zM0.4,3.6H0.8V4H0.4zM1.2,3.6H1.6V4H1.2zM2.8,3.6H3.2V4H2.8zM3.2,3.6H3.6V4H3.2zM4,3.6H4.4V4H4zM5.2,3.6H5.6V4H5.2zM6.4,3.6H6.8V4H6.4zM8,3.6H8.4V4H8zM9.2,3.6H9.6V4H9.2zM10,3.6H10.4V4H10zM0.4,4H0.8V4.4H0.4zM1.2,4H1.6V4.4H1.2zM1.6,4H2V4.4H1.6zM3.2,4H3.6V4.4H3.2zM4,4H4.4V4.4H4zM4.8,4H5.2V4.4H4.8zM5.2,4H5.6V4.4H5.2zM6.4,4H6.8V4.4H6.4zM6.8,4H7.2V4.4H6.8zM7.6,4H8V4.4H7.6zM8,4H8.4V4.4H8zM8.8,4H9.2V4.4H8.8zM9.2,4H9.6V4.4H9.2zM10,4H10.4V4.4H10zM1.2,4.4H1.6V4.8H1.2zM1.6,4.4H2V4.8H1.6zM2.8,4.4H3.2V4.8H2.8zM4,4.4H4.4V4.8H4zM4.8,4.4H5.2V4.8H4.8zM5.6,4.4H6V4.8H5.6zM6,4.4H6.4V4.8H6zM6.4,4.4H6.8V4.8H6.4zM10,4.4H10.4V4.8H10zM2,4.8H2.4V5.2H2zM3.2,4.8H3.6V5.2H3.2zM4,4.8H4.4V5.2H4zM4.4,4.8H4.8V5.2H4.4zM6,4.8H6.4V5.2H6zM6.8,4.8H7.2V5.2H6.8zM7.6,4.8H8V5.2H7.6zM8,4.8H8.4V5.2H8zM8.4,4.8H8.8V5.2H8.4zM8.8,4.8H9.2V5.2H8.8zM9.6,4.8H10V5.2H9.6zM1.6,5.2H2V5.6H1.6zM2.4,5.2H2.8V5.6H2.4zM2.8,5.2H3.2V5.6H2.8zM3.6,5.2H4V5.6H3.6zM4.8,5.2H5.2V5.6H4.8zM5.2,5.2H5.6V5.6H5.2zM6.4,5.2H6.8V5.6H6.4zM6.8,5.2H7.2V5.6H6.8zM7.6,5.2H8V5.6H7.6zM8,5.2H8.4V5.6H8zM8.8,5.2H9.2V5.6H8.8zM9.6,5.2H10V5.6H9.6zM10,5.2H10.4V5.6H10zM1.6,5.6H2V6H1.6zM2,5.6H2.4V6H2zM2.4,5.6H2.8V6H2.4zM3.2,5.6H3.6V6H3.2zM3.6,5.6H4V6H3.6zM4.4,5.6H4.8V6H4.4zM5.6,5.6H6V6H5.6zM6.4,5.6H6.8V6H6.4zM6.8,5.6H7.2V6H6.8zM7.2,5.6H7.6V6H7.2zM7.6,5.6H8V6H7.6zM8,5.6H8.4V6H8zM8.8,5.6H9.2V6H8.8zM9.2,5.6H9.6V6H9.2zM10,5.6H10.4V6H10zM0.4,6H0.8V6.4H0.4zM0.8,6H1.2V6.4H0.8zM1.6,6H2V6.4H1.6zM2.8,6H3.2V6.4H2.8zM3.6,6H4V6.4H3.6zM4,6H4.4V6.4H4zM4.4,6H4.8V6.4H4.4zM4.8,6H5.2V6.4H4.8zM5.6,6H6V6.4H5.6zM6,6H6.4V6.4H6zM6.4,6H6.8V6.4H6.4zM6.8,6H7.2V6.4H6.8zM7.6,6H8V6.4H7.6zM8.8,6H9.2V6.4H8.8zM9.2,6H9.6V6.4H9.2zM10,6H10.4V6.4H10zM1.2,6.4H1.6V6.8H1.2zM1.6,6.4H2V6.8H1.6zM2,6.4H2.4V6.8H2zM2.4,6.4H2.8V6.8H2.4zM5.2,6.4H5.6V6.8H5.2zM6,6.4H6.4V6.8H6zM6.8,6.4H7.2V6.8H6.8zM8.8,6.4H9.2V6.8H8.8zM0.4,6.8H0.8V7.2H0.4zM0.8,6.8H1.2V7.2H0.8zM1.6,6.8H2V7.2H1.6zM2,6.8H2.4V7.2H2zM2.8,6.8H3.2V7.2H2.8zM4.4,6.8H4.8V7.2H4.4zM5.2,6.8H5.6V7.2H5.2zM6.4,6.8H6.8V7.2H6.4zM6.8,6.8H7.2V7.2H6.8zM7.2,6.8H7.6V7.2H7.2zM7.6,6.8H8V7.2H7.6zM8,6.8H8.4V7.2H8zM8.4,6.8H8.8V7.2H8.4zM8.8,6.8H9.2V7.2H8.8zM9.6,6.8H10V7.2H9.6zM10,6.8H10.4V7.2H10zM3.6,7.2H4V7.6H3.6zM4.4,7.2H4.8V7.6H4.4zM4.8,7.2H5.2V7.6H4.8zM5.2,7.2H5.6V7.6H5.2zM5.6,7.2H6V7.6H5.6zM6.8,7.2H7.2V7.6H6.8zM8.4,7.2H8.8V7.6H8.4zM8.8,7.2H9.2V7.6H8.8zM9.2,7.2H9.6V7.6H9.2zM9.6,7.2H10V7.6H9.6zM10,7.2H10.4V7.6H10zM0.4,7.6H0.8V8H0.4zM0.8,7.6H1.2V8H0.8zM1.2,7.6H1.6V8H1.2zM1.6,7.6H2V8H1.6zM2,7.6H2.4V8H2zM2.4,7.6H2.8V8H2.4zM2.8,7.6H3.2V8H2.8zM3.6,7.6H4V8H3.6zM4.8,7.6H5.2V8H4.8zM5.6,7.6H6V8H5.6zM6.8,7.6H7.2V8H6.8zM7.6,7.6H8V8H7.6zM8.4,7.6H8.8V8H8.4zM8.8,7.6H9.2V8H8.8zM9.2,7.6H9.6V8H9.2zM10,7.6H10.4V8H10zM0.4,8H0.8V8.4H0.4zM2.8,8H3.2V8.4H2.8zM4,8H4.4V8.4H4zM4.4,8H4.8V8.4H4.4zM4.8,8H5.2V8.4H4.8zM5.2,8H5.6V8.4H5.2zM6.4,8H6.8V8.4H6.4zM6.8,8H7.2V8.4H6.8zM8.4,8H8.8V8.4H8.4zM8.8,8H9.2V8.4H8.8zM10,8H10.4V8.4H10zM0.4,8.4H0.8V8.8H0.4zM1.2,8.4H1.6V8.8H1.2zM1.6,8.4H2V8.8H1.6zM2,8.4H2.4V8.8H2zM2.8,8.4H3.2V8.8H2.8zM4,8.4H4.4V8.8H4zM4.4,8.4H4.8V8.8H4.4zM5.2,8.4H5.6V8.8H5.2zM6,8.4H6.4V8.8H6zM6.4,8.4H6.8V8.8H6.4zM6.8,8.4H7.2V8.8H6.8zM7.2,8.4H7.6V8.8H7.2zM7.6,8.4H8V8.8H7.6zM8,8.4H8.4V8.8H8zM8.4,8.4H8.8V8.8H8.4zM8.8,8.4H9.2V8.8H8.8zM9.6,8.4H10V8.8H9.6zM0.4,8.8H0.8V9.2H0.4zM1.2,8.8H1.6V9.2H1.2zM1.6,8.8H2V9.2H1.6zM2,8.8H2.4V9.2H2zM2.8,8.8H3.2V9.2H2.8zM4.4,8.8H4.8V9.2H4.4zM4.8,8.8H5.2V9.2H4.8zM5.2,8.8H5.6V9.2H5.2zM5.6,8.8H6V9.2H5.6zM7.2,8.8H7.6V9.2H7.2zM8.4,8.8H8.8V9.2H8.4zM9.6,8.8H10V9.2H9.6zM0.4,9.2H0.8V9.6H0.4zM1.2,9.2H1.6V9.6H1.2zM1.6,9.2H2V9.6H1.6zM2,9.2H2.4V9.6H2zM2.8,9.2H3.2V9.6H2.8zM3.6,9.2H4V9.6H3.6zM4,9.2H4.4V9.6H4zM4.4,9.2H4.8V9.6H4.4zM4.8,9.2H5.2V9.6H4.8zM7.2,9.2H7.6V9.6H7.2zM8.4,9.2H8.8V9.6H8.4zM9.2,9.2H9.6V9.6H9.2zM9.6,9.2H10V9.6H9.6zM10,9.2H10.4V9.6H10zM0.4,9.6H0.8V10H0.4zM2.8,9.6H3.2V10H2.8zM4.8,9.6H5.2V10H4.8zM6.8,9.6H7.2V10H6.8zM7.6,9.6H8V10H7.6zM8,9.6H8.4V10H8zM8.8,9.6H9.2V10H8.8zM0.4,10H0.8V10.4H0.4zM0.8,10H1.2V10.4H0.8zM1.2,10H1.6V10.4H1.2zM1.6,10H2V10.4H1.6zM2,10H2.4V10.4H2zM2.4,10H2.8V10.4H2.4zM2.8,10H3.2V10.4H2.8zM3.6,10H4V10.4H3.6zM4,10H4.4V10.4H4zM4.8,10H5.2V10.4H4.8zM5.2,10H5.6V10.4H5.2zM6.8,10H7.2V10.4H6.8zM7.6,10H8V10.4H7.6zM8.8,10H9.2V10.4H8.8zM10,10H10.4V10.4H10z"/>
-              </svg>
-            </div>
-            <div class="pix-divider"></div>
-            <p class="pix-label">Chave Pix</p>
-            <p class="pix-key" id="pix-key-display">⟨ chave a definir ⟩</p>
-            <p class="pix-name">Paolla Marinho Contildes</p>
-            <button class="pix-copy-btn" id="pix-copy-btn" onclick="copyPix()">Copiar chave</button>
-            
-          </div>
-        </div>
-      </div>
-    </div>
+              </svg>
+            </div>
+            <div class="pix-divider"></div>
+            <p class="pix-label">Chave Pix</p>
+            <p class="pix-key" id="pix-key-display">⟨ chave a definir ⟩</p>
+            <p class="pix-name">Paolla Marinho Contildes</p>
+            <button class="pix-copy-btn" id="pix-copy-btn" onclick="copyPix()">Copiar chave</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- ENTREGA DE PRESENTES -->
-    <div class="acc-tier acc-tier-entrega">
-      <div class="acc-header" onclick="this.closest('.acc-tier').classList.toggle('open')" style="cursor:pointer;">
-        <div>
-          <p class="acc-tier-label">Como entregar</p>
-          <p class="acc-tier-range">Pontos de Entrega</p>
-        </div>
-        <span class="acc-arrow">↓</span>
-      </div>
-      <div class="acc-body">
-        <div class="acc-body-inner" style="padding:24px 28px;">
-          <p style="font-size:clamp(14px,1.9vw,16px);font-style:italic;color:var(--marrom);opacity:0.75;text-align:center;line-height:1.85;margin-bottom:24px;">Para facilitar a logística, combinamos pontos de entrega por região — assim os presentes chegam com segurança e sem preocupação no dia.</p>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div style="padding:16px 20px;border:1px solid var(--creme-escuro);background:var(--creme);">
-              <p style="font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--marrom-claro);margin-bottom:6px;">Casimiro de Abreu</p>
-              <p style="font-size:clamp(14px,2vw,16px);color:var(--marrom);line-height:1.65;">Entregar na casa dos pais da noiva — <em>Marcelo e Sandra</em></p>
-            </div>
-            <div style="padding:16px 20px;border:1px solid var(--creme-escuro);background:var(--creme);">
-              <p style="font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--marrom-claro);margin-bottom:6px;">Cabo Frio</p>
-              <p style="font-size:clamp(14px,2vw,16px);color:var(--marrom);line-height:1.65;">Entregar na casa dos pais do noivo — <em>Lívia e Marcello</em></p>
-            </div>
-            <div style="padding:16px 20px;border:1px solid var(--creme-escuro);background:var(--creme);">
-              <p style="font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--marrom-claro);margin-bottom:6px;">Niterói</p>
-              <p style="font-size:clamp(14px,2vw,16px);color:var(--marrom);line-height:1.65;">Entregar diretamente aos noivos</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- ENTREGA DE PRESENTES -->
+    <div class="acc-tier acc-tier-entrega">
+      <div class="acc-header" onclick="this.closest('.acc-tier').classList.toggle('open')" style="cursor:pointer;">
+        <div>
+          <p class="acc-tier-label">Como entregar</p>
+          <p class="acc-tier-range">Pontos de Entrega</p>
+        </div>
+        <span class="acc-arrow">↓</span>
+      </div>
+      <div class="acc-body">
+        <div class="acc-body-inner" style="padding:24px 28px;">
+          <p style="font-size:clamp(14px,1.9vw,16px);font-style:italic;color:var(--marrom);opacity:0.75;text-align:center;line-height:1.85;margin-bottom:24px;">Para facilitar a logística, combinamos pontos de entrega por região — assim os presentes chegam com segurança e sem preocupação no dia.</p>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="padding:16px 20px;border:1px solid var(--creme-escuro);background:var(--creme);">
+              <p style="font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--marrom-claro);margin-bottom:6px;">Casimiro de Abreu</p>
+              <p style="font-size:clamp(14px,2vw,16px);color:var(--marrom);line-height:1.65;">Entregar na casa dos pais da noiva — <em>Marcelo e Sandra</em></p>
+            </div>
+            <div style="padding:16px 20px;border:1px solid var(--creme-escuro);background:var(--creme);">
+              <p style="font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--marrom-claro);margin-bottom:6px;">Cabo Frio</p>
+              <p style="font-size:clamp(14px,2vw,16px);color:var(--marrom);line-height:1.65;">Entregar na casa dos pais do noivo — <em>Lívia e Marcello</em></p>
+            </div>
+            <div style="padding:16px 20px;border:1px solid var(--creme-escuro);background:var(--creme);">
+              <p style="font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--marrom-claro);margin-bottom:6px;">Niterói</p>
+              <p style="font-size:clamp(14px,2vw,16px);color:var(--marrom);line-height:1.65;">Entregar diretamente aos noivos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  </div>
+  </div>
 </section>
 
 <!-- ══════════ CONFIRMAÇÃO ══════════ -->
 <section id="confirmacao">
-  <p class="sec-label reveal">Sua presença é especial</p>
-  <h2 class="sec-title reveal">Confirme sua <em>Presença</em></h2>
-  <div class="ornament reveal"><span>❧</span></div>
-  <p class="rsvp-whats reveal">Confirme sua presença até o dia <strong>13 de maio</strong> pelo WhatsApp:</p>
-  <a href="https://wa.me/552126416001" class="whats-btn reveal">(21) 2641-6001</a>
+  <p class="sec-label reveal">Sua presença é especial</p>
+  <h2 class="sec-title reveal">Confirme sua <em>Presença</em></h2>
+  <div class="ornament reveal"><span>❧</span></div>
+  <p class="rsvp-whats reveal">Confirme sua presença até o dia <strong>13 de maio</strong> pelo WhatsApp:</p>
+  <a href="https://wa.me/552126416001" class="whats-btn reveal">(21) 2641-6001</a>
 </section>
 
 <!-- ══════════ LOCAL ══════════ -->
 <section id="local">
-  <p class="sec-label reveal">Como chegar</p>
-  <h2 class="sec-title reveal">O <em>Local</em></h2>
-  <div class="reveal" style="display:flex; align-items:center; justify-content:center; gap:16px; margin: 0 auto 40px; max-width:320px; width:100%;">
-    <span style="flex:1; height:1px; background: linear-gradient(to right, transparent, rgba(201,169,110,0.6)); display:block;"></span>
-    <span style="color:var(--dourado); font-size:17px; opacity:0.8;">❧</span>
-    <span style="flex:1; height:1px; background: linear-gradient(to left, transparent, rgba(201,169,110,0.6)); display:block;"></span>
-  </div>
-  <p class="reveal" style="font-style:italic; font-size:clamp(15px,2vw,18px); color:var(--creme); margin-bottom:32px; max-width:600px; margin-left:auto; margin-right:auto; padding: 0 24px; box-sizing:border-box;">
-    "Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão do Senhor fez isto..." — Isaías 41:20
-  </p>
-  <div class="flip-container reveal" onclick="this.classList.toggle('flipped')">
-    <div class="flip-inner">
-      <div class="flip-front">
-        <p class="address-name" style="margin-bottom: 25px;">Casa Ville Verte</p>
-        <img src="./casa.png" alt="Casa Ilustração" style="width: 250px; filter: brightness(0) invert(1) opacity(0.8);" />
-        <p class="hint-tap">Toque para ver o endereço</p>
-      </div>
-      <div class="flip-back">
-        <p class="address-name">Casa Ville Verte</p>
-        <p class="address-text" style="margin: 20px 0;">
-          Parque do Imbuí, 2815<br>
-          Teresópolis, Rio de Janeiro<br><br>
-          13 de julho de 2026
-        </p>
-        <a class="map-link" href="https://www.google.com/maps/place/Estr.+Parque+do+Imbu%C3%AD,+2815+-+Posse,+Teres%C3%B3polis+-+RJ,+25970-461/data=!4m2!3m1!1s0x984d012b8c575d:0xf6e4689e6f12fa3c?sa=X&ved=1t:242&ictx=111" target="_blank">Abrir no Google Maps →</a>
-      </div>
-    </div>
-  </div>
+  <p class="sec-label reveal">Como chegar</p>
+  <h2 class="sec-title reveal">O <em>Local</em></h2>
+  <div class="reveal" style="display:flex; align-items:center; justify-content:center; gap:16px; margin: 0 auto 40px; max-width:320px; width:100%;">
+    <span style="flex:1; height:1px; background: linear-gradient(to right, transparent, rgba(201,169,110,0.6)); display:block;"></span>
+    <span style="color:var(--dourado); font-size:17px; opacity:0.8;">❧</span>
+    <span style="flex:1; height:1px; background: linear-gradient(to left, transparent, rgba(201,169,110,0.6)); display:block;"></span>
+  </div>
+  <p class="reveal" style="font-style:italic; font-size:clamp(15px,2vw,18px); color:var(--creme); margin-bottom:32px; max-width:600px; margin-left:auto; margin-right:auto; padding: 0 24px; box-sizing:border-box;">
+    "Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão do Senhor fez isto..." — Isaías 41:20
+  </p>
+  <div class="flip-container reveal" onclick="this.classList.toggle('flipped')">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <p class="address-name" style="margin-bottom: 25px;">Casa Ville Verte</p>
+        <img src="./casa.png" alt="Casa Ilustração" style="width: 250px; filter: brightness(0) invert(1) opacity(0.8);" />
+        <p class="hint-tap">Toque para ver o endereço</p>
+      </div>
+      <div class="flip-back">
+        <p class="address-name">Casa Ville Verte</p>
+        <p class="address-text" style="margin: 20px 0;">
+          Parque do Imbuí, 2815<br>
+          Teresópolis, Rio de Janeiro<br><br>
+          13 de julho de 2026
+        </p>
+        <a class="map-link" href="https://www.google.com/maps/place/Estr.+Parque+do+Imbu%C3%AD,+2815+-+Posse,+Teres%C3%B3polis+-+RJ,+25970-461/data=!4m2!3m1!1s0x984d012b8c575d:0xf6e4689e6f12fa3c?sa=X&ved=1t:242&ictx=111" target="_blank">Abrir no Google Maps →</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════ FOOTER ══════════ -->
 <footer>
-  <img src="monograma.png" class="footer-sig"/>
-  <p class="footer-sub">13 · 07 · 2026 &nbsp;·&nbsp; Teresópolis, RJ</p>
-  <p class="footer-verse">"Para que todos vejam, e saibam, e considerem, e juntamente entendam<br>que a mão do Senhor fez isto..." — Isaías 41:20</p>
+  <img src="monograma.png" class="footer-sig"/>
+  <p class="footer-sub">13 · 07 · 2026 &nbsp;·&nbsp; Teresópolis, RJ</p>
+  <p class="footer-verse">"Para que todos vejam, e saibam, e considerem, e juntamente entendam<br>que a mão do Senhor fez isto..." — Isaías 41:20</p>
 </footer>
 
-  <!-- MÚSICA -->
+  <!-- MÚSICA -->
 <audio id="bg-music"></audio>
 <button class="music-btn" id="music-btn" title="Música">♪</button>
 <div id="track-info" style="
-  position: fixed; bottom: 80px; right: 28px; z-index: 200;
-  background: rgba(19,7,6,0.92); border: 1px solid rgba(201,169,110,0.3);
-  backdrop-filter: blur(8px); padding: 10px 14px;
-  font-family: 'Cormorant Garamond', serif; font-size: 13px;
-  color: var(--dourado); display: none; text-align: right;
-  max-width: 200px; line-height: 1.5;
+  position: fixed; bottom: 80px; right: 28px; z-index: 200;
+  background: rgba(19,7,6,0.92); border: 1px solid rgba(201,169,110,0.3);
+  backdrop-filter: blur(8px); padding: 10px 14px;
+  font-family: 'Cormorant Garamond', serif; font-size: 13px;
+  color: var(--dourado); display: none; text-align: right;
+  max-width: 200px; line-height: 1.5;
 "></div>
-  
+  
 <script>
 
- /* ── MODAL: PIX DO ITEM ── */
-  let pixPendingCatId = null;
+ /* ── MODAL: PIX DO ITEM ── */
+  let pixPendingCatId = null;
 
-  function openItemPixModal(catId, itemName, itemValue) {
-    pixPendingCatId = catId;
-    document.getElementById('pix-modal-item-name').textContent = itemName;
-    document.getElementById('pix-modal-item-value').textContent = 'R$ ' + itemValue;
-    document.getElementById('pixReserveName').value = '';
-    document.getElementById('btn-copy-item-pix').textContent = 'Copiar Chave';
-    document.getElementById('itemPixModal').classList.add('open');
-    setTimeout(() => document.getElementById('pixReserveName').focus(), 120);
-  }
+  function openItemPixModal(catId, itemName, itemValue) {
+    pixPendingCatId = catId;
+    document.getElementById('pix-modal-item-name').textContent = itemName;
+    document.getElementById('pix-modal-item-value').textContent = 'R$ ' + itemValue;
+    document.getElementById('pixReserveName').value = '';
+    document.getElementById('btn-copy-item-pix').textContent = 'Copiar Chave';
+    document.getElementById('itemPixModal').classList.add('open');
+    setTimeout(() => document.getElementById('pixReserveName').focus(), 120);
+  }
 
-  function closeItemPixModal() {
-    document.getElementById('itemPixModal').classList.remove('open');
-    pixPendingCatId = null;
-  }
+  function closeItemPixModal() {
+    document.getElementById('itemPixModal').classList.remove('open');
+    pixPendingCatId = null;
+  }
 
-  function copyItemPix() {
-    navigator.clipboard.writeText(PIX_KEY).then(() => {
-      const btn = document.getElementById('btn-copy-item-pix');
-      btn.textContent = 'Copiado ✓';
-      setTimeout(() => { btn.textContent = 'Copiar Chave'; }, 2500);
-    });
-  }
+  function copyItemPix() {
+    navigator.clipboard.writeText(PIX_KEY).then(() => {
+      const btn = document.getElementById('btn-copy-item-pix');
+      btn.textContent = 'Copiado ✓';
+      setTimeout(() => { btn.textContent = 'Copiar Chave'; }, 2500);
+    });
+  }
 
-  async function confirmPixReserve() {
-    const name = document.getElementById('pixReserveName').value.trim();
-    if (!name) { 
-      document.getElementById('pixReserveName').focus(); 
-      return; 
-    }
-    
-    // Salva a reserva no mesmo sistema do Firebase para bloquear a categoria
-    reservations[pixPendingCatId] = name;
-    localStorage.setItem('pp_reservas', JSON.stringify(reservations));
-    
-    const cat = document.querySelector('[data-cat-id="' + pixPendingCatId + '"]');
-    if(cat) applyReserved(cat, name);
-    
-    closeItemPixModal();
-    
-    try {
-      await saveToFirebase();
-    } catch(e) {}
-  }
+  async function confirmPixReserve() {
+    const name = document.getElementById('pixReserveName').value.trim();
+    if (!name) { 
+      document.getElementById('pixReserveName').focus(); 
+      return; 
+    }
+    
+    // Salva a reserva no mesmo sistema do Firebase para bloquear a categoria
+    reservations[pixPendingCatId] = name;
+    localStorage.setItem('pp_reservas', JSON.stringify(reservations));
+    
+    const cat = document.querySelector('[data-cat-id="' + pixPendingCatId + '"]');
+    if(cat) applyReserved(cat, name);
+    
+    closeItemPixModal();
+    
+    try {
+      await saveToFirebase();
+    } catch(e) {}
+  }
 
-  // Fechar o modal clicando fora dele
-  document.getElementById('itemPixModal').addEventListener('click', function(e) { 
-    if (e.target === this) closeItemPixModal(); 
-  });
-  
-  // Confirmar com Enter
-  document.getElementById('pixReserveName').addEventListener('keydown', function(e) { 
-    if (e.key === 'Enter') confirmPixReserve(); 
-  });
-  
-  /* ── PLAYER COM PLAYLIST ── */
-  const playlist = [
-    { src: './musica.mp3',  title: 'Bridgerton Theme' },
-    { src: './musica2.mp3', title: '360 (Arr. For Cello Obligato and String Quartet)' },
-    { src: './musica3.mp3', title: 'Girls Like you' },
-    { src: './musica4.mp3', title: 'How Deep Is Your Love - Kiris Houston' },
-    /* adicione quantas quiser */
-  ];
+  // Fechar o modal clicando fora dele
+  document.getElementById('itemPixModal').addEventListener('click', function(e) { 
+    if (e.target === this) closeItemPixModal(); 
+  });
+  
+  // Confirmar com Enter
+  document.getElementById('pixReserveName').addEventListener('keydown', function(e) { 
+    if (e.key === 'Enter') confirmPixReserve(); 
+  });
+  
+  /* ── PLAYER COM PLAYLIST ── */
+  const playlist = [
+    { src: './musica.mp3',  title: 'Bridgerton Theme' },
+    { src: './musica2.mp3', title: '360 (Arr. For Cello Obligato and String Quartet)' },
+    { src: './musica3.mp3', title: 'Girls Like you' },
+    { src: './musica4.mp3', title: 'How Deep Is Your Love - Kiris Houston' },
+    /* adicione quantas quiser */
+  ];
 
-  let currentTrack = Math.floor(Math.random() * playlist.length);
-  let playing = false;
+  let currentTrack = Math.floor(Math.random() * playlist.length);
+  let playing = false;
 
-  const audio   = document.getElementById('bg-music');
-  const btn     = document.getElementById('music-btn');
-  const info    = document.getElementById('track-info');
+  const audio   = document.getElementById('bg-music');
+  const btn     = document.getElementById('music-btn');
+  const info    = document.getElementById('track-info');
 
-  audio.volume = 0.35;
+  audio.volume = 0.35;
 
-  function loadTrack(index) {
-    audio.src = playlist[index].src;
-    info.innerHTML = `
-      <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.2em;opacity:0.6;margin-bottom:4px;">TOCANDO AGORA</div>
-      ${playlist[index].title}
-      <div style="margin-top:8px;display:flex;gap:10px;justify-content:flex-end;">
-        <span onclick="prevTrack()" style="cursor:pointer;opacity:0.7;">&#8592; ant</span>
-        <span onclick="nextTrack()" style="cursor:pointer;opacity:0.7;">próx &#8594;</span>
-      </div>`;
-  }
+  function loadTrack(index) {
+    audio.src = playlist[index].src;
+    info.innerHTML = `
+      <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.2em;opacity:0.6;margin-bottom:4px;">TOCANDO AGORA</div>
+      ${playlist[index].title}
+      <div style="margin-top:8px;display:flex;gap:10px;justify-content:flex-end;">
+        <span onclick="prevTrack()" style="cursor:pointer;opacity:0.7;">&#8592; ant</span>
+        <span onclick="nextTrack()" style="cursor:pointer;opacity:0.7;">próx &#8594;</span>
+      </div>`;
+  }
 
-  function nextTrack() {
-    currentTrack = (currentTrack + 1) % playlist.length;
-    loadTrack(currentTrack);
-    if (playing) audio.play();
-  }
+  function nextTrack() {
+    currentTrack = (currentTrack + 1) % playlist.length;
+    loadTrack(currentTrack);
+    if (playing) audio.play();
+  }
 
-  function prevTrack() {
-    currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
-    loadTrack(currentTrack);
-    if (playing) audio.play();
-  }
+  function prevTrack() {
+    currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
+    loadTrack(currentTrack);
+    if (playing) audio.play();
+  }
 
-  /* avança automaticamente ao terminar a faixa */
-  audio.addEventListener('ended', () => {
-    audio.loop = false;
-    nextTrack();
-  });
+  /* avança automaticamente ao terminar a faixa */
+  audio.addEventListener('ended', () => {
+    audio.loop = false;
+    nextTrack();
+  });
 
-  loadTrack(currentTrack);
+  loadTrack(currentTrack);
 
-  /* toque inicial no primeiro clique */
-  document.addEventListener('click', function startOnInteraction() {
-    if (!playing) {
-      audio.play().then(() => {
-        playing = true;
-        btn.style.color = 'var(--dourado)';
-        info.style.display = 'block';
-      }).catch(() => {});
-    }
-    document.removeEventListener('click', startOnInteraction);
-  }, { once: true });
+  /* toque inicial no primeiro clique */
+  document.addEventListener('click', function startOnInteraction() {
+    if (!playing) {
+      audio.play().then(() => {
+        playing = true;
+        btn.style.color = 'var(--dourado)';
+        info.style.display = 'block';
+      }).catch(() => {});
+    }
+    document.removeEventListener('click', startOnInteraction);
+  }, { once: true });
 
-  /* botão: play/pause + mostrar info */
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (playing) {
-      audio.pause();
-      playing = false;
-      btn.style.color = 'rgba(201,169,110,0.35)';
-      info.style.display = 'none';
-    } else {
-      audio.play();
-      playing = true;
-      btn.style.color = 'var(--dourado)';
-      info.style.display = 'block';
-    }
-  });
+  /* botão: play/pause + mostrar info */
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (playing) {
+      audio.pause();
+      playing = false;
+      btn.style.color = 'rgba(201,169,110,0.35)';
+      info.style.display = 'none';
+    } else {
+      audio.play();
+      playing = true;
+      btn.style.color = 'var(--dourado)';
+      info.style.display = 'block';
+    }
+  });
 
-  /* tentativa de autoplay */
-  audio.play().then(() => {
-    playing = true;
-    info.style.display = 'block';
-  }).catch(() => {});
+  /* tentativa de autoplay */
+  audio.play().then(() => {
+    playing = true;
+    info.style.display = 'block';
+  }).catch(() => {});
 </script>
 
 <!-- ══════════ MODAL: RESERVAR ══════════ -->
 <div class="modal-overlay" id="reserveModal">
-  <div class="modal-box">
-    <h3>Reservar presente</h3>
-    <p class="modal-item-name" id="modal-item-name"></p>
-    <p class="modal-desc">Digite seu nome para reservar este item.<br>Ele ficará marcado para todos os convidados.</p>
-    <input type="text" id="reserveName" placeholder="Seu nome" maxlength="60" autocomplete="off"/>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeReserveModal()">Cancelar</button>
-      <button class="btn-confirm" onclick="confirmReserve()">Reservar ✓</button>
-    </div>
-  </div>
+  <div class="modal-box">
+    <h3>Reservar presente</h3>
+    <p class="modal-item-name" id="modal-item-name"></p>
+    <p class="modal-desc">Digite seu nome para reservar este item.<br>Ele ficará marcado para todos os convidados.</p>
+    <input type="text" id="reserveName" placeholder="Seu nome" maxlength="60" autocomplete="off"/>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeReserveModal()">Cancelar</button>
+      <button class="btn-confirm" onclick="confirmReserve()">Reservar ✓</button>
+    </div>
+  </div>
 </div>
 
 <!-- ══════════ MODAL: CANCELAR RESERVA ══════════ -->
 <div class="modal-overlay" id="cancelModal">
-  <div class="modal-box">
-    <h3>Cancelar reserva</h3>
-    <p class="modal-item-name" id="cancel-item-name"></p>
-    <p class="modal-desc">Tem certeza que deseja cancelar a reserva deste item?<br>Ele voltará a ficar disponível para outros convidados.</p>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeCancelModal()">Manter reserva</button>
-      <button class="btn-danger" onclick="confirmCancel()">Sim, cancelar</button>
-    </div>
-  </div>
+  <div class="modal-box">
+    <h3>Cancelar reserva</h3>
+    <p class="modal-item-name" id="cancel-item-name"></p>
+    <p class="modal-desc">Tem certeza que deseja cancelar a reserva deste item?<br>Ele voltará a ficar disponível para outros convidados.</p>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeCancelModal()">Manter reserva</button>
+      <button class="btn-danger" onclick="confirmCancel()">Sim, cancelar</button>
+    </div>
+  </div>
 </div>
 
 <!-- ══════════ MODAL: PIX DO ITEM ══════════ -->
 <div class="modal-overlay" id="itemPixModal">
-  <div class="modal-box">
-    <h3>Presentear no Pix</h3>
-    <p class="modal-item-name" id="pix-modal-item-name"></p>
-    <p class="modal-desc" style="margin-bottom: 20px;">Valor: <strong id="pix-modal-item-value" style="color: var(--dourado);">R$ 000,00</strong><br>Copie a chave abaixo para transferir o valor e em seguida confirme sua reserva.</p>
-    
-    <div class="pix-modal-key" id="modal-pix-key-display">
-      paollamcontildes@gmail.com
-    </div>
-    
-    <input type="text" id="pixReserveName" placeholder="Seu nome para registrar o presente" maxlength="60" autocomplete="off" style="margin-bottom: 24px; text-align: center;"/>
+  <div class="modal-box">
+    <h3>Presentear no Pix</h3>
+    <p class="modal-item-name" id="pix-modal-item-name"></p>
+    <p class="modal-desc" style="margin-bottom: 20px;">Valor: <strong id="pix-modal-item-value" style="color: var(--dourado);">R$ 000,00</strong><br>Copie a chave abaixo para transferir o valor e em seguida confirme sua reserva.</p>
+    
+    <div class="pix-modal-key" id="modal-pix-key-display">
+      paollamcontildes@gmail.com
+    </div>
+    
+    <input type="text" id="pixReserveName" placeholder="Seu nome para registrar o presente" maxlength="60" autocomplete="off" style="margin-bottom: 24px; text-align: center;"/>
 
-    <div class="modal-actions" style="flex-wrap: wrap; gap: 12px; justify-content: center;">
-      <button class="btn-cancel" onclick="closeItemPixModal()">Cancelar</button>
-      <button class="btn-cancel" id="btn-copy-item-pix" onclick="copyItemPix()">Copiar Chave</button>
-      <button class="btn-confirm" onclick="confirmPixReserve()" style="width: 100%; margin-top: 8px;">Já paguei e Reservar ✓</button>
-    </div>
-  </div>
+    <div class="modal-actions" style="flex-wrap: wrap; gap: 12px; justify-content: center;">
+      <button class="btn-cancel" onclick="closeItemPixModal()">Cancelar</button>
+      <button class="btn-cancel" id="btn-copy-item-pix" onclick="copyItemPix()">Copiar Chave</button>
+      <button class="btn-confirm" onclick="confirmPixReserve()" style="width: 100%; margin-top: 8px;">Já paguei e Reservar ✓</button>
+    </div>
+  </div>
 </div>
 
 <script>
-  /* ── CONTAGEM REGRESSIVA ── */
-  function tick() {
-    const diff = new Date('2026-07-13T11:30:00') - new Date();
-    if (diff <= 0) { ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent='00'); return; }
-    const p = n => String(n).padStart(2,'0');
-    document.getElementById('cd-d').textContent = p(Math.floor(diff/86400000));
-    document.getElementById('cd-h').textContent = p(Math.floor(diff%86400000/3600000));
-    document.getElementById('cd-m').textContent = p(Math.floor(diff%3600000/60000));
-    document.getElementById('cd-s').textContent = p(Math.floor(diff%60000/1000));
-  }
-  tick(); setInterval(tick,1000);
+  /* ── CONTAGEM REGRESSIVA ── */
+  function tick() {
+    const diff = new Date('2026-07-13T11:30:00') - new Date();
+    if (diff <= 0) { ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent='00'); return; }
+    const p = n => String(n).padStart(2,'0');
+    document.getElementById('cd-d').textContent = p(Math.floor(diff/86400000));
+    document.getElementById('cd-h').textContent = p(Math.floor(diff%86400000/3600000));
+    document.getElementById('cd-m').textContent = p(Math.floor(diff%3600000/60000));
+    document.getElementById('cd-s').textContent = p(Math.floor(diff%60000/1000));
+  }
+  tick(); setInterval(tick,1000);
 
-  /* ── SCROLL REVEAL ── */
-  document.querySelectorAll('.reveal').forEach(el => {
-    new IntersectionObserver(([e]) => { if(e.isIntersecting) e.target.classList.add('visible'); },{threshold:0.1}).observe(el);
-  });
+  /* ── SCROLL REVEAL ── */
+  document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver(([e]) => { if(e.isIntersecting) e.target.classList.add('visible'); },{threshold:0.1}).observe(el);
+  });
 
-  /* ── ACCORDION ── */
-  function toggleTier(id) {
-    const tier = document.getElementById(id);
-    const isOpen = tier.classList.contains('open');
-    document.querySelectorAll('.acc-tier').forEach(t => t.classList.remove('open'));
-    if (!isOpen) tier.classList.add('open');
-  }
+  /* ── ACCORDION ── */
+  function toggleTier(id) {
+    const tier = document.getElementById(id);
+    const isOpen = tier.classList.contains('open');
+    document.querySelectorAll('.acc-tier').forEach(t => t.classList.remove('open'));
+    if (!isOpen) tier.classList.add('open');
+  }
 
 
-  /* ── SISTEMA DE RESERVA ── */
-  const FIREBASE_URL = 'https://paollapaulo-bf6b0-default-rtdb.firebaseio.com';
-  let pendingId = null, cancelPendingId = null, reservations = {}, saving = false;
+  /* ── SISTEMA DE RESERVA ── */
+  const FIREBASE_URL = 'https://paollapaulo-bf6b0-default-rtdb.firebaseio.com';
+  let pendingId = null, cancelPendingId = null, reservations = {}, saving = false;
 
-  function updateCounter() {
-    const count = document.querySelectorAll('.gift-category.is-reserved').length;
-    const el = document.getElementById('reserve-count');
-    if (el) el.textContent = count;
-  }
+  function updateCounter() {
+    const count = document.querySelectorAll('.gift-category.is-reserved').length;
+    const el = document.getElementById('reserve-count');
+    if (el) el.textContent = count;
+  }
 
-  function applyReserved(catEl, name) {
-    catEl.classList.add('is-reserved');
-    const header = catEl.querySelector('.gift-cat-header');
-    const titleEl = catEl.querySelector('.gift-cat-title') || catEl.querySelector('.reserved-item-title');
-    const titleText = catEl.dataset.title || (titleEl ? titleEl.textContent : '');
-    const catId = catEl.dataset.catId;
-    header.innerHTML = `
-      <div class="reserved-inner" onclick="openCancelModal('${catId}', '${titleText.replace(/'/g,"\\'")}', event)">
-        <div class="reserved-checkmark">✓</div>
-        <div class="reserved-info">
-          <p class="reserved-item-title">${titleText}</p>
-          <p class="reserved-donor">por ${name}</p>
-          <p class="reserved-hint">Clique para cancelar</p>
-        </div>
-        <span class="reserved-tag">Reservado</span>
-      </div>`;
-    updateCounter();
-  }
+  function applyReserved(catEl, name) {
+    catEl.classList.add('is-reserved');
+    const header = catEl.querySelector('.gift-cat-header');
+    const titleEl = catEl.querySelector('.gift-cat-title') || catEl.querySelector('.reserved-item-title');
+    const titleText = catEl.dataset.title || (titleEl ? titleEl.textContent : '');
+    const catId = catEl.dataset.catId;
+    header.innerHTML = `
+      <div class="reserved-inner" onclick="openCancelModal('${catId}', '${titleText.replace(/'/g,"\\'")}', event)">
+        <div class="reserved-checkmark">✓</div>
+        <div class="reserved-info">
+          <p class="reserved-item-title">${titleText}</p>
+          <p class="reserved-donor">por ${name}</p>
+          <p class="reserved-hint">Clique para cancelar</p>
+        </div>
+        <span class="reserved-tag">Reservado</span>
+      </div>`;
+    updateCounter();
+  }
 
-  function revertToAvailable(catEl, titleText) {
-    catEl.classList.remove('is-reserved');
-    const header = catEl.querySelector('.gift-cat-header');
-    const catId = catEl.dataset.catId;
-    // Restore the original title and button
-    const nameParts = titleText.replace(/\\/g, '');
-    header.innerHTML = `
-      <p class="gift-cat-title">${titleText}</p>
-      <button class="reserve-btn" onclick="openReserveModal('${catId}','${titleText.replace(/'/g,"\\'")}',event)">♡ Vou presentear</button>`;
-    // Show gift items again
-    catEl.querySelectorAll('.gift-item').forEach(el => el.style.display = '');
-    updateCounter();
-  }
+  function revertToAvailable(catEl, titleText) {
+    catEl.classList.remove('is-reserved');
+    const header = catEl.querySelector('.gift-cat-header');
+    const catId = catEl.dataset.catId;
+    // Restore the original title and button
+    const nameParts = titleText.replace(/\\/g, '');
+    header.innerHTML = `
+      <p class="gift-cat-title">${titleText}</p>
+      <button class="reserve-btn" onclick="openReserveModal('${catId}','${titleText.replace(/'/g,"\\'")}',event)">♡ Vou presentear</button>`;
+    // Show gift items again
+    catEl.querySelectorAll('.gift-item').forEach(el => el.style.display = '');
+    updateCounter();
+  }
 
-  function renderAll() {
-    // Guarda o título original no data-title antes de qualquer substituição
-    document.querySelectorAll('[data-cat-id]').forEach(cat => {
-      if (!cat.dataset.title) {
-        const t = cat.querySelector('.gift-cat-title');
-        if (t) cat.dataset.title = t.textContent;
-      }
-    });
-    document.querySelectorAll('[data-cat-id]').forEach(cat => {
-      const id = cat.dataset.catId;
-      const isReserved = cat.classList.contains('is-reserved');
-      if (reservations[id]) {
-        if (!isReserved) applyReserved(cat, reservations[id]);
-      } else if (isReserved) {
-        revertToAvailable(cat, cat.dataset.title || '');
-      }
-    });
-    updateCounter();
-  }
+  function renderAll() {
+    // Guarda o título original no data-title antes de qualquer substituição
+    document.querySelectorAll('[data-cat-id]').forEach(cat => {
+      if (!cat.dataset.title) {
+        const t = cat.querySelector('.gift-cat-title');
+        if (t) cat.dataset.title = t.textContent;
+      }
+    });
+    document.querySelectorAll('[data-cat-id]').forEach(cat => {
+      const id = cat.dataset.catId;
+      const isReserved = cat.classList.contains('is-reserved');
+      if (reservations[id]) {
+        if (!isReserved) applyReserved(cat, reservations[id]);
+      } else if (isReserved) {
+        revertToAvailable(cat, cat.dataset.title || '');
+      }
+    });
+    updateCounter();
+  }
 
-  async function saveToFirebase() {
-    if (saving) return;
-    saving = true;
-    try {
-      await fetch(FIREBASE_URL + '/reservas.json', {
-        method: 'PUT', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(reservations)
-      });
-    } catch(e) { console.log('Erro ao salvar:', e); }
-    saving = false;
-  }
+  async function saveToFirebase() {
+    if (saving) return;
+    saving = true;
+    try {
+      await fetch(FIREBASE_URL + '/reservas.json', {
+        method: 'PUT', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(reservations)
+      });
+    } catch(e) { console.log('Erro ao salvar:', e); }
+    saving = false;
+  }
 
-  async function loadReservations() {
-    try { reservations = JSON.parse(localStorage.getItem('pp_reservas') || '{}'); renderAll(); } catch(e) {}
-    try {
-      const res = await fetch(FIREBASE_URL + '/reservas.json');
-      const data = await res.json();
-      reservations = data || {};
-      localStorage.setItem('pp_reservas', JSON.stringify(reservations));
-      renderAll();
-    } catch(e) { console.log('Firebase indisponível, usando cache local'); }
-  }
+  async function loadReservations() {
+    try { reservations = JSON.parse(localStorage.getItem('pp_reservas') || '{}'); renderAll(); } catch(e) {}
+    try {
+      const res = await fetch(FIREBASE_URL + '/reservas.json');
+      const data = await res.json();
+      reservations = data || {};
+      localStorage.setItem('pp_reservas', JSON.stringify(reservations));
+      renderAll();
+    } catch(e) { console.log('Firebase indisponível, usando cache local'); }
+  }
 
-  /* ── MODAL: RESERVAR ── */
-  function openReserveModal(catId, catName, e) {
-    if (e) e.stopPropagation();
-    document.getElementById('modal-item-name').textContent = catName;
-    document.getElementById('reserveName').value = '';
-    pendingId = catId;
-    document.getElementById('reserveModal').classList.add('open');
-    setTimeout(() => document.getElementById('reserveName').focus(), 120);
-  }
-  function closeReserveModal() {
-    document.getElementById('reserveModal').classList.remove('open');
-    pendingId = null;
-  }
-  async function confirmReserve() {
-    const name = document.getElementById('reserveName').value.trim();
-    if (!name) { document.getElementById('reserveName').focus(); return; }
-    reservations[pendingId] = name;
-    localStorage.setItem('pp_reservas', JSON.stringify(reservations));
-    const cat = document.querySelector('[data-cat-id="' + pendingId + '"]');
-    applyReserved(cat, name);
-    closeReserveModal();
-    try {
+  /* ── MODAL: RESERVAR ── */
+  function openReserveModal(catId, catName, e) {
+    if (e) e.stopPropagation();
+    document.getElementById('modal-item-name').textContent = catName;
+    document.getElementById('reserveName').value = '';
+    pendingId = catId;
+    document.getElementById('reserveModal').classList.add('open');
+    setTimeout(() => document.getElementById('reserveName').focus(), 120);
+  }
+  function closeReserveModal() {
+    document.getElementById('reserveModal').classList.remove('open');
+    pendingId = null;
+  }
+  async function confirmReserve() {
+    const name = document.getElementById('reserveName').value.trim();
+    if (!name) { document.getElementById('reserveName').focus(); return; }
+    reservations[pendingId] = name;
+    localStorage.setItem('pp_reservas', JSON.stringify(reservations));
+    const cat = document.querySelector('[data-cat-id="' + pendingId + '"]');
+    applyReserved(cat, name);
+    closeReserveModal();
+    try {
 await saveToFirebase();
-  } catch(e) {}
-  }
-  document.getElementById('reserveModal').addEventListener('click', function(e) { if (e.target === this) closeReserveModal(); });
-  document.getElementById('reserveName').addEventListener('keydown', function(e) { if (e.key === 'Enter') confirmReserve(); });
+  } catch(e) {}
+  }
+  document.getElementById('reserveModal').addEventListener('click', function(e) { if (e.target === this) closeReserveModal(); });
+  document.getElementById('reserveName').addEventListener('keydown', function(e) { if (e.key === 'Enter') confirmReserve(); });
 
-  /* ── MODAL: CANCELAR ── */
-  function openCancelModal(catId, catName, e) {
-    if (e) e.stopPropagation();
-    document.getElementById('cancel-item-name').textContent = catName;
-    cancelPendingId = catId;
-    document.getElementById('cancelModal').classList.add('open');
-  }
-  function closeCancelModal() {
-    document.getElementById('cancelModal').classList.remove('open');
-    cancelPendingId = null;
-  }
-  async function confirmCancel() {
-    const catEl = document.querySelector('[data-cat-id="' + cancelPendingId + '"]');
-    const titleEl = catEl.querySelector('.reserved-item-title');
-    const titleText = titleEl ? titleEl.textContent : '';
-    delete reservations[cancelPendingId];
-    localStorage.setItem('pp_reservas', JSON.stringify(reservations));
-    revertToAvailable(catEl, titleText);
-    closeCancelModal();
-    try {
+  /* ── MODAL: CANCELAR ── */
+  function openCancelModal(catId, catName, e) {
+    if (e) e.stopPropagation();
+    document.getElementById('cancel-item-name').textContent = catName;
+    cancelPendingId = catId;
+    document.getElementById('cancelModal').classList.add('open');
+  }
+  function closeCancelModal() {
+    document.getElementById('cancelModal').classList.remove('open');
+    cancelPendingId = null;
+  }
+  async function confirmCancel() {
+    const catEl = document.querySelector('[data-cat-id="' + cancelPendingId + '"]');
+    const titleEl = catEl.querySelector('.reserved-item-title');
+    const titleText = titleEl ? titleEl.textContent : '';
+    delete reservations[cancelPendingId];
+    localStorage.setItem('pp_reservas', JSON.stringify(reservations));
+    revertToAvailable(catEl, titleText);
+    closeCancelModal();
+    try {
 await saveToFirebase();
-  } catch(e) {}
-  }
-  document.getElementById('cancelModal').addEventListener('click', function(e) { if (e.target === this) closeCancelModal(); });
+  } catch(e) {}
+  }
+  document.getElementById('cancelModal').addEventListener('click', function(e) { if (e.target === this) closeCancelModal(); });
 
-  /* ── PIX ── */
-  const PIX_KEY = 'paollamcontildes@gmail.com';
-  const PIX_NAME = 'Paolla Marinho Contildes';
 
-  document.getElementById('pix-key-display').textContent = PIX_KEY;
-
-  function copyPix() {
-    navigator.clipboard.writeText(PIX_KEY).then(() => {
-      const btn = document.getElementById('pix-copy-btn');
-      btn.textContent = 'Copiado ✓';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = 'Copiar chave'; btn.classList.remove('copied'); }, 2500);
-    });
-  }
-
-  loadReservations();
-  setInterval(loadReservations, 30000);
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) loadReservations(); });
+  loadReservations();
+  setInterval(loadReservations, 30000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) loadReservations(); });
 </script>
 </body>
 </html>
