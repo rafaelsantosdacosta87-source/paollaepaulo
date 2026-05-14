@@ -172,15 +172,16 @@
       background: rgba(201,169,110,0.1); 
       border: 1px dashed var(--dourado); 
       border-radius: 4px;
-      padding: 16px; 
+      padding: 16px 12px; 
       margin-bottom: 24px; 
-      font-family: 'Cinzel', serif;
-      font-size: clamp(14px, 2.5vw, 16px); 
+      font-family: 'Cormorant Garamond', serif; /* Fonte mais adequada para leitura de e-mail */
+      font-size: clamp(18px, 4.5vw, 22px); /* Letra um pouco maior */
       color: var(--dourado-claro); 
       text-align: center;
-      word-break: break-all;
-      letter-spacing: 0.1em;
-      font-weight: 500;
+      word-break: break-word; /* Só quebra a linha se a palavra inteira não couber */
+      letter-spacing: normal; /* Tira o espaçamento excessivo */
+      font-weight: 600;
+      text-transform: lowercase; /* Força o e-mail a ficar todo em minúsculo */
     }
 
     /* ── GIFT CAT HEADER ── */
