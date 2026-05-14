@@ -184,6 +184,21 @@
       text-transform: lowercase; /* Força o e-mail a ficar todo em minúsculo */
     }
 
+    /* ── IMAGEM DAS EXPERIÊNCIAS ── */
+    .exp-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--creme-escuro);
+      transition: all 0.3s;
+    }
+    
+    /* Deixa a imagem opaca e cinza se o item for reservado */
+    .gift-category.is-reserved .exp-img {
+      opacity: 0.3;
+      filter: grayscale(100%);
+    }
     /* ── GIFT CAT HEADER ── */
     .gift-cat-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 14px; }
     .gift-cat-title { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--marrom); margin: 0; flex: 1; min-width: 0; line-height: 1.4; }
@@ -798,6 +813,50 @@
       </div></div>
     </div>
 
+    <!-- FAIXA EXPERIÊNCIAS (LUA DE MEL) -->
+    <div class="acc-tier" id="tier-exp">
+      <div class="acc-header" onclick="toggleTier('tier-exp')">
+        <div>
+          <p class="acc-tier-label">Lua de Mel</p>
+          <p class="acc-tier-range">Experiências</p>
+        </div>
+        <span class="acc-arrow">↓</span>
+      </div>
+      <div class="acc-body"><div class="acc-body-inner">
+
+        <!-- EXPERIÊNCIA 1 -->
+        <div class="gift-category" data-cat-id="exp-001">
+          <!-- Coloque o link da imagem no src="" -->
+          <img src="./farellones.jpg" alt="Dia de Neve em Farellones" class="exp-img" />
+          
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Dia de Neve em Farellones</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 500,00</span>
+            </div>
+            <!-- O botão já abre direto o modal do Pix -->
+            <button class="reserve-btn" onclick="openItemPixModal('exp-001', 'Dia de Neve em Farellones', '500,00')">♡ Presentear no Pix</button>
+          </div>
+        </div>
+
+        <!-- EXPERIÊNCIA 2 -->
+        <div class="gift-category" data-cat-id="exp-002">
+          <!-- Coloque o link da imagem no src="" -->
+          <img src="./vinicola.jpg" alt="Tour em Vinícola" class="exp-img" />
+          
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Tour em Vinícola</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 350,00</span>
+            </div>
+            <!-- O botão já abre direto o modal do Pix -->
+            <button class="reserve-btn" onclick="openItemPixModal('exp-002', 'Tour em Vinícola', '350,00')">♡ Presentear no Pix</button>
+          </div>
+        </div>
+
+      </div></div>
+    </div>
+    
     <!-- FAIXA PIX -->
     <div class="acc-tier acc-tier-pix" id="tier-pix">
       <div class="acc-header" onclick="toggleTier('tier-pix')">
