@@ -156,6 +156,28 @@
     .gift-links { display: flex; flex-wrap: wrap; gap: 8px; }
     .gift-link { display: inline-block; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--marrom-claro); text-decoration: none; border: 1px solid var(--creme-escuro); padding: 5px 12px; transition: all 0.25s; }
     .gift-link:hover { background: var(--creme); border-color: var(--dourado); color: var(--marrom); }
+    /* ── BOTAO PIX NOS ITENS ── */
+    .gift-link-pix { 
+      background: rgba(201,169,110,0.1); 
+      border-color: var(--dourado); 
+      color: var(--marrom); 
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .gift-link-pix:hover { 
+      background: var(--dourado); 
+      color: var(--marrom); 
+    }
+    .pix-modal-key {
+      background: rgba(243,235,224,0.06); 
+      border-bottom: 1px solid rgba(201,169,110,0.4); 
+      padding: 12px; 
+      margin-bottom: 24px; 
+      font-size: clamp(16px, 2.5vw, 18px); 
+      color: var(--creme); 
+      word-break: break-all;
+      letter-spacing: 0.05em;
+    }
 
     /* ── GIFT CAT HEADER ── */
     .gift-cat-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 14px; }
@@ -665,6 +687,34 @@
 "></div>
   
 <script>
+
+  /* ── MODAL: PIX DO ITEM ── */
+  function openItemPixModal(itemName) {
+    document.getElementById('pix-modal-item-name').textContent = itemName;
+    document.getElementById('btn-copy-item-pix').textContent = 'Copiar Chave';
+    document.getElementById('itemPixModal').classList.add('open');
+  }
+
+  function closeItemPixModal() {
+    document.getElementById('itemPixModal').classList.remove('open');
+  }
+
+  function copyItemPix() {
+    navigator.clipboard.writeText(PIX_KEY).then(() => {
+      const btn = document.getElementById('btn-copy-item-pix');
+      btn.textContent = 'Copiado ✓';
+      // Retorna o texto ao normal após 2.5 segundos
+      setTimeout(() => { 
+        btn.textContent = 'Copiar Chave'; 
+      }, 2500);
+    });
+  }
+
+  // Fechar o modal clicando fora dele
+  document.getElementById('itemPixModal').addEventListener('click', function(e) { 
+    if (e.target === this) closeItemPixModal(); 
+  });
+  
   /* ── PLAYER COM PLAYLIST ── */
   const playlist = [
     { src: './musica.mp3',  title: 'Bridgerton Theme' },
