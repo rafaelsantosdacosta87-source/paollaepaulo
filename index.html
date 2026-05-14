@@ -1461,24 +1461,6 @@ await saveToFirebase();
   }
   document.getElementById('cancelModal').addEventListener('click', function(e) { if (e.target === this) closeCancelModal(); });
 
-  /* ── PIX ── */
-  const PIX_KEY = 'paollamcontildes@gmail.com';
-  const PIX_NAME = 'Paolla Marinho Contildes';
-
-  document.getElementById('pix-key-display').textContent = PIX_KEY;
-
-  function copyPix() {
-    navigator.clipboard.writeText(PIX_KEY).then(() => {
-      const btn = document.getElementById('pix-copy-btn');
-      btn.textContent = 'Copiado ✓';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = 'Copiar chave'; btn.classList.remove('copied'); }, 2500);
-    });
-  }
-
-  loadReservations();
-  setInterval(loadReservations, 30000);
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) loadReservations(); });
 </script>
 </body>
 </html>
