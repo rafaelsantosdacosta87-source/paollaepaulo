@@ -169,14 +169,18 @@
       color: var(--marrom); 
     }
     .pix-modal-key {
-      background: rgba(243,235,224,0.06); 
-      border-bottom: 1px solid rgba(201,169,110,0.4); 
-      padding: 12px; 
+      background: rgba(201,169,110,0.1); 
+      border: 1px dashed var(--dourado); 
+      border-radius: 4px;
+      padding: 16px; 
       margin-bottom: 24px; 
-      font-size: clamp(16px, 2.5vw, 18px); 
-      color: var(--creme); 
+      font-family: 'Cinzel', serif;
+      font-size: clamp(14px, 2.5vw, 16px); 
+      color: var(--dourado-claro); 
+      text-align: center;
       word-break: break-all;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
+      font-weight: 500;
     }
 
     /* ── GIFT CAT HEADER ── */
@@ -449,77 +453,141 @@
         <span class="acc-arrow">↓</span>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
+        
         <div class="gift-category" data-cat-id="cat-001">
-          <div class="gift-cat-header"><p class="gift-cat-title">Liquidificador</p><button class="reserve-btn" onclick="openReserveModal('cat-001','Liquidificador',event)">♡ Vou presentear</button></div>
-          <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Oster 1400W</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/47dvdIA" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28WFzh2" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-001', 'Oster 1400W', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Liquidificador</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-001','Liquidificador',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Electrolux 1500W</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://meli.la/32srsgZ" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4sYhnlK" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-001', 'Electrolux 1500W', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Oster 1400W</p>
+            <div class="gift-links"><a href="https://amzn.to/47dvdIA" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28WFzh2" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-001', 'Liquidificador', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          </div>
+          <div class="gift-item">
+            <p class="gift-name">Electrolux 1500W</p>
+            <div class="gift-links"><a href="https://meli.la/32srsgZ" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4sYhnlK" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-001', 'Liquidificador', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-001b">
-          <div class="gift-cat-header"><p class="gift-cat-title">Processador de Alimentos</p><button class="reserve-btn" onclick="openReserveModal('cat-001b','Processador de Alimentos',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Processador de Alimentos</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-001b','Processador de Alimentos',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Black & Decker 2L</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://meli.la/2RxuaCz" target="_blank" class="gift-link">Mercado Livre</a><span class="gift-link" style="opacity:0.4;cursor:default;border-style:dashed;">Amazon (em breve)</span><a onclick="openItemPixModal('cat-001b', 'Black & Decker 2L', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Black & Decker 2L</p>
+            <div class="gift-links"><a href="https://meli.la/2RxuaCz" target="_blank" class="gift-link">Mercado Livre</a><span class="gift-link" style="opacity:0.4;cursor:default;border-style:dashed;">Amazon (em breve)</span><a onclick="openItemPixModal('cat-001b', 'Processador de Alimentos', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-002">
-          <div class="gift-cat-header"><p class="gift-cat-title">Sanduicheira Grill</p><button class="reserve-btn" onclick="openReserveModal('cat-002','Sanduicheira Grill',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Sanduicheira Grill</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-002','Sanduicheira Grill',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Oster 1000W</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/4sYy8xd" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/3237nDa" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-002', 'Oster 1000W', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Oster 1000W</p>
+            <div class="gift-links"><a href="https://amzn.to/4sYy8xd" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/3237nDa" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-002', 'Sanduicheira Grill', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-003">
-          <div class="gift-cat-header"><p class="gift-cat-title">Escorredor de Louça</p><button class="reserve-btn" onclick="openReserveModal('cat-003','Escorredor de Louça',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Escorredor de Louça</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-003','Escorredor de Louça',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Tramontina Inox</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://meli.la/31mjcVA" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4bVGrEb" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-003', 'Tramontina Inox', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Tramontina Inox</p>
+            <div class="gift-links"><a href="https://meli.la/31mjcVA" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4bVGrEb" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-003', 'Escorredor de Louça', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-004">
-          <div class="gift-cat-header"><p class="gift-cat-title">Chaleira</p><button class="reserve-btn" onclick="openReserveModal('cat-004','Chaleira',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Chaleira</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-004','Chaleira',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Black and Decker</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/40PP6ln" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-004', 'Black and Decker', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Black and Decker</p>
+            <div class="gift-links"><a href="https://amzn.to/40PP6ln" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-004', 'Chaleira', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-005">
-          <div class="gift-cat-header"><p class="gift-cat-title">Jogo de Taças</p><button class="reserve-btn" onclick="openReserveModal('cat-005','Jogo de Taças',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Jogo de Taças</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-005','Jogo de Taças',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Taça de Cristal 460ml</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://meli.la/1vU2e1b" target="_blank" class="gift-link">Mercado Livre</a><a href="http://bit.ly/4lGbcQK" target="_blank" class="gift-link">Magalu</a><a href="https://amzn.to/4lK4B84" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-005', 'Taça de Cristal 460ml', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Taça de Cristal 460ml</p>
+            <div class="gift-links"><a href="https://meli.la/1vU2e1b" target="_blank" class="gift-link">Mercado Livre</a><a href="http://bit.ly/4lGbcQK" target="_blank" class="gift-link">Magalu</a><a href="https://amzn.to/4lK4B84" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-005', 'Jogo de Taças', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-006">
-          <div class="gift-cat-header"><p class="gift-cat-title">Jogo de Toalha</p><button class="reserve-btn" onclick="openReserveModal('cat-006','Jogo de Toalha',event)">♡ Vou presentear</button></div>
-          <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Banhão Algodão Egípcio 600g</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://www.firstclass.com.br/jg-banhao-4p-hs-fio-egipcio-supreme-100--alg---cinza-1-24-cinza-escuro-1-24/p" target="_blank" class="gift-link">First Class</a><a onclick="openItemPixModal('cat-006', 'Banhão Algodão Egípcio 600g', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Jogo de Toalha</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-006','Jogo de Toalha',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Buddemeyer Fio Penteado</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/416uOEt" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-006', 'Buddemeyer Fio Penteado', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Banhão Algodão Egípcio 600g</p>
+            <div class="gift-links"><a href="https://www.firstclass.com.br/jg-banhao-4p-hs-fio-egipcio-supreme-100--alg---cinza-1-24-cinza-escuro-1-24/p" target="_blank" class="gift-link">First Class</a><a onclick="openItemPixModal('cat-006', 'Jogo de Toalha', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          </div>
+          <div class="gift-item">
+            <p class="gift-name">Buddemeyer Fio Penteado</p>
+            <div class="gift-links"><a href="https://amzn.to/416uOEt" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-006', 'Jogo de Toalha', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-007">
-          <div class="gift-cat-header"><p class="gift-cat-title">Porta Tempero</p><button class="reserve-btn" onclick="openReserveModal('cat-007','Porta Tempero',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Porta Tempero</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-007','Porta Tempero',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Porta Tempero</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
+            <p class="gift-name">Porta Tempero</p>
             <div class="gift-links"><a href="https://www.tokstok.com.br/porta-temperos-c-6-bambu-incolor-bamboo/p?idsku=414303" target="_blank" class="gift-link">Tok&amp;Stok</a><a onclick="openItemPixModal('cat-007', 'Porta Tempero', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-008">
-          <div class="gift-cat-header"><p class="gift-cat-title">Cesto de Roupa</p><button class="reserve-btn" onclick="openReserveModal('cat-008','Cesto de Roupa',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Cesto de Roupa</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-008','Cesto de Roupa',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Grid Preto</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://s.shopee.com.br/3B2rrWh8WI" target="_blank" class="gift-link">Shopee</a><a onclick="openItemPixModal('cat-008', 'Grid Preto', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Grid Preto</p>
+            <div class="gift-links"><a href="https://s.shopee.com.br/3B2rrWh8WI" target="_blank" class="gift-link">Shopee</a><a onclick="openItemPixModal('cat-008', 'Cesto de Roupa', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
       </div></div>
     </div>
 
@@ -530,71 +598,121 @@
         <span class="acc-arrow">↓</span>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
+
         <div class="gift-category" data-cat-id="cat-010b">
-          <div class="gift-cat-header"><p class="gift-cat-title">Jogo de Travessas de Cerâmica</p><button class="reserve-btn" onclick="openReserveModal('cat-010b','Jogo de Travessas de Cerâmica',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Jogo de Travessas de Cerâmica</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-010b','Jogo de Travessas de Cerâmica',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Cerâmica Bege Retangular 3 peças</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://www.lojakaster.com.br/jogo-travessas-de-ceramica-bege-retangular-3pcs" target="_blank" class="gift-link">Kaster</a><a onclick="openItemPixModal('cat-010b', 'Cerâmica Bege Retangular 3 peças', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Cerâmica Bege Retangular 3 peças</p>
+            <div class="gift-links"><a href="https://www.lojakaster.com.br/jogo-travessas-de-ceramica-bege-retangular-3pcs" target="_blank" class="gift-link">Kaster</a><a onclick="openItemPixModal('cat-010b', 'Jogo de Travessas de Cerâmica', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-010c">
-          <div class="gift-cat-header"><p class="gift-cat-title">Balcão para Cooktop e Forno</p><button class="reserve-btn" onclick="openReserveModal('cat-010c','Balcão para Cooktop e Forno',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Balcão para Cooktop e Forno</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-010c','Balcão para Cooktop e Forno',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Madesa 70×60 cm com Tampo</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://www.madesa.com/products/balcao-para-forno-micro-ondas-70-60-cm-1-gaveta-branco-tampo-rustic-madesa" target="_blank" class="gift-link">Madesa</a><a onclick="openItemPixModal('cat-010c', 'Madesa 70×60 cm com Tampo', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Madesa 70×60 cm com Tampo</p>
+            <div class="gift-links"><a href="https://www.madesa.com/products/balcao-para-forno-micro-ondas-70-60-cm-1-gaveta-branco-tampo-rustic-madesa" target="_blank" class="gift-link">Madesa</a><a onclick="openItemPixModal('cat-010c', 'Balcão para Cooktop e Forno', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-011">
-          <div class="gift-cat-header"><p class="gift-cat-title">Panela de Pressão (indução)</p><button class="reserve-btn" onclick="openReserveModal('cat-011','Panela de Pressão (indução)',event)">♡ Vou presentear</button></div>
-          <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Rochedo 4L</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://meli.la/1sm4xdb" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Rochedo 4L', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Panela de Pressão (indução)</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-011','Panela de Pressão (indução)',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Tramontina 4.5L</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://meli.la/1UDukJQ" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Tramontina 4.5L', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Rochedo 4L</p>
+            <div class="gift-links"><a href="https://meli.la/1sm4xdb" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          </div>
+          <div class="gift-item">
+            <p class="gift-name">Tramontina 4.5L</p>
+            <div class="gift-links"><a href="https://meli.la/1UDukJQ" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-012">
-          <div class="gift-cat-header"><p class="gift-cat-title">Jogo de Cama</p><button class="reserve-btn" onclick="openReserveModal('cat-012','Jogo de Cama',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Jogo de Cama</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-012','Jogo de Cama',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">300 Fios Buddemeyer – Cetim</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/40Nt0jm" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28t8srf" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-012', '300 Fios Buddemeyer – Cetim', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">300 Fios Buddemeyer – Cetim</p>
+            <div class="gift-links"><a href="https://amzn.to/40Nt0jm" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28t8srf" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-012', 'Jogo de Cama', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-013">
-          <div class="gift-cat-header"><p class="gift-cat-title">Air Fryer</p><button class="reserve-btn" onclick="openReserveModal('cat-013','Air Fryer',event)">♡ Vou presentear</button></div>
-          <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Philips Walita Série 1000 XL — 6,2L</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/40NfP1V" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-013', 'Philips Walita Série 1000 XL — 6,2L', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Air Fryer</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-013','Air Fryer',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Philips Walita Série 2000 XL Digital — 6,2L</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/4dz57Uc" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-013', 'Philips Walita Série 2000 XL Digital — 6,2L', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Philips Walita Série 1000 XL — 6,2L</p>
+            <div class="gift-links"><a href="https://amzn.to/40NfP1V" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-013', 'Air Fryer', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          </div>
+          <div class="gift-item">
+            <p class="gift-name">Philips Walita Série 2000 XL Digital — 6,2L</p>
+            <div class="gift-links"><a href="https://amzn.to/4dz57Uc" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-013', 'Air Fryer', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-015">
-          <div class="gift-cat-header"><p class="gift-cat-title">Batedeira</p><button class="reserve-btn" onclick="openReserveModal('cat-015','Batedeira',event)">♡ Vou presentear</button></div>
-          <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Electrolux 750W (Bowl Inox)</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://meli.la/2fv9itW" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/47LIZCl" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-015', 'Electrolux 750W (Bowl Inox)', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Batedeira</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-015','Batedeira',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Oster 850W (Bowl Inox)</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/3PnVq0T" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/31b1Vvq" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-015', 'Oster 850W (Bowl Inox)', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Electrolux 750W (Bowl Inox)</p>
+            <div class="gift-links"><a href="https://meli.la/2fv9itW" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/47LIZCl" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-015', 'Batedeira', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          </div>
+          <div class="gift-item">
+            <p class="gift-name">Oster 850W (Bowl Inox)</p>
+            <div class="gift-links"><a href="https://amzn.to/3PnVq0T" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/31b1Vvq" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-015', 'Batedeira', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-016">
-          <div class="gift-cat-header"><p class="gift-cat-title">Depurador</p><button class="reserve-btn" onclick="openReserveModal('cat-016','Depurador',event)">♡ Vou presentear</button></div>
-          <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Electrolux Inox 60cm</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://loja.electrolux.com.br/depurador-60cm-de-parede-inox-de60x-electrolux/p?idsku=148" target="_blank" class="gift-link">Electrolux</a><a onclick="openItemPixModal('cat-016', 'Electrolux Inox 60cm', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Depurador</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-016','Depurador',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Philco Inox</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/4rV9Y5C" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-016', 'Philco Inox', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Electrolux Inox 60cm</p>
+            <div class="gift-links"><a href="https://loja.electrolux.com.br/depurador-60cm-de-parede-inox-de60x-electrolux/p?idsku=148" target="_blank" class="gift-link">Electrolux</a><a onclick="openItemPixModal('cat-016', 'Depurador', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          </div>
+          <div class="gift-item">
+            <p class="gift-name">Philco Inox</p>
+            <div class="gift-links"><a href="https://amzn.to/4rV9Y5C" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-016', 'Depurador', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
       </div></div>
     </div>
 
@@ -605,45 +723,81 @@
         <span class="acc-arrow">↓</span>
       </div>
       <div class="acc-body"><div class="acc-body-inner">
+
         <div class="gift-category" data-cat-id="cat-017">
-          <div class="gift-cat-header"><p class="gift-cat-title">Cooktop de Indução</p><button class="reserve-btn" onclick="openReserveModal('cat-017','Cooktop de Indução',event)">♡ Vou presentear</button></div>
-          <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Dako</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/4t0bdBs" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/2VHKZhT" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-017', 'Dako', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Cooktop de Indução</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-017','Cooktop de Indução',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">EOS</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/4t0AkEb" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-017', 'EOS', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Dako</p>
+            <div class="gift-links"><a href="https://amzn.to/4t0bdBs" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/2VHKZhT" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-017', 'Cooktop de Indução', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+          </div>
+          <div class="gift-item">
+            <p class="gift-name">EOS</p>
+            <div class="gift-links"><a href="https://amzn.to/4t0AkEb" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-017', 'Cooktop de Indução', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-018">
-          <div class="gift-cat-header"><p class="gift-cat-title">Jogo de Panelas</p><button class="reserve-btn" onclick="openReserveModal('cat-018','Jogo de Panelas',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Jogo de Panelas</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-018','Jogo de Panelas',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Tramontina Grano</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/4mwcgHn" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1ma2Yqp" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-018', 'Tramontina Grano', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Tramontina Grano</p>
+            <div class="gift-links"><a href="https://amzn.to/4mwcgHn" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1ma2Yqp" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-018', 'Jogo de Panelas', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-014">
-          <div class="gift-cat-header"><p class="gift-cat-title">Vaporizador de Roupas</p><button class="reserve-btn" onclick="openReserveModal('cat-014','Vaporizador de Roupas',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Vaporizador de Roupas</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-014','Vaporizador de Roupas',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Electrolux Expert</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://amzn.to/41jFVtu" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1kFNLDC" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-014', 'Electrolux Expert', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Electrolux Expert</p>
+            <div class="gift-links"><a href="https://amzn.to/41jFVtu" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1kFNLDC" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-014', 'Vaporizador de Roupas', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-019">
-          <div class="gift-cat-header"><p class="gift-cat-title">Aparelho de Jantar</p><button class="reserve-btn" onclick="openReserveModal('cat-019','Aparelho de Jantar',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Aparelho de Jantar</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-019','Aparelho de Jantar',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">30 Peças Bio Latte — Porto Brasil</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://s.shopee.com.br/1qYAiN7sdk" target="_blank" class="gift-link">Shopee</a><a href="https://meli.la/1YyXTds" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-019', '30 Peças Bio Latte — Porto Brasil', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">30 Peças Bio Latte — Porto Brasil</p>
+            <div class="gift-links"><a href="https://s.shopee.com.br/1qYAiN7sdk" target="_blank" class="gift-link">Shopee</a><a href="https://meli.la/1YyXTds" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-019', 'Aparelho de Jantar', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
         <div class="gift-category" data-cat-id="cat-020">
-          <div class="gift-cat-header"><p class="gift-cat-title">Geladeira</p><button class="reserve-btn" onclick="openReserveModal('cat-020','Geladeira',event)">♡ Vou presentear</button></div>
+          <div class="gift-cat-header">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <p class="gift-cat-title">Geladeira</p>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 000,00</span>
+            </div>
+            <button class="reserve-btn" onclick="openReserveModal('cat-020','Geladeira',event)">♡ Vou presentear</button>
+          </div>
           <div class="gift-item">
-            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;"><p class="gift-name" style="margin-bottom:0;">Eletrolux 410L</p><span style="font-family:'Cinzel',serif; font-size:10px; color:var(--dourado);">R$ 000,00</span></div>
-            <div class="gift-links"><a href="https://loja.electrolux.com.br/geladeira-electrolux-frost-free-inverter-410l-efficient-com-autosense-inox-look--if46s-/p" target="_blank" class="gift-link">Eletrolux</a><a onclick="openItemPixModal('cat-020', 'Eletrolux 410L', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <p class="gift-name">Eletrolux 410L</p>
+            <div class="gift-links"><a href="https://loja.electrolux.com.br/geladeira-electrolux-frost-free-inverter-410l-efficient-com-autosense-inox-look--if46s-/p" target="_blank" class="gift-link">Eletrolux</a><a onclick="openItemPixModal('cat-020', 'Geladeira', '000,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
+
       </div></div>
     </div>
 
