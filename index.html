@@ -1402,7 +1402,8 @@
   const PIX_KEY = 'paollamcontildes@gmail.com';
   const PIX_NAME = 'Paolla Marinho Contildes';
 
-  document.getElementById('pix-key-display').textContent = PIX_KEY;
+  const pixKeyEl = document.getElementById('pix-key-display');
+if (pixKeyEl) pixKeyEl.textContent = PIX_KEY;
 
   function copyPix() {
     navigator.clipboard.writeText(PIX_KEY).then(() => {
