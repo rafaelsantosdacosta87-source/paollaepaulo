@@ -1236,6 +1236,11 @@
 </div>
 
 <script>
+  /* ══════════════════════════════════════════════════════
+   COLE ESTE BLOCO NO LUGAR DO SEGUNDO <script> DO SEU HTML
+   (o que começa com "CONTAGEM REGRESSIVA" e vai até o final)
+   ══════════════════════════════════════════════════════ */
+
   /* ── CONTAGEM REGRESSIVA ── */
   function tick() {
     const diff = new Date('2026-07-13T11:30:00') - new Date();
@@ -1261,7 +1266,6 @@
     if (!isOpen) tier.classList.add('open');
   }
 
-
   /* ── SISTEMA DE RESERVA ── */
   const FIREBASE_URL = 'https://paollapaulo-bf6b0-default-rtdb.firebaseio.com';
   let pendingId = null, cancelPendingId = null, reservations = {}, saving = false;
@@ -1273,11 +1277,15 @@
   }
 
   function applyReserved(catEl, name) {
+    /* ✅ CORREÇÃO: lê e salva o título ANTES de qualquer alteração no DOM */
+    const titleEl = catEl.querySelector('.gift-cat-title');
+    if (titleEl && titleEl.textContent.trim()) {
+      catEl.dataset.title = titleEl.textContent.trim();
+    }
+    const titleText = catEl.dataset.title || '';
+    const catId = catEl.dataset.catId;
     catEl.classList.add('is-reserved');
     const header = catEl.querySelector('.gift-cat-header');
-    const titleEl = catEl.querySelector('.gift-cat-title') || catEl.querySelector('.reserved-item-title');
-    const titleText = catEl.dataset.title || (titleEl ? titleEl.textContent : '');
-    const catId = catEl.dataset.catId;
     header.innerHTML = `
       <div class="reserved-inner" onclick="openCancelModal('${catId}', '${titleText.replace(/'/g,"\\'")}', event)">
         <div class="reserved-checkmark">✓</div>
@@ -1295,22 +1303,18 @@
     catEl.classList.remove('is-reserved');
     const header = catEl.querySelector('.gift-cat-header');
     const catId = catEl.dataset.catId;
-    // Restore the original title and button
-    const nameParts = titleText.replace(/\\/g, '');
     header.innerHTML = `
       <p class="gift-cat-title">${titleText}</p>
       <button class="reserve-btn" onclick="openReserveModal('${catId}','${titleText.replace(/'/g,"\\'")}',event)">♡ Vou presentear</button>`;
-    // Show gift items again
     catEl.querySelectorAll('.gift-item').forEach(el => el.style.display = '');
     updateCounter();
   }
 
   function renderAll() {
+    /* ✅ CORREÇÃO: loop único — salva título e aplica estado na mesma passagem */
     document.querySelectorAll('[data-cat-id]').forEach(cat => {
-      // Salva o título SEMPRE que .gift-cat-title estiver no DOM
       const t = cat.querySelector('.gift-cat-title');
       if (t && t.textContent.trim()) cat.dataset.title = t.textContent.trim();
-
       const id = cat.dataset.catId;
       const isReserved = cat.classList.contains('is-reserved');
       if (reservations[id]) {
@@ -1366,9 +1370,7 @@
     const cat = document.querySelector('[data-cat-id="' + pendingId + '"]');
     applyReserved(cat, name);
     closeReserveModal();
-    try {
-await saveToFirebase();
-  } catch(e) {}
+    try { await saveToFirebase(); } catch(e) {}
   }
   document.getElementById('reserveModal').addEventListener('click', function(e) { if (e.target === this) closeReserveModal(); });
   document.getElementById('reserveName').addEventListener('keydown', function(e) { if (e.key === 'Enter') confirmReserve(); });
@@ -1386,15 +1388,13 @@ await saveToFirebase();
   }
   async function confirmCancel() {
     const catEl = document.querySelector('[data-cat-id="' + cancelPendingId + '"]');
-    const titleEl = catEl.querySelector('.reserved-item-title');
-    const titleText = titleEl ? titleEl.textContent : '';
+    /* ✅ CORREÇÃO: lê do dataset que já foi salvo pelo applyReserved */
+    const titleText = catEl.dataset.title || catEl.querySelector('.reserved-item-title')?.textContent || '';
     delete reservations[cancelPendingId];
     localStorage.setItem('pp_reservas', JSON.stringify(reservations));
     revertToAvailable(catEl, titleText);
     closeCancelModal();
-    try {
-await saveToFirebase();
-  } catch(e) {}
+    try { await saveToFirebase(); } catch(e) {}
   }
   document.getElementById('cancelModal').addEventListener('click', function(e) { if (e.target === this) closeCancelModal(); });
 
