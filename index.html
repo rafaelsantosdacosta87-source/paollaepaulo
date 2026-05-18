@@ -1306,14 +1306,11 @@
   }
 
   function renderAll() {
-    // Guarda o título original no data-title antes de qualquer substituição
     document.querySelectorAll('[data-cat-id]').forEach(cat => {
-      if (!cat.dataset.title) {
-        const t = cat.querySelector('.gift-cat-title');
-        if (t) cat.dataset.title = t.textContent;
-      }
-    });
-    document.querySelectorAll('[data-cat-id]').forEach(cat => {
+      // Salva o título SEMPRE que .gift-cat-title estiver no DOM
+      const t = cat.querySelector('.gift-cat-title');
+      if (t && t.textContent.trim()) cat.dataset.title = t.textContent.trim();
+
       const id = cat.dataset.catId;
       const isReserved = cat.classList.contains('is-reserved');
       if (reservations[id]) {
