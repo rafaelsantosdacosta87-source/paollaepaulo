@@ -282,6 +282,9 @@
     .btn-cancel:hover { opacity: 0.7; }
     .btn-danger { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; background: none; color: rgba(220,100,80,0.75); border: 1px solid rgba(220,100,80,0.3); padding: 12px 28px; cursor: pointer; transition: all 0.2s; }
     .btn-danger:hover { background: rgba(220,100,80,0.1); border-color: rgba(220,100,80,0.6); color: rgba(220,100,80,1); }
+    .btn-card { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; background: var(--marrom-claro); color: var(--creme); border: none; padding: 12px 28px; cursor: pointer; transition: opacity 0.2s; }
+    .btn-card:hover { opacity: 0.85; }
+    .btn-card[disabled] { opacity: 0.3; cursor: not-allowed; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
@@ -519,13 +522,13 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Escorredor de Louça</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 189,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 185,00</span>
             </div>
             <button class="reserve-btn" onclick="openReserveModal('cat-003','Escorredor de Louça',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
             <p class="gift-name">Tramontina Inox</p>
-            <div class="gift-links"><a href="https://meli.la/31mjcVA" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4bVGrEb" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-003', 'Escorredor de Louça', '189,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <div class="gift-links"><a href="https://meli.la/31mjcVA" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4bVGrEb" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-003', 'Escorredor de Louça', '185,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
 
@@ -607,9 +610,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Jarra de Vidro Borossilicato 1,5L</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 105,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 110,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-101', 'Jarra de Vidro Borossilicato 1,5L', '105,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-101', 'Jarra de Vidro Borossilicato 1,5L', '110,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -617,9 +620,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Kit de Utensílios de Cozinha em Silicone</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 106,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 110,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-102', 'Kit de Utensílios de Cozinha em Silicone', '106,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-102', 'Kit de Utensílios de Cozinha em Silicone', '110,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -627,9 +630,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Capacho em Fibra de Coco</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 109,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 110,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-103', 'Capacho em Fibra de Coco', '109,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-103', 'Capacho em Fibra de Coco', '110,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -637,9 +640,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Jogo de 3 Tábuas de Corte</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 115,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 110,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-104', 'Jogo de 3 Tábuas de Corte', '115,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-104', 'Jogo de 3 Tábuas de Corte', '110,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -647,9 +650,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Kit Fronha em Algodão High Satin</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 120,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 125,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-105', 'Kit Fronha em Algodão High Satin', '120,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-105', 'Kit Fronha em Algodão High Satin', '125,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -657,9 +660,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Jogo de Ramequins</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 124,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 125,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-106', 'Jogo de Ramequins', '124,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-106', 'Jogo de Ramequins', '125,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -667,9 +670,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Jogo de Bowls</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 130,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 125,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-107', 'Jogo de Bowls', '130,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-107', 'Jogo de Bowls', '125,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -677,9 +680,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Conjunto de Facas - 8 peças Inox</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 149,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 140,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-108', 'Conjunto de Facas - 8 peças Inox', '149,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-108', 'Conjunto de Facas - 8 peças Inox', '140,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -707,9 +710,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Toalha de Mesa</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 180,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 185,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-111', 'Toalha de Mesa', '180,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-111', 'Toalha de Mesa', '185,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -717,9 +720,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Edredom Sherpa</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 205,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 210,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-112', 'Edredom Sherpa', '205,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-112', 'Edredom Sherpa', '210,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -727,9 +730,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Faqueiro 30 peças Inox</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 239,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 235,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-113', 'Faqueiro 30 peças Inox', '239,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-113', 'Faqueiro 30 peças Inox', '235,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -737,9 +740,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Abajur Contemporâneo</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 244,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 235,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-114', 'Abajur Contemporâneo', '244,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-114', 'Abajur Contemporâneo', '235,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -747,9 +750,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Kit Colcha</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 270,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 275,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-115', 'Kit Colcha', '270,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-115', 'Kit Colcha', '275,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -796,17 +799,17 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Panela de Pressão (indução)</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 455,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 445,00</span>
             </div>
             <button class="reserve-btn" onclick="openReserveModal('cat-011','Panela de Pressão (indução)',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
             <p class="gift-name">Rochedo 4L</p>
-            <div class="gift-links"><a href="https://meli.la/1sm4xdb" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '455,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <div class="gift-links"><a href="https://meli.la/1sm4xdb" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '445,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
           <div class="gift-item">
             <p class="gift-name">Tramontina 4.5L</p>
-            <div class="gift-links"><a href="https://meli.la/1UDukJQ" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '455,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <div class="gift-links"><a href="https://meli.la/1UDukJQ" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '445,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
 
@@ -814,13 +817,13 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Jogo de Cama</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 490,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 495,00</span>
             </div>
             <button class="reserve-btn" onclick="openReserveModal('cat-012','Jogo de Cama',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
             <p class="gift-name">300 Fios Buddemeyer – Cetim</p>
-            <div class="gift-links"><a href="https://amzn.to/40Nt0jm" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28t8srf" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-012', 'Jogo de Cama', '490,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <div class="gift-links"><a href="https://amzn.to/40Nt0jm" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28t8srf" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-012', 'Jogo de Cama', '495,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
 
@@ -846,17 +849,17 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Batedeira</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 499,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 495,00</span>
             </div>
             <button class="reserve-btn" onclick="openReserveModal('cat-015','Batedeira',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
             <p class="gift-name">Electrolux 750W (Bowl Inox)</p>
-            <div class="gift-links"><a href="https://meli.la/2fv9itW" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/47LIZCl" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-015', 'Batedeira', '499,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <div class="gift-links"><a href="https://meli.la/2fv9itW" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/47LIZCl" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-015', 'Batedeira', '495,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
           <div class="gift-item">
             <p class="gift-name">Oster 850W (Bowl Inox)</p>
-            <div class="gift-links"><a href="https://amzn.to/3PnVq0T" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/31b1Vvq" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-015', 'Batedeira', '499,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <div class="gift-links"><a href="https://amzn.to/3PnVq0T" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/31b1Vvq" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-015', 'Batedeira', '495,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
 
@@ -864,13 +867,13 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Depurador</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 399,90</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 405,00</span>
             </div>
             <button class="reserve-btn" onclick="openReserveModal('cat-016','Depurador',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
             <p class="gift-name">Philco Inox</p>
-            <div class="gift-links"><a href="https://amzn.to/4rV9Y5C" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-016', 'Depurador', '399,90')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <div class="gift-links"><a href="https://amzn.to/4rV9Y5C" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-016', 'Depurador', '405,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
 
@@ -935,13 +938,13 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Aparelho de Jantar</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 619,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 630,00</span>
             </div>
             <button class="reserve-btn" onclick="openReserveModal('cat-019','Aparelho de Jantar',event)">♡ Vou presentear</button>
           </div>
           <div class="gift-item">
             <p class="gift-name">30 Peças Bio Latte — Porto Brasil</p>
-            <div class="gift-links"><a onclick="openItemPixModal('cat-019', 'Aparelho de Jantar', '619,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
+            <div class="gift-links"><a onclick="openItemPixModal('cat-019', 'Aparelho de Jantar', '630,00')" class="gift-link gift-link-pix">Presentear no Pix</a></div>
           </div>
         </div>
 
@@ -963,9 +966,9 @@
           <div class="gift-cat-header">
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <p class="gift-cat-title">Tapete TokStok</p>
-              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 890,00</span>
+              <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 905,00</span>
             </div>
-            <button class="reserve-btn" onclick="openItemPixModal('cat-301', 'Tapete TokStok', '890,00')">♡ Presentear no Pix</button>
+            <button class="reserve-btn" onclick="openItemPixModal('cat-301', 'Tapete TokStok', '905,00')">♡ Presentear no Pix</button>
           </div>
         </div>
 
@@ -999,9 +1002,9 @@
       <div class="gift-cat-header">
         <div style="display: flex; flex-direction: column; gap: 4px;">
           <p class="gift-cat-title">Cafézinho Superfaturado em Las Condes</p>
-          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 130,00</span>
+          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 125,00</span>
         </div>
-        <button class="reserve-btn" onclick="openItemPixModal('exp-003', 'Cafézinho Superfaturado em Las Condes', '130,00')">♡ Presentear no Pix</button>
+        <button class="reserve-btn" onclick="openItemPixModal('exp-003', 'Cafézinho Superfaturado em Las Condes', '125,00')">♡ Presentear no Pix</button>
       </div>
     </div>
 
@@ -1010,9 +1013,9 @@
       <div class="gift-cat-header">
         <div style="display: flex; flex-direction: column; gap: 4px;">
           <p class="gift-cat-title">Vinho do Vale do Maipo de recordação</p>
-          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 139,00</span>
+          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 140,00</span>
         </div>
-        <button class="reserve-btn" onclick="openItemPixModal('exp-004', 'Vinho do Vale do Maipo de recordação', '139,00')">♡ Presentear no Pix</button>
+        <button class="reserve-btn" onclick="openItemPixModal('exp-004', 'Vinho do Vale do Maipo de recordação', '140,00')">♡ Presentear no Pix</button>
       </div>
     </div>
 
@@ -1054,9 +1057,9 @@
       <div class="gift-cat-header">
         <div style="display: flex; flex-direction: column; gap: 4px;">
           <p class="gift-cat-title">Passeio de Funicular por Cerro San Cristóbal</p>
-          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 180,00</span>
+          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 185,00</span>
         </div>
-        <button class="reserve-btn" onclick="openItemPixModal('exp-008', 'Passeio de Funicular por Cerro San Cristóbal', '180,00')">♡ Presentear no Pix</button>
+        <button class="reserve-btn" onclick="openItemPixModal('exp-008', 'Passeio de Funicular por Cerro San Cristóbal', '185,00')">♡ Presentear no Pix</button>
       </div>
     </div>
 
@@ -1076,9 +1079,9 @@
       <div class="gift-cat-header">
         <div style="display: flex; flex-direction: column; gap: 4px;">
           <p class="gift-cat-title">Por do sol no Luna Bar</p>
-          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 230,00</span>
+          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 235,00</span>
         </div>
-        <button class="reserve-btn" onclick="openItemPixModal('exp-011', 'Por do sol no Luna Bar', '230,00')">♡ Presentear no Pix</button>
+        <button class="reserve-btn" onclick="openItemPixModal('exp-011', 'Por do sol no Luna Bar', '235,00')">♡ Presentear no Pix</button>
       </div>
     </div>
 
@@ -1087,9 +1090,9 @@
       <div class="gift-cat-header">
         <div style="display: flex; flex-direction: column; gap: 4px;">
           <p class="gift-cat-title">City Tour pelo Centro Histórico de Santiago</p>
-          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 280,00</span>
+          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 275,00</span>
         </div>
-        <button class="reserve-btn" onclick="openItemPixModal('exp-007', 'City Tour pelo Centro Histórico de Santiago', '280,00')">♡ Presentear no Pix</button>
+        <button class="reserve-btn" onclick="openItemPixModal('exp-007', 'City Tour pelo Centro Histórico de Santiago', '275,00')">♡ Presentear no Pix</button>
       </div>
     </div>
 
@@ -1109,9 +1112,9 @@
       <div class="gift-cat-header">
         <div style="display: flex; flex-direction: column; gap: 4px;">
           <p class="gift-cat-title">Passeio por Vinã e Valpo</p>
-          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 410,00</span>
+          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 405,00</span>
         </div>
-        <button class="reserve-btn" onclick="openItemPixModal('exp-010', 'Passeio por Vinã e Valpo', '410,00')">♡ Presentear no Pix</button>
+        <button class="reserve-btn" onclick="openItemPixModal('exp-010', 'Passeio por Vinã e Valpo', '405,00')">♡ Presentear no Pix</button>
       </div>
     </div>
 
@@ -1120,9 +1123,9 @@
       <div class="gift-cat-header">
         <div style="display: flex; flex-direction: column; gap: 4px;">
           <p class="gift-cat-title">Tour por Vinícola Alyan</p>
-          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 640,00</span>
+          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 630,00</span>
         </div>
-        <button class="reserve-btn" onclick="openItemPixModal('exp-013', 'Tour por Vinícola Alyan', '640,00')">♡ Presentear no Pix</button>
+        <button class="reserve-btn" onclick="openItemPixModal('exp-013', 'Tour por Vinícola Alyan', '630,00')">♡ Presentear no Pix</button>
       </div>
     </div>
 
@@ -1131,9 +1134,9 @@
       <div class="gift-cat-header">
         <div style="display: flex; flex-direction: column; gap: 4px;">
           <p class="gift-cat-title">Tour pela Vinícola Concha y Toro</p>
-          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 920,00</span>
+          <span style="font-family:'Cinzel',serif; font-size:14px; color:var(--marrom-claro); font-weight: 600;">R$ 905,00</span>
         </div>
-        <button class="reserve-btn" onclick="openItemPixModal('exp-014', 'Tour pela Vinícola Concha y Toro', '920,00')">♡ Presentear no Pix</button>
+        <button class="reserve-btn" onclick="openItemPixModal('exp-014', 'Tour pela Vinícola Concha y Toro', '905,00')">♡ Presentear no Pix</button>
       </div>
     </div>
     
@@ -1261,12 +1264,51 @@
     }
   }
 
+  /* ── LINKS DE PAGAMENTO NO CARTÃO (INFINITEPAY) ── */
+  /* Mapeados pelo valor exibido no item (ex: "110,00"). Itens cujo valor não
+     estiver aqui simplesmente não mostram o botão de cartão (só Pix). */
+  const CARD_LINKS = {
+    '110,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-V1rUxWkqNs-110,00',
+    '125,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-eaUYnk7l32-125,00',
+    '140,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-QGHWut5Xw2-140,00',
+    '160,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-YfaI2Ip7kW-160,00',
+    '185,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-foZLOBFbt5-185,00',
+    '210,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-EbbVhQ9eY6-210,00',
+    '235,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-KfPtRDbsCM-235,00',
+    '275,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-leVn1RqO4I-275,00',
+    '320,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-uXJlbmWeO1-320,00',
+    '405,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-19DFBruQGk-405,00',
+    '445,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-DucTiPjlX8-445,00',
+    '495,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-autJGs25ek-495,00',
+    '569,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-w1eMoNa8Dy-569,00',
+    '630,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-ABSATh9iue-630,00',
+    '905,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-PymNVuIzZp-905,00',
+    '2900,00': 'https://link.infinitepay.io/paulo-victor-xal/VC1D-E7HNuqg5VK-2900,00'
+  };
+
+  let currentPixValue = null;
+
+  function payWithCard() {
+    const link = CARD_LINKS[currentPixValue];
+    if (link) window.open(link, '_blank');
+  }
+
   function openItemPixModal(catId, itemName, itemValue) {
     pixPendingCatId = catId;
+    currentPixValue = itemValue;
     document.getElementById('pix-modal-item-name').textContent = itemName;
     document.getElementById('pix-modal-item-value').textContent = 'R$ ' + itemValue;
     document.getElementById('pixReserveName').value = '';
     document.getElementById('btn-copy-item-pix').textContent = 'Copiar Chave';
+    const cardBtn = document.getElementById('btn-card-pay');
+    if (cardBtn) {
+      if (CARD_LINKS[itemValue]) {
+        cardBtn.style.display = '';
+        cardBtn.disabled = false;
+      } else {
+        cardBtn.style.display = 'none';
+      }
+    }
     document.getElementById('itemPixModal').classList.add('open');
     renderPixQR(catId, itemValue);
     setTimeout(() => document.getElementById('pixReserveName').focus(), 120);
@@ -1275,6 +1317,7 @@
   function closeItemPixModal() {
     document.getElementById('itemPixModal').classList.remove('open');
     pixPendingCatId = null;
+    currentPixValue = null;
   }
 
   function copyItemPix() {
@@ -1430,9 +1473,9 @@
 <!-- ══════════ MODAL: PIX DO ITEM ══════════ -->
 <div class="modal-overlay" id="itemPixModal">
   <div class="modal-box">
-    <h3>Presentear no Pix</h3>
+    <h3>Presentear</h3>
     <p class="modal-item-name" id="pix-modal-item-name"></p>
-    <p class="modal-desc" style="margin-bottom: 20px;">Valor: <strong id="pix-modal-item-value" style="color: var(--dourado);">R$ 000,00</strong><br>Copie a chave abaixo para transferir o valor e em seguida confirme sua reserva.</p>
+    <p class="modal-desc" style="margin-bottom: 20px;">Valor: <strong id="pix-modal-item-value" style="color: var(--dourado);">R$ 000,00</strong><br>Pague no Pix (copiando a chave abaixo) ou no cartão de crédito, e depois confirme sua reserva.</p>
     
     <div class="pix-qr-wrap" id="pix-qr-wrap">
       <div id="pix-qr-render"></div>
@@ -1447,6 +1490,7 @@
     <div class="modal-actions" style="flex-wrap: wrap; gap: 12px; justify-content: center;">
       <button class="btn-cancel" onclick="closeItemPixModal()">Cancelar</button>
       <button class="btn-cancel" id="btn-copy-item-pix" onclick="copyItemPix()">Copiar Chave</button>
+      <button class="btn-card" id="btn-card-pay" onclick="payWithCard()">💳 Pagar com Cartão</button>
       <button class="btn-confirm" onclick="confirmPixReserve()" style="width: 100%; margin-top: 8px;">Já paguei e Reservar ✓</button>
     </div>
   </div>
