@@ -296,6 +296,8 @@
     .btn-card { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; background: var(--marrom-claro); color: var(--creme); border: none; padding: 12px 28px; cursor: pointer; transition: opacity 0.2s; }
     .btn-card:hover { opacity: 0.85; }
     .btn-card[disabled] { opacity: 0.3; cursor: not-allowed; }
+    .btn-card-primary { background: var(--dourado); color: var(--marrom); order: -1; width: 100%; margin-bottom: 4px; font-size: 11px; padding: 14px 28px; }
+    .btn-card-primary:hover { opacity: 0.9; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
@@ -539,7 +541,7 @@
           </div>
           <div class="gift-item">
             <p class="gift-name">Tramontina Inox</p>
-            <div class="gift-links"><a href="https://meli.la/31mjcVA" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4bVGrEb" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-003', 'Escorredor de Louça', '185,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="payWithCardDirect('185,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
+            <div class="gift-links"><a href="https://meli.la/31mjcVA" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/4bVGrEb" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-003', 'Escorredor de Louça', '185,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="openItemPixModal('cat-003', 'Escorredor de Louça', '185,00', 'card'); payWithCardDirect('185,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
           </div>
         </div>
 
@@ -599,7 +601,7 @@
           </div>
           <div class="gift-item">
             <p class="gift-name">Porta Tempero</p>
-            <div class="gift-links"><a href="https://www.tokstok.com.br/porta-temperos-c-6-bambu-incolor-bamboo/p?idsku=414303" target="_blank" class="gift-link">Tok&amp;Stok</a><a onclick="openItemPixModal('cat-007', 'Porta Tempero', '160,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="payWithCardDirect('160,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
+            <div class="gift-links"><a href="https://www.tokstok.com.br/porta-temperos-c-6-bambu-incolor-bamboo/p?idsku=414303" target="_blank" class="gift-link">Tok&amp;Stok</a><a onclick="openItemPixModal('cat-007', 'Porta Tempero', '160,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="openItemPixModal('cat-007', 'Porta Tempero', '160,00', 'card'); payWithCardDirect('160,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
           </div>
         </div>
 
@@ -627,7 +629,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-101', 'Jarra de Vidro Borossilicato 1,5L', '110,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('110,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-101', 'Jarra de Vidro Borossilicato 1,5L', '110,00', 'card'); payWithCardDirect('110,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -642,7 +644,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-102', 'Kit de Utensílios de Cozinha em Silicone', '110,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('110,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-102', 'Kit de Utensílios de Cozinha em Silicone', '110,00', 'card'); payWithCardDirect('110,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -657,7 +659,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-103', 'Capacho em Fibra de Coco', '110,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('110,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-103', 'Capacho em Fibra de Coco', '110,00', 'card'); payWithCardDirect('110,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -672,7 +674,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-104', 'Jogo de 3 Tábuas de Corte', '110,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('110,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-104', 'Jogo de 3 Tábuas de Corte', '110,00', 'card'); payWithCardDirect('110,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -687,7 +689,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-105', 'Kit Fronha em Algodão High Satin', '125,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('125,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-105', 'Kit Fronha em Algodão High Satin', '125,00', 'card'); payWithCardDirect('125,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -702,7 +704,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-106', 'Jogo de Ramequins', '125,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('125,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-106', 'Jogo de Ramequins', '125,00', 'card'); payWithCardDirect('125,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -717,7 +719,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-107', 'Jogo de Bowls', '125,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('125,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-107', 'Jogo de Bowls', '125,00', 'card'); payWithCardDirect('125,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -732,7 +734,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-108', 'Conjunto de Facas - 8 peças Inox', '140,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('140,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-108', 'Conjunto de Facas - 8 peças Inox', '140,00', 'card'); payWithCardDirect('140,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -747,7 +749,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-109', 'Jogo De Lençol Casal Verde', '160,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('160,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-109', 'Jogo De Lençol Casal Verde', '160,00', 'card'); payWithCardDirect('160,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -762,7 +764,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-110', 'Jogo de Lençol Casal Bege', '160,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('160,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-110', 'Jogo de Lençol Casal Bege', '160,00', 'card'); payWithCardDirect('160,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -777,7 +779,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-111', 'Toalha de Mesa', '185,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('185,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-111', 'Toalha de Mesa', '185,00', 'card'); payWithCardDirect('185,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -792,7 +794,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-112', 'Edredom Sherpa', '210,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('210,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-112', 'Edredom Sherpa', '210,00', 'card'); payWithCardDirect('210,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -807,7 +809,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-113', 'Faqueiro 30 peças Inox', '235,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('235,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-113', 'Faqueiro 30 peças Inox', '235,00', 'card'); payWithCardDirect('235,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -822,7 +824,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-114', 'Abajur Contemporâneo', '235,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('235,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-114', 'Abajur Contemporâneo', '235,00', 'card'); payWithCardDirect('235,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -837,7 +839,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-115', 'Kit Colcha', '275,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('275,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-115', 'Kit Colcha', '275,00', 'card'); payWithCardDirect('275,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -891,11 +893,11 @@
           </div>
           <div class="gift-item">
             <p class="gift-name">Rochedo 4L</p>
-            <div class="gift-links"><a href="https://meli.la/1sm4xdb" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '445,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="payWithCardDirect('445,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
+            <div class="gift-links"><a href="https://meli.la/1sm4xdb" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '445,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '445,00', 'card'); payWithCardDirect('445,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
           </div>
           <div class="gift-item">
             <p class="gift-name">Tramontina 4.5L</p>
-            <div class="gift-links"><a href="https://meli.la/1UDukJQ" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '445,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="payWithCardDirect('445,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
+            <div class="gift-links"><a href="https://meli.la/1UDukJQ" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '445,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="openItemPixModal('cat-011', 'Panela de Pressão (indução)', '445,00', 'card'); payWithCardDirect('445,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
           </div>
         </div>
 
@@ -909,7 +911,7 @@
           </div>
           <div class="gift-item">
             <p class="gift-name">300 Fios Buddemeyer – Cetim</p>
-            <div class="gift-links"><a href="https://amzn.to/40Nt0jm" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28t8srf" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-012', 'Jogo de Cama', '495,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="payWithCardDirect('495,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
+            <div class="gift-links"><a href="https://amzn.to/40Nt0jm" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/28t8srf" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-012', 'Jogo de Cama', '495,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="openItemPixModal('cat-012', 'Jogo de Cama', '495,00', 'card'); payWithCardDirect('495,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
           </div>
         </div>
 
@@ -941,11 +943,11 @@
           </div>
           <div class="gift-item">
             <p class="gift-name">Electrolux 750W (Bowl Inox)</p>
-            <div class="gift-links"><a href="https://meli.la/2fv9itW" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/47LIZCl" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-015', 'Batedeira', '495,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="payWithCardDirect('495,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
+            <div class="gift-links"><a href="https://meli.la/2fv9itW" target="_blank" class="gift-link">Mercado Livre</a><a href="https://amzn.to/47LIZCl" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-015', 'Batedeira', '495,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="openItemPixModal('cat-015', 'Batedeira', '495,00', 'card'); payWithCardDirect('495,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
           </div>
           <div class="gift-item">
             <p class="gift-name">Oster 850W (Bowl Inox)</p>
-            <div class="gift-links"><a href="https://amzn.to/3PnVq0T" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/31b1Vvq" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-015', 'Batedeira', '495,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="payWithCardDirect('495,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
+            <div class="gift-links"><a href="https://amzn.to/3PnVq0T" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/31b1Vvq" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-015', 'Batedeira', '495,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="openItemPixModal('cat-015', 'Batedeira', '495,00', 'card'); payWithCardDirect('495,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
           </div>
         </div>
 
@@ -959,7 +961,7 @@
           </div>
           <div class="gift-item">
             <p class="gift-name">Philco Inox</p>
-            <div class="gift-links"><a href="https://amzn.to/4rV9Y5C" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-016', 'Depurador', '405,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="payWithCardDirect('405,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
+            <div class="gift-links"><a href="https://amzn.to/4rV9Y5C" target="_blank" class="gift-link">Amazon</a><a onclick="openItemPixModal('cat-016', 'Depurador', '405,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="openItemPixModal('cat-016', 'Depurador', '405,00', 'card'); payWithCardDirect('405,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
           </div>
         </div>
 
@@ -1016,7 +1018,7 @@
           </div>
           <div class="gift-item">
             <p class="gift-name">Electrolux Expert</p>
-            <div class="gift-links"><a href="https://amzn.to/41jFVtu" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1kFNLDC" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-014', 'Vaporizador de Roupas', '569,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="payWithCardDirect('569,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
+            <div class="gift-links"><a href="https://amzn.to/41jFVtu" target="_blank" class="gift-link">Amazon</a><a href="https://meli.la/1kFNLDC" target="_blank" class="gift-link">Mercado Livre</a><a onclick="openItemPixModal('cat-014', 'Vaporizador de Roupas', '569,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="openItemPixModal('cat-014', 'Vaporizador de Roupas', '569,00', 'card'); payWithCardDirect('569,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
           </div>
         </div>
 
@@ -1030,7 +1032,7 @@
           </div>
           <div class="gift-item">
             <p class="gift-name">30 Peças Bio Latte — Porto Brasil</p>
-            <div class="gift-links"><a onclick="openItemPixModal('cat-019', 'Aparelho de Jantar', '630,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="payWithCardDirect('630,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
+            <div class="gift-links"><a onclick="openItemPixModal('cat-019', 'Aparelho de Jantar', '630,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="openItemPixModal('cat-019', 'Aparelho de Jantar', '630,00', 'card'); payWithCardDirect('630,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
           </div>
         </div>
 
@@ -1044,7 +1046,7 @@
           </div>
           <div class="gift-item">
             <p class="gift-name">Eletrolux 415L</p>
-            <div class="gift-links"><a href="https://loja.electrolux.com.br/geladeira-electrolux-frost-free-inverter-415l-efficient-com-autosense-inox-look--if46s-/p?gad_campaignid=22836580767&gad_source=1&gbraid=0AAAAADpuC9uCAkd4E-EPtSIDS1uHdivJD&gclid=CjwKCAjw5ZXQBhBdEiwAI5XVWUWreWt_ujFrGeN55ugdQDYegKmHXDm3H_vUQlOMmdkoQKiUn8K0aBoCwywQAvD_BwE&gclsrc=aw.ds&idsku=310127197&skuId=310127197" target="_blank" class="gift-link">Eletrolux</a><a onclick="openItemPixModal('cat-020', 'Geladeira', '2900,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="payWithCardDirect('2900,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
+            <div class="gift-links"><a href="https://loja.electrolux.com.br/geladeira-electrolux-frost-free-inverter-415l-efficient-com-autosense-inox-look--if46s-/p?gad_campaignid=22836580767&gad_source=1&gbraid=0AAAAADpuC9uCAkd4E-EPtSIDS1uHdivJD&gclid=CjwKCAjw5ZXQBhBdEiwAI5XVWUWreWt_ujFrGeN55ugdQDYegKmHXDm3H_vUQlOMmdkoQKiUn8K0aBoCwywQAvD_BwE&gclsrc=aw.ds&idsku=310127197&skuId=310127197" target="_blank" class="gift-link">Eletrolux</a><a onclick="openItemPixModal('cat-020', 'Geladeira', '2900,00')" class="gift-link gift-link-pix">Presentear no Pix</a> <a onclick="openItemPixModal('cat-020', 'Geladeira', '2900,00', 'card'); payWithCardDirect('2900,00')" class="gift-link gift-link-card">Presentear no Cartão</a></div>
           </div>
         </div>
 
@@ -1058,7 +1060,7 @@
           <div class="gift-item">
             <div class="gift-links">
               <a onclick="openItemPixModal('cat-301', 'Tapete TokStok', '905,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-            <a onclick="payWithCardDirect('905,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+            <a onclick="openItemPixModal('cat-301', 'Tapete TokStok', '905,00', 'card'); payWithCardDirect('905,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
             </div>
           </div>
         </div>
@@ -1088,7 +1090,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-002', 'Lembrancinhas do Chile (Com uma inclusa para você)', '125,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('125,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-002', 'Lembrancinhas do Chile (Com uma inclusa para você)', '125,00', 'card'); payWithCardDirect('125,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1104,7 +1106,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-003', 'Cafézinho Superfaturado em Las Condes', '125,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('125,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-003', 'Cafézinho Superfaturado em Las Condes', '125,00', 'card'); payWithCardDirect('125,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1120,7 +1122,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-004', 'Vinho do Vale do Maipo de recordação', '140,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('140,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-004', 'Vinho do Vale do Maipo de recordação', '140,00', 'card'); payWithCardDirect('140,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1136,7 +1138,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-005', '&quot;RioCard&quot; Chileno pro Casal', '140,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('140,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-005', '&quot;RioCard&quot; Chileno pro Casal', '140,00', 'card'); payWithCardDirect('140,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1152,7 +1154,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-001', 'Roupa de Neve para o Paulo não passar frio', '160,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('160,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-001', 'Roupa de Neve para o Paulo não passar frio', '160,00', 'card'); payWithCardDirect('160,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1168,7 +1170,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-006', 'Roupa de Neve para a Paolla ficar estilosa nas fotos', '160,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('160,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-006', 'Roupa de Neve para a Paolla ficar estilosa nas fotos', '160,00', 'card'); payWithCardDirect('160,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1184,7 +1186,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-008', 'Passeio de Funicular por Cerro San Cristóbal', '185,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('185,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-008', 'Passeio de Funicular por Cerro San Cristóbal', '185,00', 'card'); payWithCardDirect('185,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1200,7 +1202,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-009', 'Transfer do Aeroporto', '210,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('210,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-009', 'Transfer do Aeroporto', '210,00', 'card'); payWithCardDirect('210,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1216,7 +1218,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-011', 'Por do sol no Luna Bar', '235,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('235,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-011', 'Por do sol no Luna Bar', '235,00', 'card'); payWithCardDirect('235,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1232,7 +1234,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-007', 'City Tour pelo Centro Histórico de Santiago', '275,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('275,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-007', 'City Tour pelo Centro Histórico de Santiago', '275,00', 'card'); payWithCardDirect('275,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1248,7 +1250,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-012', 'Jantar na Pizzaria Tiramisu', '320,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('320,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-012', 'Jantar na Pizzaria Tiramisu', '320,00', 'card'); payWithCardDirect('320,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1264,7 +1266,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-010', 'Passeio por Vinã e Valpo', '405,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('405,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-010', 'Passeio por Vinã e Valpo', '405,00', 'card'); payWithCardDirect('405,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1280,7 +1282,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-013', 'Tour por Vinícola Alyan', '630,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('630,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-013', 'Tour por Vinícola Alyan', '630,00', 'card'); payWithCardDirect('630,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1296,7 +1298,7 @@
       <div class="gift-item">
         <div class="gift-links">
           <a onclick="openItemPixModal('exp-014', 'Tour pela Vinícola Concha y Toro', '905,00')" class="gift-link gift-link-pix">Presentear no Pix</a>
-        <a onclick="payWithCardDirect('905,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
+        <a onclick="openItemPixModal('exp-014', 'Tour pela Vinícola Concha y Toro', '905,00', 'card'); payWithCardDirect('905,00')" class="gift-link gift-link-card">Presentear no Cartão</a>
         </div>
       </div>
     </div>
@@ -1459,25 +1461,70 @@
     if (link) window.open(link, '_blank');
   }
 
-  function openItemPixModal(catId, itemName, itemValue) {
+  function openItemPixModal(catId, itemName, itemValue, method) {
+    method = method || 'pix';
     pixPendingCatId = catId;
     currentPixValue = itemValue;
     document.getElementById('pix-modal-item-name').textContent = itemName;
-    document.getElementById('pix-modal-item-value').textContent = 'R$ ' + itemValue;
     document.getElementById('pixReserveName').value = '';
     document.getElementById('btn-copy-item-pix').textContent = 'Copiar Chave';
     const cardBtn = document.getElementById('btn-card-pay');
+    const hasCardLink = !!CARD_LINKS[itemValue];
     if (cardBtn) {
-      if (CARD_LINKS[itemValue]) {
+      if (hasCardLink) {
         cardBtn.style.display = '';
         cardBtn.disabled = false;
       } else {
         cardBtn.style.display = 'none';
       }
     }
+
+    const modalBox = document.querySelector('#itemPixModal .modal-box');
+    const modalTitle = modalBox ? modalBox.querySelector('h3') : null;
+    const descEl = document.getElementById('pix-modal-desc');
+    const qrWrap = document.getElementById('pix-qr-wrap');
+    const keyDisplay = document.getElementById('modal-pix-key-display');
+    const copyBtn = document.getElementById('btn-copy-item-pix');
+    const pixToggle = document.getElementById('pix-method-toggle');
+
+    if (descEl) {
+      descEl.innerHTML = 'Valor: <strong id="pix-modal-item-value" style="color: var(--dourado);">R$ ' + itemValue + '</strong><br>' +
+        (method === 'card' && hasCardLink
+          ? 'Uma aba de pagamento foi aberta. Depois de pagar, digite seu nome abaixo para confirmar sua reserva.'
+          : 'Pague no Pix (copiando a chave abaixo) ou no cartão de crédito, e depois confirme sua reserva.');
+    }
+
+    if (method === 'card' && hasCardLink) {
+      // Cartão é o método principal: esconde QR/chave Pix e destaca o botão de cartão
+      if (modalTitle) modalTitle.textContent = 'Presentear no Cartão';
+      if (qrWrap) qrWrap.style.display = 'none';
+      if (keyDisplay) keyDisplay.style.display = 'none';
+      if (copyBtn) copyBtn.style.display = 'none';
+      if (cardBtn) {
+        cardBtn.classList.add('btn-card-primary');
+        cardBtn.textContent = '💳 Abrir pagamento novamente';
+      }
+      if (pixToggle) pixToggle.style.display = '';
+    } else {
+      // Pix é o método principal (comportamento padrão)
+      if (modalTitle) modalTitle.textContent = 'Presentear';
+      if (qrWrap) qrWrap.style.display = '';
+      if (keyDisplay) keyDisplay.style.display = '';
+      if (copyBtn) copyBtn.style.display = '';
+      if (cardBtn) {
+        cardBtn.classList.remove('btn-card-primary');
+        cardBtn.textContent = '💳 Pagar com Cartão';
+      }
+      if (pixToggle) pixToggle.style.display = 'none';
+      renderPixQR(catId, itemValue);
+    }
+
     document.getElementById('itemPixModal').classList.add('open');
-    renderPixQR(catId, itemValue);
     setTimeout(() => document.getElementById('pixReserveName').focus(), 120);
+  }
+
+  function switchPixModalToPix() {
+    openItemPixModal(pixPendingCatId, document.getElementById('pix-modal-item-name').textContent, currentPixValue, 'pix');
   }
 
   function closeItemPixModal() {
@@ -1641,7 +1688,7 @@
   <div class="modal-box">
     <h3>Presentear</h3>
     <p class="modal-item-name" id="pix-modal-item-name"></p>
-    <p class="modal-desc" style="margin-bottom: 20px;">Valor: <strong id="pix-modal-item-value" style="color: var(--dourado);">R$ 000,00</strong><br>Pague no Pix (copiando a chave abaixo) ou no cartão de crédito, e depois confirme sua reserva.</p>
+    <p class="modal-desc" id="pix-modal-desc" style="margin-bottom: 20px;">Valor: <strong id="pix-modal-item-value" style="color: var(--dourado);">R$ 000,00</strong><br>Pague no Pix (copiando a chave abaixo) ou no cartão de crédito, e depois confirme sua reserva.</p>
     
     <div class="pix-qr-wrap" id="pix-qr-wrap">
       <div id="pix-qr-render"></div>
@@ -1654,10 +1701,11 @@
     <input type="text" id="pixReserveName" placeholder="Seu nome para registrar o presente" maxlength="60" autocomplete="off" style="margin-bottom: 24px; text-align: center;"/>
 
     <div class="modal-actions" style="flex-wrap: wrap; gap: 12px; justify-content: center;">
+      <button class="btn-card" id="btn-card-pay" onclick="payWithCard()">💳 Pagar com Cartão</button>
       <button class="btn-cancel" onclick="closeItemPixModal()">Cancelar</button>
       <button class="btn-cancel" id="btn-copy-item-pix" onclick="copyItemPix()">Copiar Chave</button>
-      <button class="btn-card" id="btn-card-pay" onclick="payWithCard()">💳 Pagar com Cartão</button>
       <button class="btn-confirm" onclick="confirmPixReserve()" style="width: 100%; margin-top: 8px;">Já paguei e Reservar ✓</button>
+      <a href="javascript:void(0)" id="pix-method-toggle" onclick="switchPixModalToPix()" style="display:none; width: 100%; text-align: center; font-size: 13px; font-style: italic; color: rgba(243,235,224,0.45); text-decoration: underline; margin-top: 4px;">Prefiro pagar com Pix</a>
     </div>
   </div>
 </div>
